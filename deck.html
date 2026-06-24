@@ -142,7 +142,7 @@
 
   /* ===== cross-section diagram ===== */
   .xsec{ display:flex; flex-direction:column-reverse; gap:3px; flex:1 1 auto; justify-content:center; }
-  .fl{ display:flex; align-items:center; gap:12px; }
+  .fl{ display:grid; grid-template-columns:54px 1fr 150px; align-items:center; gap:12px; }
   .fl .flno{ width:54px; font-size:12px; font-weight:700; color:var(--navy); text-align:right; }
   .fl .flbar{ height:30px; border-radius:3px; display:flex; align-items:center; padding:0 10px;
     color:#fff; font-size:11.5px; font-weight:700; white-space:nowrap; min-width:60px; }
@@ -189,7 +189,7 @@
   <div class="shead"><div class="skick">Overview</div><h2 class="stitle serif">검토 개요</h2><div class="srule"></div></div>
   <div class="sbody spread">
     <div class="row" style="gap:22px; align-items:stretch;">
-      <div class="col" style="flex:1.05">
+      <div class="col" style="flex:1">
         <h3 class="serif" style="font-size:17px;color:var(--navy2);margin-bottom:8px;">사업 기본정보</h3>
         <div class="facts">
           <div class="f"><span class="k">대지위치</span><span class="v">당하동 1237</span></div>
@@ -201,14 +201,6 @@
           <div class="f"><span class="k">상품구성</span><span class="v">근생 128 · 업무 48 · 판매 19호</span></div>
           <div class="f"><span class="k">주차</span><span class="v">127대 (법정 118%)</span></div>
         </div>
-      </div>
-      <div class="col" style="flex:.95">
-        <h3 class="serif" style="font-size:17px;color:var(--navy2);margin-bottom:8px;">검토 목적과 범위</h3>
-        <ul class="clean" style="justify-content:flex-start;flex:0;">
-          <li>원안(킴앤코) 분양가·사업수지의 <b>적정성 독립 검증</b></li>
-          <li>공개 시장데이터 <b>다중출처 교차검증</b> (호가·마케팅 자료는 구분 표기)</li>
-          <li>절대 수입은 재계산하지 않고 <b>민감도</b>로 리스크 구간 제시</li>
-        </ul>
       </div>
     </div>
     <div class="call">
@@ -365,44 +357,15 @@
   <div class="sbody">
     <div class="row fill" style="gap:18px; align-items:stretch;">
       <div class="col" style="flex:1.12;">
-        <div class="mapfig" style="flex:0 0 auto; width:100%; aspect-ratio:420/300; background:#eef3f8; border-color:#cdd9e8;">
-          <svg viewBox="0 0 420 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" font-family="'Noto Sans KR','Malgun Gothic',sans-serif">
-            <rect x="0" y="0" width="420" height="300" fill="#eef3f8"/>
-            <path d="M0 128 H420" stroke="#d3deea" stroke-width="11"/>
-            <text x="210" y="121" fill="#8497ad" font-size="8.5" text-anchor="middle">— 인천1호선 · 간선도로 —</text>
-            <path d="M252 128 V300" stroke="#d3deea" stroke-width="8"/>
-            <text x="64" y="44" fill="#6b7c92" font-size="10" font-weight="700">원당·불로지구</text>
-            <text x="300" y="150" fill="#6b7c92" font-size="10" font-weight="700">법조타운 권역</text>
-            <!-- 200m 연결선 -->
-            <line x1="210" y1="186" x2="262" y2="222" stroke="#1e8e5a" stroke-width="1.6" stroke-dasharray="4 3"/>
-            <rect x="206" y="196" width="70" height="15" rx="7.5" fill="#e7f3ec" stroke="#1e8e5a" stroke-width=".7"/>
-            <text x="241" y="207" fill="#1e8e5a" font-size="8.5" font-weight="700" text-anchor="middle">약 200m · 도보 3분</text>
-            <!-- 메트로시티 -->
-            <text x="92" y="80" font-size="15" fill="#2f6fb0" text-anchor="middle">&#9670;</text>
-            <text x="104" y="74" fill="#15233b" font-size="10" font-weight="700">메트로시티</text>
-            <text x="104" y="86" fill="#8497ad" font-size="8.5">101역세권 · 타 입지</text>
-            <!-- 아라역 -->
-            <circle cx="176" cy="150" r="3.6" fill="#15233b"/>
-            <text x="184" y="147" fill="#6b7c92" font-size="8.5">아라역(101역)</text>
-            <!-- K타워 본건 -->
-            <text x="210" y="184" font-size="26" fill="#e0a020" stroke="#15233b" stroke-width=".5" text-anchor="middle">&#9733;</text>
-            <rect x="170" y="186" width="80" height="16" rx="4" fill="#15233b"/>
-            <text x="210" y="198" fill="#fff" font-size="9.5" font-weight="800" text-anchor="middle">K타워 (본건)</text>
-            <!-- 선양법조타워 -->
-            <text x="266" y="227" font-size="15" fill="#1e8e5a" text-anchor="middle">&#9679;</text>
-            <text x="278" y="221" fill="#15233b" font-size="10" font-weight="700">선양법조타워</text>
-            <text x="278" y="233" fill="#8497ad" font-size="8.5">동일 법조타운 · 직접비교</text>
-            <!-- iH 웰카운티 -->
-            <text x="352" y="266" font-size="13" fill="#5b6b80" text-anchor="middle">&#9679;</text>
-            <text x="345" y="282" fill="#15233b" font-size="9.5" font-weight="700" text-anchor="end">iH 웰카운티</text>
-            <text x="345" y="293" fill="#8497ad" font-size="8" text-anchor="end">검단 타 블록</text>
-            <!-- 제목·범례 -->
-            <text x="12" y="20" fill="#15233b" font-size="11.5" font-weight="800">검단신도시 일대 — 비교사례 위치 (도식)</text>
-            <text x="12" y="291" fill="#8497ad" font-size="8">★ 본건   ● 직접·단지내상가   ◆ 역세권상가</text>
-          </svg>
-          <div class="src" style="background:rgba(255,255,255,.85);">도식 · 실제 축척 아님</div>
+        <div class="mapfig">
+          <img src="map_base.png" alt="비교사례 위치도">
+          <div class="pin gold" style="left:50%; top:41%;"><div class="dot"></div><div class="tag2">① K타워 (본건)</div></div>
+          <div class="pin" style="left:56%; top:64%;"><div class="dot"></div><div class="tag2">② 선양법조타워</div></div>
+          <div class="mline" style="left:50%; top:41%; width:90px; transform:rotate(63deg);"></div>
+          <div class="mdist" style="left:57%; top:53%;">약 200m · 도보 3분</div>
+          <div class="mlabel" style="left:50%; top:90%;">↓ 법조타운(법원·검찰) · 만남의광장</div>
+          <div class="src">출처: 카카오맵 (지도)</div>
         </div>
-        <div class="call" style="font-size:11px; padding:8px 12px; margin-top:8px; border-left-color:#2f6fb0; background:#eef4fb;"><b>문정 법조 오피스(서울 송파)</b>는 직선 약 35km로 지도 밖 — 검단 오피스 단가 부재를 메우는 <b>벤치마크</b>로만 사용.</div>
       </div>
       <div class="col" style="flex:1.0; justify-content:center;">
         <table style="font-size:12px;">
