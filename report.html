@@ -24,22 +24,24 @@
   h3, h4 { page-break-after: avoid; }
   thead { display: table-header-group; }
   :root{
-    --navy:#0e2a4d; --navy2:#163a66; --gold:#b8924a; --gold-l:#e9dcc2;
-    --ink:#1a2230; --mut:#5d6b7e; --line:#d7dde6; --bg:#f4f6f9;
-    --red:#b5302a; --amber:#c8821b; --green:#1f7a4d; --blue:#2a6db5;
+    /* Sentry-inspired 바이올렛/라임 팔레트 — 네이비 대비 밝게 */
+    --navy:#3a2178; --navy2:#5b46a8; --gold:#6a5fc1; --gold-l:#ece8fb;
+    --lime:#c2ef4e;
+    --ink:#1f1633; --mut:#6b6480; --line:#e5e7eb; --bg:#ffffff;
+    --red:#d6453d; --amber:#c8821b; --green:#1f9d57; --blue:#4f5bd5;
   }
   /* ---- cover ---- */
   .cover{ height:265mm; display:flex; flex-direction:column; justify-content:space-between;
-    background:linear-gradient(160deg,#0e2a4d 0%,#163a66 60%,#1e4a80 100%); color:#fff;
+    background:linear-gradient(160deg,#150f23 0%,#2a1659 55%,#422082 100%); color:#fff;
     margin:-16mm -14mm 0 -14mm; padding:34mm 22mm; }
   .cover .kick{ letter-spacing:5px; font-size:12px; color:var(--gold-l); font-weight:600;}
   .cover h1{ font-size:33px; line-height:1.25; margin:14px 0 0; font-weight:800; }
-  .cover h1 b{ color:#ffd98a; }
+  .cover h1 b{ color:var(--lime); }
   .cover .sub{ font-size:14px; color:#cdd9ea; margin-top:18px; }
-  .cover .rule{ height:3px; width:120px; background:var(--gold); margin:26px 0; }
+  .cover .rule{ height:3px; width:120px; background:var(--lime); margin:26px 0; }
   .cover .meta{ font-size:12px; color:#dbe4f0; line-height:2; }
   .cover .foot{ font-size:11px; color:#9fb3cc; border-top:1px solid rgba(255,255,255,.2); padding-top:12px;}
-  .cover .badge{ display:inline-block; border:1px solid var(--gold); color:#ffd98a; font-size:11px;
+  .cover .badge{ display:inline-block; border:1px solid var(--lime); color:var(--lime); font-size:11px;
     padding:3px 12px; border-radius:14px; margin-top:8px;}
   /* ---- section ---- */
   .sec{ page-break-before: always; }
@@ -55,14 +57,14 @@
   /* ---- tables ---- */
   table{ width:100%; border-collapse:collapse; margin:8px 0 10px; font-size:9.6px; }
   th,td{ border:1px solid var(--line); padding:5px 7px; vertical-align:middle; }
-  th{ background:var(--navy); color:#fff; font-weight:700; text-align:center; }
+  th{ background:#efeafc; color:#33215f; font-weight:700; text-align:center; }
   td.l{ text-align:left;} td.c{text-align:center;} td.r{text-align:right;}
-  tbody tr:nth-child(even){ background:#f6f8fb; }
-  .sub th{ background:var(--navy2); }
+  tbody tr:nth-child(even){ background:#f7f5fc; }
+  .sub th{ background:#e1d9f6; color:#33215f; }
   caption{ caption-side:top; text-align:left; font-size:9px; color:var(--mut); padding:2px 0;}
   /* ---- callouts ---- */
   .box{ border:1px solid var(--line); border-radius:5px; padding:10px 13px; margin:10px 0; background:#fff;}
-  .box.key{ border-left:5px solid var(--gold); background:#fcf9f2;}
+  .box.key{ border-left:5px solid var(--gold); background:#f5f2ff;}
   .box.warn{ border-left:5px solid var(--red); background:#fcf2f1;}
   .box.ok{ border-left:5px solid var(--green); background:#f1f8f4;}
   .box .t{ font-weight:800; color:var(--navy); font-size:10.6px; margin-bottom:3px;}
@@ -82,7 +84,7 @@
   ol{ margin:5px 0 8px; padding-left:20px;}
   .foot-note{ font-size:8.6px; color:var(--mut); border-top:1px solid var(--line); margin-top:14px; padding-top:6px;}
   a{ color:var(--blue); text-decoration:none; word-break:break-all;}
-  .pill{ font-size:8.6px; background:var(--gold-l); color:#6b5320; padding:1px 7px; border-radius:9px; font-weight:700;}
+  .pill{ font-size:8.6px; background:var(--gold-l); color:#4a3a86; padding:1px 7px; border-radius:9px; font-weight:700;}
 </style>
 </head>
 <body>
@@ -281,7 +283,7 @@
   <div class="sechead"><span class="secno">3</span><span class="sectitle">주변 시세 — 상가 · 오피스</span>
     <span class="secdesc">다중출처 수집</span></div>
 
-  <div class="box small" style="background:#fcf9f2;border-left:5px solid var(--gold)">
+  <div class="box small" style="background:#f5f2ff;border-left:5px solid var(--gold)">
     <b>데이터 신뢰도 고지.</b> 상가·오피스는 아파트와 달리 실거래 공개가 드물어, 아래 수치 상당수는 분양 호가·마케팅 자료의 성격이 강하다.
     네이버부동산·직방·다방·아실의 동적 매물 원자료는 로그인·동적페이지 제약으로 직접 수집이 제한된다. 추정치와 실데이터를 구분해 표기했다.
   </div>
@@ -308,7 +310,7 @@
         <tr><td class="l">전용 / 분양면적</td><td class="r">11.04평 / 22.35평</td></tr>
         <tr><td class="l"><b>계약평당가</b></td><td class="r"><b>약 4,800만원</b></td></tr>
         <tr><td class="l"><b>전용평당가</b></td><td class="r"><b>약 9,720만원</b></td></tr>
-        <tr style="background:#fcf9f2"><td class="l"><b>전용률</b></td><td class="r"><b>약 49.4%</b></td></tr>
+        <tr style="background:#f5f2ff"><td class="l"><b>전용률</b></td><td class="r"><b>약 49.4%</b></td></tr>
       </tbody>
     </table>
   </div>
