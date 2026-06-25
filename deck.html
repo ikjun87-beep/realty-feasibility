@@ -161,7 +161,8 @@
   .fl{ display:grid; grid-template-columns:58px minmax(0,1fr) 156px; align-items:center; gap:13px; }
   .fl .flno{ font-size:14px; font-weight:700; color:var(--navy); text-align:right; }
   .fl .barwrap{ display:flex; align-items:center; gap:12px; min-width:0; }
-  .fl .flbar{ height:30px; border-radius:4px; flex:0 0 auto; min-width:14px; box-shadow:0 1px 2px rgba(21,35,59,.14); }
+  .fl .flbar{ height:32px; border-radius:4px; flex:0 0 auto; min-width:16px; display:flex; align-items:center;
+    padding:0 13px; color:#fff; font-size:14.5px; font-weight:700; white-space:nowrap; box-shadow:0 1px 3px rgba(21,35,59,.18); }
   .fl .flval{ font-size:14.5px; font-weight:800; color:var(--navy); white-space:nowrap; }
   .fl .flval .u{ color:var(--mut); font-weight:600; font-size:13px; margin-right:4px; }
   .fl .flmeta{ font-size:13px; color:var(--mut); }
@@ -188,6 +189,10 @@
   .node .nd{ font-size:13.5px; color:var(--mut); line-height:1.5; }
   .node.gold{ background:#eef4fb; border-color:#cfe0f2; }
   .arrow{ flex:0 0 30px; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:22px; font-weight:700; }
+
+  /* sensitivity inline rate-bar */
+  .sbar{ height:6px; background:#eef1f5; border-radius:3px; margin:7px auto 0; width:76%; }
+  .sbar i{ display:block; height:100%; border-radius:3px; }
 </style>
 </head>
 <body>
@@ -200,7 +205,6 @@
   <div class="cr"></div>
   <div class="cs">인천 서구 당하동 1237 · 검단신도시 C3-①-5 일반상업BL<br>근린생활시설 · 업무시설 · 판매시설 개발사업</div>
   <div class="cm">검토 기준일 2026.06.24 &nbsp;·&nbsp; 시행 ㈜케이타워검단 &nbsp;·&nbsp; 원자료 ㈜킴앤코 사업계획서</div>
-  <div class="cbadge">독립 검토 · 다중출처 교차검증 · 2026.06 기준</div>
 </section>
 
 <!-- 2. 검토 개요 -->
@@ -256,7 +260,7 @@
       <div class="col" style="flex:.85; justify-content:center; gap:11px;">
         <div class="call ok" style="padding:12px 15px;"><span class="t">역세권 · 법조타운</span>인천1호선 검단연장(2025.6.28 개통) 역세권. 인천지법 북부지원·검찰 북부지청(2028.3 개원)에 인접한 핵심 상업 블록.</div>
         <div class="call" style="padding:12px 15px;"><span class="t">배후수요</span>검단신도시 계획 18.7만명·7.6만세대. 2026~27년 입주 활발(국평 7~8억대).</div>
-        <div class="call warn" style="padding:12px 15px;"><span class="t">현황</span>부지는 현재 조성 중(공터). 주변 법조타운·오피스텔·상가가 형성되는 단계 — 상권 성숙에는 시간이 필요.</div>
+        <div class="call warn" style="padding:12px 15px;"><span class="t">현황</span>부지는 현재 조성 중(공터). 주변 법조타운·오피스텔·상가가 형성되는 단계로, 상권 성숙에는 시간이 소요됨.</div>
       </div>
     </div>
   </div>
@@ -269,14 +273,14 @@
   <div class="sbody spread">
     <div class="kpis fill">
       <div class="kpi"><div class="n">17.3%</div><div class="l">원안 수익률<br>(낙관·상한선)</div></div>
-      <div class="kpi rd"><div class="n">0.4%</div><div class="l">상가값 −20%면<br>(본전·손익분기)</div></div>
-      <div class="kpi gd"><div class="n">84.8%</div><div class="l">상가가 차지하는<br>수입 비중</div></div>
+      <div class="kpi rd"><div class="n">0.4%</div><div class="l">상가 −20% 시<br>(손익분기)</div></div>
+      <div class="kpi gd"><div class="n">84.8%</div><div class="l">상가 부문<br>수입 비중</div></div>
       <div class="kpi"><div class="n">2028.3</div><div class="l">법조타운 개원<br>(지연 확정)</div></div>
     </div>
     <div class="call big">
-      <span class="t">한마디로</span>
-      원안의 수익률 17.3%는 위층 상가까지 1층에 가까운 비싼 값에 모두 팔린다는 가정에 기대고 있다.
-      상가 평균 분양가가 15~20%만 내려가도 수익은 본전 수준(손익분기)으로 떨어진다.
+      <span class="t">요약</span>
+      원안의 수익률 17.3%는 상층 상가까지 1층 근접 단가로 전량 분양된다는 가정에 의존한다.
+      상가 평균 분양가가 15~20% 하락할 경우 수익은 손익분기 수준으로 하락한다.
     </div>
     <div class="row" style="gap:14px;">
       <div class="call ok" style="flex:1;font-size:14.5px;"><span class="t" style="font-size:14.5px;">확인 사항 ①</span>층별 분양가 현실화 — 1층가가 상층에 적용됐는지</div>
@@ -301,7 +305,7 @@
       </tbody>
     </table>
     <div class="call">
-      1층·업무 단가는 시장 범위 안에 있다. 취약점은 <b>상층 근생에 1층 근접가를 적용했는지 여부</b>로 좁혀지며, 층별 차등가로 재산정하면 수익률은 한 자릿수로 내려갈 개연성이 크다.
+      1층·업무 단가는 시장 범위 내에 있다. 취약 요인은 <b>상층 근생에 1층 근접가를 적용했는지 여부</b>로 한정되며, 층별 차등가로 재산정 시 수익률이 한 자릿수로 하락할 개연성이 크다.
     </div>
   </div>
   <div class="sfoot"><span>The K Tower 검단 · 적정 분양가·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
@@ -322,7 +326,7 @@
     </table>
     <div class="call warn">
       <span class="t">시사점</span>
-      분양가에 즉시 반영할 수 있는 확정 호재는 인천1호선뿐이며 이미 가격에 들어가 있다. GTX-D·5호선은 예정 호재로만 보수 반영하고, 법조타운 수요는 2028년 개원 이후로 본다. 미실현 호재를 현재 분양가에 전부 반영하면 흡수율 리스크로 돌아온다.
+      분양가에 즉시 반영할 수 있는 확정 호재는 인천1호선뿐이며 이미 가격에 들어가 있다. GTX-D·5호선은 예정 호재로만 보수 반영하고, 법조타운 수요는 2028년 개원 이후로 본다. 미실현 호재를 현재 분양가에 전부 반영할 경우 흡수율 리스크로 작용한다.
     </div>
   </div>
   <div class="sfoot"><span>The K Tower 검단 · 적정 분양가·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
@@ -339,10 +343,10 @@
       <div class="kpi"><div class="n">3,818호</div><div class="l">인천 총 미분양<br>(2026.2)</div></div>
     </div>
     <div class="row" style="gap:14px;">
-      <div class="col call warn"><span class="t">오피스도 안전하지 않다</span>인천에서는 오피스 공실(18.7%)이 상가(13.6%)보다 오히려 높다. 원도심 노후오피스 영향으로, 용도 전환만으론 리스크를 피하지 못한다.</div>
-      <div class="col call warn"><span class="t">검단에 몰린 침체</span>인천 준공후 악성 미분양의 74%가 서구(검단)에 몰려 있다. 분양시장 침체가 본 사업 입지에 직접 작용한다.</div>
+      <div class="col call warn"><span class="t">오피스 부문의 불확실성</span>인천에서는 오피스 공실(18.7%)이 상가(13.6%)보다 오히려 높다. 원도심 노후오피스 영향으로, 용도 전환만으로는 리스크를 회피하기 어렵다.</div>
+      <div class="col call warn"><span class="t">검단 지역 분양시장 침체</span>인천 준공후 악성 미분양의 74%가 서구(검단)에 집중되어 있다. 분양시장 침체가 본 사업 입지에 직접 작용한다.</div>
     </div>
-    <div class="call ok"><span class="t">받쳐주는 요인</span>인천1호선 개통(확정 역세권) · 법조타운 착공 완료 · 배후 주거 구매력 견조(국평 7~8억대, 분양가상한제 안전마진).</div>
+    <div class="call ok"><span class="t">사업성 지지 요인</span>인천1호선 개통(확정 역세권) · 법조타운 착공 완료 · 배후 주거 구매력 견조(국평 7~8억대, 분양가상한제 안전마진).</div>
   </div>
   <div class="sfoot"><span>The K Tower 검단 · 적정 분양가·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
 </section>
@@ -423,14 +427,14 @@
     <div class="row fill" style="gap:22px; align-items:stretch;">
       <div class="col" style="flex:1.12; justify-content:center;">
         <div class="xsec">
-          <div class="fl"><span class="flno">B1~3</span><div class="barwrap"><div class="flbar u-b" style="width:12%;"></div><span class="flval"><span class="u">지하</span>주차·기계·전기</span></div><span class="flmeta">지하 5,167㎡ 중</span></div>
-          <div class="fl"><span class="flno">1F</span><div class="barwrap"><div class="flbar u-1" style="width:40%;"></div><span class="flval"><span class="u">근생·판매</span>4,500만/평 · 100%</span></div></div>
-          <div class="fl"><span class="flno">2F</span><div class="barwrap"><div class="flbar u-g" style="width:15%;"></div><span class="flval"><span class="u">근생</span>1,700만/평 · 38%</span></div><span class="flmeta">선양 2층 감안 상향 여지</span></div>
-          <div class="fl"><span class="flno">3F</span><div class="barwrap"><div class="flbar u-g" style="width:12%;"></div><span class="flval"><span class="u">근생</span>1,300만/평 · 29%</span></div></div>
-          <div class="fl"><span class="flno">4F</span><div class="barwrap"><div class="flbar u-g" style="width:10%;"></div><span class="flval"><span class="u">근생</span>1,100만/평 · 24%</span></div></div>
-          <div class="fl"><span class="flno">5F</span><div class="barwrap"><div class="flbar u-g" style="width:9%;"></div><span class="flval"><span class="u">근생</span>1,000만/평 · 22%</span></div></div>
-          <div class="fl"><span class="flno">6~7F</span><div class="barwrap"><div class="flbar u-g" style="width:8%;"></div><span class="flval"><span class="u">근생</span>950만/평 · 21%</span></div></div>
-          <div class="fl"><span class="flno">8~10F</span><div class="barwrap"><div class="flbar u-1" style="width:11%; background:var(--gold);"></div><span class="flval"><span class="u">업무</span>1,200만/평(계약)</span></div><span class="flmeta">전용률·개원지연 공실 확인</span></div>
+          <div class="fl"><span class="flno">B1~3</span><div class="barwrap"><div class="flbar u-b" style="width:34%;"></div><span class="flval"><span class="u">지하</span>주차·기계·전기</span></div><span class="flmeta">지하 5,167㎡ 중</span></div>
+          <div class="fl"><span class="flno">1F</span><div class="barwrap"><div class="flbar u-1" style="width:100%;">근생·판매 · 4,500만/평 · 100%</div></div></div>
+          <div class="fl"><span class="flno">2F</span><div class="barwrap"><div class="flbar u-g" style="width:38%;"></div><span class="flval"><span class="u">근생</span>1,700만/평 · 38%</span></div><span class="flmeta">선양 2층 감안 상향 여지</span></div>
+          <div class="fl"><span class="flno">3F</span><div class="barwrap"><div class="flbar u-g" style="width:29%;"></div><span class="flval"><span class="u">근생</span>1,300만/평 · 29%</span></div></div>
+          <div class="fl"><span class="flno">4F</span><div class="barwrap"><div class="flbar u-g" style="width:24%;"></div><span class="flval"><span class="u">근생</span>1,100만/평 · 24%</span></div></div>
+          <div class="fl"><span class="flno">5F</span><div class="barwrap"><div class="flbar u-g" style="width:22%;"></div><span class="flval"><span class="u">근생</span>1,000만/평 · 22%</span></div></div>
+          <div class="fl"><span class="flno">6~7F</span><div class="barwrap"><div class="flbar u-g" style="width:21%;"></div><span class="flval"><span class="u">근생</span>950만/평 · 21%</span></div></div>
+          <div class="fl"><span class="flno">8~10F</span><div class="barwrap"><div class="flbar u-1" style="width:27%; background:var(--gold);"></div><span class="flval"><span class="u">업무</span>1,200만/평(계약)</span></div><span class="flmeta">전용률·개원지연 공실 확인</span></div>
         </div>
         <div class="leg"><span><i class="u-1"></i>1층·업무(시장 범위 내)</span><span><i class="u-g"></i>상층 근생(하향 재설정)</span><span><i class="u-b"></i>지하</span></div>
       </div>
@@ -458,7 +462,7 @@
           <div><span class="sw" style="background:var(--gold);"></span><b>근린생활시설</b> 833.9억 · 84.8%</div>
           <div><span class="sw" style="background:var(--navy3);"></span>업무시설 149.3억 · 15.2%</div>
         </div>
-        <div class="call warn" style="font-size:14px; padding:11px 14px; margin-top:8px;">수입의 85%가 가장 약한 부문(상가)에 묶여 있다. 근생 분양가가 흔들리면 사업 전체가 흔들린다 — 구조적 편중이 최대 리스크.</div>
+        <div class="call warn" style="font-size:14px; padding:11px 14px; margin-top:8px;">수입의 85%가 최약 부문(상가)에 집중되어 있다. 근생 분양가 변동 시 사업 전체가 영향을 받는다 — 구조적 편중이 최대 리스크.</div>
       </div>
     </div>
     <h3 class="serif" style="font-size:16px; color:var(--navy2); margin:4px 0 8px;">사업 추진 구조 — 본PF 기표의 4대 전제</h3>
@@ -481,19 +485,20 @@
 <section class="slide">
   <div class="shead"><div class="skick">Sensitivity</div><h2 class="stitle serif">민감도 — 상가 분양가가 수익률을 좌우</h2><div class="srule"></div></div>
   <div class="sbody spread">
-    <table class="fill">
+    <style>#sens12 td{ padding:8px 14px; } #sens12 .sbar{ margin-top:5px; }</style>
+    <table class="fill" id="sens12">
       <thead><tr><th>시나리오</th><th>근생 수입</th><th>총수입</th><th>세전이익</th><th>수익률</th></tr></thead>
       <tbody>
-        <tr><td class="l"><b>원안(낙관)</b></td><td class="r">833.9억</td><td class="r">983.1억</td><td class="r">170.4억</td><td class="c" style="color:var(--green);font-weight:700">17.3%</td></tr>
-        <tr><td class="l">근생 −10%</td><td class="r">750.5억</td><td class="r">899.7억</td><td class="r">87.0억</td><td class="c" style="color:var(--amber);font-weight:700">9.7%</td></tr>
-        <tr><td class="l">근생 −15%</td><td class="r">708.8억</td><td class="r">858.0억</td><td class="r">45.4억</td><td class="c" style="color:var(--amber);font-weight:700">5.3%</td></tr>
-        <tr style="background:#fcf2f1"><td class="l"><b>근생 −20%</b></td><td class="r">667.1억</td><td class="r">816.3억</td><td class="r">3.7억</td><td class="c" style="color:var(--red);font-weight:700">0.4% · 손익분기</td></tr>
-        <tr><td class="l">근생 −25%</td><td class="r">625.4억</td><td class="r">774.7억</td><td class="r" style="color:var(--red)">−38.0억</td><td class="c" style="color:var(--red);font-weight:700">적자</td></tr>
+        <tr><td class="l"><b>원안(낙관)</b></td><td class="r">833.9억</td><td class="r">983.1억</td><td class="r">170.4억</td><td class="c" style="color:var(--green);font-weight:700">17.3%<div class="sbar"><i style="width:100%;background:var(--green)"></i></div></td></tr>
+        <tr><td class="l">근생 −10%</td><td class="r">750.5억</td><td class="r">899.7억</td><td class="r">87.0억</td><td class="c" style="color:var(--amber);font-weight:700">9.7%<div class="sbar"><i style="width:56%;background:var(--amber)"></i></div></td></tr>
+        <tr><td class="l">근생 −15%</td><td class="r">708.8억</td><td class="r">858.0억</td><td class="r">45.4억</td><td class="c" style="color:var(--amber);font-weight:700">5.3%<div class="sbar"><i style="width:31%;background:var(--amber)"></i></div></td></tr>
+        <tr style="background:#fcf2f1"><td class="l"><b>근생 −20%</b></td><td class="r">667.1억</td><td class="r">816.3억</td><td class="r">3.7억</td><td class="c" style="color:var(--red);font-weight:700">0.4% · 손익분기<div class="sbar"><i style="width:3%;background:var(--red)"></i></div></td></tr>
+        <tr><td class="l">근생 −25%</td><td class="r">625.4억</td><td class="r">774.7억</td><td class="r" style="color:var(--red)">−38.0억</td><td class="c" style="color:var(--red);font-weight:700">적자<div class="sbar"><i style="width:100%;background:#f0d3d1"></i></div></td></tr>
       </tbody>
     </table>
     <div class="call warn big">
-      <span class="t">17.3%는 최대치일 뿐 기준이 아니다</span>
-      상층 근생을 시장가대로만 반영해도 −15~20% 구간(수익률 5%→손익분기)에 진입할 가능성이 크다. 본 민감도는 지출을 고정한 보수적 단순화로, 실제로는 분양 지연 시 금융비 상승이 겹쳐 더 악화된다.
+      <span class="t">17.3%는 기준치가 아닌 최대치</span>
+      상층 근생에 시장가만 반영해도 −15~20% 구간(수익률 5%→손익분기)에 진입할 가능성이 크다. 본 민감도는 지출을 고정한 보수적 단순화이며, 실제로는 분양 지연 시 금융비 상승이 중첩되어 추가 악화될 수 있다.
     </div>
   </div>
   <div class="sfoot"><span>The K Tower 검단 · 적정 분양가·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
@@ -514,7 +519,7 @@
           <li>자기자본 확충 (현물출자·리츠)</li>
           <li>근생 앵커 선임대 + 층별 차등가 재설정</li>
         </ul>
-        <div class="call warn" style="font-size:14px; padding:11px 14px;">분양 흡수율이 받쳐줘야 성립. 미분양 시 금융비 폭증으로 수익률 급락.</div>
+        <div class="call warn" style="font-size:14px; padding:11px 14px;">분양 흡수율 확보가 성립 전제. 미분양 시 금융비 증가로 수익률 하락.</div>
       </div>
       <div class="plan b">
         <h3 class="serif">2안 — 분양성 우선 재편</h3>
@@ -526,7 +531,7 @@
           <li>법조타운 개원(2028.3) 타이밍 연동</li>
           <li>책준형 신탁 + 일부 통매각·리츠 편입</li>
         </ul>
-        <div class="call ok" style="font-size:14px; padding:11px 14px;">시장 약세·저신용 시행사 환경에서 완주 확률을 높이는 현실적 경로.</div>
+        <div class="call ok" style="font-size:14px; padding:11px 14px;">시장 약세·저신용 시행사 환경에서 완주 가능성을 높이는 현실적 경로.</div>
       </div>
     </div>
   </div>
