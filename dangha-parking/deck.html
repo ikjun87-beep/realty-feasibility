@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>당하동 1250 주차전용건축물 — 분양성·사업성 검토 (발표자료)</title>
+<style>
+  @page { size: 297mm 167mm; margin: 0; }   /* 16:9 가로 */
+  * { box-sizing: border-box; margin:0; padding:0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  :root{
+    --navy:#15233b; --navy2:#2f6fb0; --navy3:#15233b; --gold:#2f6fb0; --gold-l:#e8eef5; --gold-b:#7fb1e6;
+    --lime:#2f6fb0;
+    --ink:#1f2937; --mut:#5b6b80; --line:#d9e1ec; --bg:#ffffff;
+    --red:#d23b3b; --amber:#e0a020; --green:#1e8e5a; --blue:#2f6fb0;
+  }
+  body{ font-family:"Noto Sans KR","Malgun Gothic",sans-serif; color:var(--ink); background:#5b6675; font-weight:400; counter-reset:slidepg;
+    word-break:keep-all; overflow-wrap:break-word; }
+  .serif{ font-family:"Noto Serif KR","Noto Sans KR",serif; }
+
+  .slide{
+    width:297mm; height:167mm; background:#fff; position:relative; overflow:hidden;
+    page-break-after:always; margin:0 auto 6mm; padding:14mm 16mm 11mm;
+    display:flex; flex-direction:column; counter-increment:slidepg;
+  }
+  .shead{ flex:0 0 auto; margin-bottom:9px; }
+  .skick{ font-size:12px; letter-spacing:4px; color:var(--gold); font-weight:700; text-transform:uppercase; }
+  .stitle{ font-size:31px; font-weight:700; color:var(--navy); margin-top:5px; line-height:1.18; letter-spacing:-.3px; }
+  .stitle.sm{ font-size:26px; }
+  .srule{ width:62px; height:4px; background:var(--gold); margin:12px 0 0; }
+  .sbody{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; min-height:0; }
+  .sbody.spread{ justify-content:space-between; }
+  .sbody.top{ justify-content:flex-start; }
+  .sfoot{ flex:0 0 auto; display:flex; align-items:center; justify-content:space-between;
+    border-top:1px solid var(--gold-l); padding-top:7px; margin-top:10px; font-size:10px; color:var(--mut); }
+  .sfoot .cf{ color:var(--gold); font-weight:700; letter-spacing:2px; }
+  .sfoot .pg{ color:var(--navy); font-weight:700; }
+  .sfoot .pg::after{ content: counter(slidepg, decimal-leading-zero); }
+
+  /* cover & closing (light) */
+  .cover{ justify-content:center; }
+  .cover.light{ background:#ffffff; color:var(--ink); padding:0 34mm; }
+  .cover.light::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:9px;
+    background:linear-gradient(180deg,var(--navy) 0%,var(--navy2) 45%,var(--gold) 100%); }
+  .cover.light::after{ content:""; position:absolute; left:34mm; right:34mm; bottom:13mm; height:1px; background:var(--gold-l); }
+  .cover.light .ck{ color:var(--gold); letter-spacing:7px; font-size:14.5px; font-weight:700; }
+  .cover h1{ font-size:46px; font-weight:700; line-height:1.2; margin:18px 0; color:var(--navy); }
+  .cover h1 b{ color:var(--gold); font-weight:700; }
+  .cover .cr{ width:84px; height:4px; background:var(--gold); margin:22px 0; }
+  .cover .cs{ font-size:17px; line-height:1.75; color:#41506a; }
+  .cover .cm{ font-size:13.5px; line-height:2; margin-top:14px; color:#8190a3; }
+  .cover .cbadge{ display:inline-block; align-self:flex-start; border:1px solid var(--navy); color:var(--navy); background:#fff; font-size:13.5px;
+    padding:5px 16px; border-radius:18px; margin-top:18px; }
+  .cover.light .wm{ position:absolute; right:34mm; top:13mm; font-size:11px; letter-spacing:3px; color:#b9c3d1; font-weight:700; }
+
+  p.body{ font-size:16.5px; line-height:1.7; color:#2a3445; }
+  .mut{ color:var(--mut); }
+  .row{ display:flex; gap:16px; }
+  .row.fill{ flex:1 1 auto; min-height:0; }
+  .col{ flex:1; display:flex; flex-direction:column; }
+
+  /* KPI cards */
+  .kpis{ display:flex; gap:16px; }
+  .kpis.fill{ flex:1 1 auto; }
+  .kpi{ flex:1; border:1px solid #e3e9f1; border-radius:12px;
+    padding:15px 18px; background:#fff; box-shadow:0 3px 12px rgba(21,35,59,.07); display:flex; flex-direction:column; justify-content:center; }
+  .kpi .n{ font-size:36px; font-weight:800; color:var(--navy); line-height:1; }
+  .kpi .l{ font-size:13.5px; color:var(--mut); margin-top:10px; line-height:1.4; }
+  .kpi.gd .n{ color:var(--gold);}
+  .kpi.rd .n{ color:var(--red);}
+  .kpi.gr .n{ color:var(--green);}
+
+  /* callout */
+  .call{ border:1px solid #e6ebf2; border-left:4px solid var(--gold); background:#fff; border-radius:8px; padding:15px 19px;
+    font-size:16px; line-height:1.7; box-shadow:0 2px 9px rgba(21,35,59,.05); }
+  .call.warn{ border-left-color:var(--red); }
+  .call.ok{ border-left-color:var(--green); }
+  .call.amber{ border-left-color:var(--amber); background:#fffaf0; }
+  .call.big{ font-size:18px; }
+  .call .t{ font-weight:800; color:var(--navy); font-size:15.5px; display:block; margin-bottom:7px; padding-bottom:6px; border-bottom:1px solid #eef2f7; }
+
+  /* tables */
+  table{ width:100%; border-collapse:collapse; font-size:15px; }
+  .sbody > table.fill{ flex:1 1 auto; min-height:0; }
+  th,td{ border:none; border-bottom:1px solid var(--line); padding:8.5px 13px; }
+  th{ background:transparent; color:var(--navy); font-weight:800; text-align:center; font-size:14px; border-bottom:2px solid var(--navy); letter-spacing:.2px; }
+  td.l{text-align:left;} td.c{text-align:center;} td.r{text-align:right; font-variant-numeric:tabular-nums;}
+  tbody tr:nth-child(even){ background:#f6f9fc; }
+  td.hl{ background:#eef4fb !important; }
+  tr.tot td{ background:var(--gold-l); font-weight:800; color:var(--navy); border-top:2px solid var(--navy2); }
+  .tag{ display:inline-flex; align-items:center; gap:4px; font-size:14px; font-weight:800; padding:4px 10px; border-radius:6px; color:#fff; letter-spacing:.2px; box-shadow:0 1px 2px rgba(21,35,59,.18); white-space:nowrap;}
+  .tag.r{background:var(--red);} .tag.a{background:var(--amber);} .tag.g{background:var(--green);} .tag.b{background:var(--blue);}
+  .tag.g::before{content:"\2713"; font-weight:900;}
+  .tag.r::before{content:"\25B2"; font-size:9px;}
+  .tag.a::before{content:"\25CF"; font-size:8px;}
+  .tag.b::before{content:"\25C6"; font-size:8px;}
+
+  /* clean bullet list */
+  ul.clean{ list-style:none; padding:0; display:flex; flex-direction:column; justify-content:center; flex:1 1 auto; gap:4px; }
+  ul.clean li{ font-size:17.5px; line-height:1.6; margin:9px 0; padding-left:28px; position:relative; }
+  ul.clean li b{ color:var(--navy); }
+  ul.clean li::before{ content:""; position:absolute; left:0; top:7px; width:11px; height:11px;
+    background:var(--gold); border-radius:2px; transform:rotate(45deg); }
+
+  /* fact grid */
+  .facts{ display:grid; grid-template-columns:1fr 1fr; gap:0 28px; }
+  .facts .f{ display:flex; border-bottom:1px solid var(--line); padding:11px 2px; font-size:15px; }
+  .facts .f .k{ width:92px; color:var(--gold); font-weight:700; flex:0 0 auto; }
+  .facts .f .v{ color:#2a3445; }
+
+  /* two-plan */
+  .plan{ flex:1; border:1px solid #e3e9f1; border-radius:12px; padding:20px 22px; display:flex; flex-direction:column; box-shadow:0 3px 12px rgba(21,35,59,.06); }
+  .plan h3{ font-size:20px; color:var(--navy); margin-bottom:7px; font-weight:800; border-left:5px solid var(--navy); padding-left:11px; }
+  .plan.b h3{ color:var(--gold); border-left-color:var(--gold); }
+  .plan .ph{ font-size:14px; color:var(--mut); margin-bottom:11px; }
+  .plan ul{ padding-left:19px; font-size:15px; line-height:1.65; flex:1 1 auto; }
+  .plan li{ margin:6px 0; }
+
+  /* drawing figures */
+  .dwgrow{ display:flex; gap:16px; flex:1 1 auto; min-height:0; }
+  .dwg{ flex:1; border:1px solid var(--line); border-radius:8px; overflow:hidden; background:#fff; display:flex; flex-direction:column; box-shadow:0 2px 9px rgba(21,35,59,.05); }
+  .dwg .im{ position:relative; flex:1 1 auto; min-height:0; }
+  .dwg .im img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .dwg .im .no{ position:absolute; left:9px; top:9px; background:var(--navy); color:#fff; font-size:13px; font-weight:700; padding:3px 11px; border-radius:5px; }
+  .dwg .cap{ flex:0 0 auto; font-size:13.5px; color:var(--mut); padding:9px 13px; border-top:1px solid var(--line); background:#fafcff; line-height:1.45; }
+  .dwg .cap b{ color:var(--navy); }
+
+  /* donut */
+  .donut{ width:168px; height:168px; border-radius:50%; flex:0 0 auto;
+    background:conic-gradient(var(--navy) 0 72.31%, var(--gold) 72.31% 100%); position:relative; }
+  .donut::after{ content:""; position:absolute; inset:34px; background:#fff; border-radius:50%; }
+  .donut .ctr{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:1; }
+  .donut .ctr .n{ font-size:26px; font-weight:800; color:var(--navy); line-height:1; }
+  .donut .ctr .l{ font-size:12px; color:var(--mut); margin-top:3px; }
+  .dleg{ font-size:15.5px; line-height:2; }
+  .dleg .sw{ display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:7px; vertical-align:-1px; }
+
+  /* flow nodes */
+  .flow{ display:flex; align-items:stretch; gap:0; }
+  .node{ flex:1; border:1px solid #e3e9f1; border-radius:9px;
+    padding:13px 12px; display:flex; flex-direction:column; justify-content:center; background:#fff; box-shadow:0 2px 8px rgba(21,35,59,.05); }
+  .node .nt{ font-size:14.5px; font-weight:800; color:var(--navy); margin-bottom:4px; }
+  .node .nd{ font-size:13px; color:var(--mut); line-height:1.5; }
+  .node.gold{ background:#eef4fb; border-color:#cfe0f2; }
+  .arrow{ flex:0 0 26px; display:flex; align-items:center; justify-content:center; color:var(--gold); font-size:20px; font-weight:700; }
+
+  /* sensitivity rate-bar */
+  .sbar{ height:7px; background:#eef1f5; border-radius:4px; margin:6px auto 0; width:80%; }
+  .sbar i{ display:block; height:100%; border-radius:4px; }
+
+  /* assumption note ribbon */
+  .estnote{ font-size:12.5px; color:#9a6b12; background:#fdf6e6; border:1px solid #f0dca8; border-radius:6px; padding:7px 13px; }
+</style>
+</head>
+<body>
+
+<!-- 1. COVER -->
+<section class="slide cover light">
+  <div class="wm">당하동 1250 · 검단 P2</div>
+  <div class="ck">REAL ESTATE FEASIBILITY REVIEW</div>
+  <h1 class="serif">검단신도시 당하동 1250<br><b>주차전용건축물</b> · <b>사업성</b> 검토</h1>
+  <div class="cr"></div>
+  <div class="cs">인천 서구 당하동 1250 · 검단신도시 P2-주9 일반(준)주거BL<br>주차 139대 + 근린생활시설 5개층 복합 개발</div>
+  <div class="cm">검토 기준일 2026.06.26 &nbsp;·&nbsp; 원자료 건축 도면(㈜해인건축사사무소) &nbsp;·&nbsp; 사업수지는 시장 표준 가정 기반 개괄 추정</div>
+  <div class="cbadge">건축 도면 기반 1차 검토 · 수지 항목 시장표준 가정 추정 · DRAFT</div>
+</section>
+
+<!-- 2. 검토 개요 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Overview</div><h2 class="stitle serif">검토 개요</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <div class="row" style="gap:22px; align-items:stretch;">
+      <div class="col" style="flex:1.05">
+        <h3 class="serif" style="font-size:17px;color:var(--navy2);margin-bottom:8px;">사업 기본정보</h3>
+        <div class="facts">
+          <div class="f"><span class="k">대지위치</span><span class="v">당하동 1250 (P2-주9)</span></div>
+          <div class="f"><span class="k">용도지역</span><span class="v">준주거지역</span></div>
+          <div class="f"><span class="k">대지면적</span><span class="v">2,311.2㎡ (699평)</span></div>
+          <div class="f"><span class="k">연면적</span><span class="v">8,648.1㎡ (2,616평)</span></div>
+          <div class="f"><span class="k">규모</span><span class="v">지하1 ~ 지상5층</span></div>
+          <div class="f"><span class="k">용적률</span><span class="v">363.7% (법정 400)</span></div>
+          <div class="f"><span class="k">주차</span><span class="v">139대 (전기차 7대)</span></div>
+          <div class="f"><span class="k">접도</span><span class="v">13M 도로 3면 접함</span></div>
+        </div>
+      </div>
+      <div class="col" style="flex:.95">
+        <h3 class="serif" style="font-size:17px;color:var(--navy2);margin-bottom:8px;">핵심 결론(초안)</h3>
+        <ul class="clean" style="justify-content:flex-start;flex:0;">
+          <li><b>건축·법적 요건은 안정적 충족</b> — 주차전용건축물 3대 요건 OK</li>
+          <li><b>사업성은 손익분기 부근</b> — 토지가·근생 분양가가 성패 좌우</li>
+          <li><b>주차 단독 수익은 한계</b> — 근생 가치 극대화가 관건</li>
+        </ul>
+      </div>
+    </div>
+    <div class="call amber">
+      <span class="t">본 검토의 전제</span>
+      시행사 제공 사업수지가 없어, 토지비·공사비·분양가 등 사업성 항목은 <b>시장 표준 원단위 가정 기반 개괄 추정</b>이다. 실제 토지 공급가·근생 전략 확정 시 갱신해야 하며, 수치는 절대값보다 <b>구조·민감도</b> 파악 용도로 본다.
+    </div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 3. 법적 요건 판정 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Legal Compliance</div><h2 class="stitle serif">주차전용건축물 — 법적 요건 판정</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <div class="kpis fill">
+      <div class="kpi gr"><div class="n">72.31%</div><div class="l">주차장 면적비율<br>(요건 70%↑ 충족)</div></div>
+      <div class="kpi"><div class="n">27.69%</div><div class="l">근린생활시설<br>(요건 30% 미만 충족)</div></div>
+      <div class="kpi"><div class="n">49.77%</div><div class="l">1층 근생 비율<br>(요건 50% 이하 충족)</div></div>
+      <div class="kpi gr"><div class="n">3 / 3</div><div class="l">3대 법적 요건<br>모두 충족</div></div>
+    </div>
+    <table class="fill">
+      <thead><tr><th style="width:20%">요건</th><th style="width:16%">기준</th><th style="width:14%">계획</th><th style="width:12%">판정</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td class="l"><b>주차장 면적비율</b></td><td class="c">70% 이상</td><td class="c">72.31%</td><td class="c"><span class="tag g">충족</span></td><td class="l">주차 6,254.1㎡ / 연면적 8,648.1㎡</td></tr>
+        <tr><td class="l"><b>근생 면적비율</b></td><td class="c">30% 미만</td><td class="c">27.69%</td><td class="c"><span class="tag g">충족</span></td><td class="l">근생 2,393.8㎡ — 보조 용도 범위</td></tr>
+        <tr><td class="l"><b>1층 근생 비율</b></td><td class="c">50% 이하</td><td class="c">49.77%</td><td class="c"><span class="tag g">충족</span></td><td class="l">1층 바닥면적 기준 — 경계선(설계변경 시 재검증)</td></tr>
+        <tr><td class="l"><b>건폐율·용적률</b></td><td class="c">80% / 400%</td><td class="c">79.96% / 363.68%</td><td class="c"><span class="tag g">충족</span></td><td class="l">법정 한도 내 밀도 거의 채움</td></tr>
+      </tbody>
+    </table>
+    <div class="call ok"><span class="t">판정</span>건축·법적 측면은 <b>안정적으로 확정</b>. 1층 근생 49.77%만 50% 경계선에 가까워 설계변경 시 재검증이 필요하다.</div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 4. 층별 구성 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Floor Composition</div><h2 class="stitle serif">층별 구성 — 주차 + 근생 복합</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <table class="fill">
+      <thead><tr><th style="width:11%">층</th><th>주용도</th><th style="width:13%">주차대수</th><th style="width:16%">근생 면적</th><th style="width:16%">주차 면적</th><th style="width:15%">층별 합계</th></tr></thead>
+      <tbody>
+        <tr><td class="c"><b>5F</b></td><td class="l">근생(휴게음식) + 주차 · 전기차 충전</td><td class="c">26</td><td class="r">367.66㎡</td><td class="r">751.09㎡</td><td class="r">1,135.91㎡</td></tr>
+        <tr><td class="c"><b>4F</b></td><td class="l">근생(사무소) + 주차</td><td class="c">31</td><td class="r">367.66㎡</td><td class="r">1,098.05㎡</td><td class="r">1,812.14㎡</td></tr>
+        <tr><td class="c"><b>3F</b></td><td class="l">근생(학원) + 주차</td><td class="c">28</td><td class="r">367.66㎡</td><td class="r">1,098.05㎡</td><td class="r">1,812.14㎡</td></tr>
+        <tr><td class="c"><b>2F</b></td><td class="l">근생(일반음식) + 주차</td><td class="c">28</td><td class="r">330.60㎡</td><td class="r">1,298.05㎡</td><td class="r">1,812.14㎡</td></tr>
+        <tr><td class="c hl"><b>1F</b></td><td class="l hl">근생(소매점) + 주차 · 코어</td><td class="c hl">20</td><td class="r hl">848.40㎡</td><td class="r hl">856.30㎡</td><td class="r hl">1,833.14㎡</td></tr>
+        <tr><td class="c">B1</td><td class="l">주차 · 기계/전기</td><td class="c">6</td><td class="r">–</td><td class="r">67.24㎡</td><td class="r">242.65㎡</td></tr>
+        <tr class="tot"><td class="c">합계</td><td class="l">주차 139대 + 근생 5개층</td><td class="c">139</td><td class="r">2,393.8㎡</td><td class="r">6,254.1㎡</td><td class="r">8,648.1㎡</td></tr>
+      </tbody>
+    </table>
+    <div class="call"><span class="t">구성 특징</span>1층은 <b>소매점(848㎡, 근생 최대)</b>으로 가치가 높고, 2~5층은 음식·학원·사무·휴게로 업종을 분리했다. 자주식 주차가 전 층에 분산되고 5층에 전기차 충전구획이 있다.</div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 5. 도면 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Drawings</div><h2 class="stitle serif">배치 · 평면 — 건축 도면</h2><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="dwgrow">
+      <figure class="dwg"><div class="im"><span class="no">A-102</span><img src="dwg_site_a102.png" alt="건물배치도"></div>
+        <div class="cap"><b>건물배치도</b> — 13M 도로 <b>3면 접도</b>, ㄷ자형 매스, 주차 진출입 동선 (SCALE 1/350)</div></figure>
+      <figure class="dwg"><div class="im"><span class="no">A-202</span><img src="dwg_floor1_a202.png" alt="1층 평면도"></div>
+        <div class="cap"><b>1층 평면도</b> — 근생(소매)·주차·코어 배치, 1층 근생 49.77% (SCALE 1/200)</div></figure>
+    </div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 6. 입지·시장 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Location &amp; Market</div><h2 class="stitle serif">입지 · 시장환경 — 검단신도시 P2</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <div class="kpis fill">
+      <div class="kpi"><div class="n">18.7만</div><div class="l">검단신도시 계획인구<br>(7.6만세대)</div></div>
+      <div class="kpi gd"><div class="n">5,400</div><div class="l">2026년 입주 세대<br>(배후수요 확대)</div></div>
+      <div class="kpi rd"><div class="n">13.6%</div><div class="l">인천 중대형<br>상가 공실률</div></div>
+      <div class="kpi rd"><div class="n">74%</div><div class="l">인천 준공후 미분양 중<br>서구(검단) 비중</div></div>
+    </div>
+    <div class="row" style="gap:14px;">
+      <div class="col call ok"><span class="t">우호 요인</span>인천1호선 검단연장 개통(역세권) · 2026~27년 주거 입주 활발. <b>주거 입주가 늘수록 주차 수요·근생 배후수요가 동반 증가</b>해 본 주차전용건축물에 우호적.</div>
+      <div class="col call warn"><span class="t">부담 요인</span>검단 상가 공실·미분양 부담(서구 74%). 다만 본 건 근생은 <b>27.69%(보조 수익원)</b>로 분양형 빌딩보다 상가시장 노출이 작다. 상층 근생가는 보수적으로 본다.</div>
+    </div>
+    <div class="call amber"><span class="t">시사점</span>호재 상당수가 '예정' 단계이므로 수익 가정에 과다 반영은 지양한다. 주차전용건축물의 핵심은 <b>주차 수요·요금</b>으로, 1차 검증 과제다.</div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 7. 수익 구조 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Revenue Structure</div><h2 class="stitle serif">수익 구조 — 주차 + 근생</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <div class="row" style="gap:26px; align-items:center; flex:1 1 auto;">
+      <div class="col" style="flex:0 0 auto; align-items:center; justify-content:center;">
+        <div class="donut"><div class="ctr"><div class="n">72%</div><div class="l">면적: 주차</div></div></div>
+      </div>
+      <div class="col" style="justify-content:center;">
+        <h3 class="serif" style="font-size:16px; color:var(--navy2); margin-bottom:6px;">면적 구성 (연면적 8,648㎡)</h3>
+        <div class="dleg">
+          <div><span class="sw" style="background:var(--navy);"></span><b>주차장</b> 6,254㎡ · 72.31% — 가용 약 <b>121대</b>(근생 부설 제외)</div>
+          <div><span class="sw" style="background:var(--gold);"></span>근린생활시설 2,394㎡ · 27.69% — 1~5층</div>
+        </div>
+        <div class="call warn" style="font-size:14px; padding:11px 14px; margin-top:8px;">면적은 주차가 72%지만, <b>수익 기여는 근생이 더 클 가능성</b>이 크다. 주차 단독 운영수익(연 약 0.9~1.3억)만으로는 사업비 회수에 한계.</div>
+      </div>
+    </div>
+    <h3 class="serif" style="font-size:16px; color:var(--navy2); margin:4px 0 8px;">수익 모델 — 3가지 경로 (가용 121대 기준)</h3>
+    <div class="flow">
+      <div class="node gold"><div class="nt">① 직영 운영</div><div class="nd">시간·월정기 주차요금<br>연 0.9~1.3억(추정)</div></div>
+      <div class="arrow">·</div>
+      <div class="node"><div class="nt">② 구획 분양</div><div class="nd">주차구획 개별 분양<br>건축물분양법 검토</div></div>
+      <div class="arrow">·</div>
+      <div class="node"><div class="nt">③ 통임대</div><div class="nd">운영사 일괄 임대<br>고정 임대료</div></div>
+      <div class="arrow">+</div>
+      <div class="node gold"><div class="nt">근생 분양/임대</div><div class="nd">1층 소매 앵커<br>가치 극대화 관건</div></div>
+    </div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 8. 개괄 추정 수지 - 가정 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Pro-forma · Assumptions</div><h2 class="stitle serif">개괄 추정 수지 — 원단위 가정</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <div class="estnote">⚠ 아래 원단위는 <b>시장 표준 가정</b>이며 시행사 제공 수지가 아니다. 검단 인근 시세·표준 공사비를 근거로 한 <b>개괄 추정</b>으로, 실제 토지 공급가·분양 전략 확정 시 갱신한다.</div>
+    <table class="fill">
+      <thead><tr><th style="width:16%">구분</th><th style="width:16%">항목</th><th style="width:22%">원단위 가정</th><th style="width:14%">산출</th><th>근거</th></tr></thead>
+      <tbody>
+        <tr><td class="c" rowspan="2"><b>수입</b></td><td class="l">근생 분양</td><td class="c">2,300만/평 (blended)</td><td class="r">약 162억</td><td class="l">×704평. 1층 소매 강세·상층 보수 적용(검단 약세 반영)</td></tr>
+        <tr><td class="l">주차 분양</td><td class="c">4,000만/대</td><td class="r">약 48억</td><td class="l">×121대. 구획분양 가정(운영 시 NOI 환산)</td></tr>
+        <tr><td class="c" rowspan="4"><b>지출</b></td><td class="l">토지비</td><td class="c">650만/평</td><td class="r">약 45억</td><td class="l">×699평. 검단 주차장용지(준주거) 공급가 추정</td></tr>
+        <tr><td class="l">직접공사비</td><td class="c">490만/평</td><td class="r">약 128억</td><td class="l">×2,616평. 주차전용건축물(철콘 라멘조) 표준</td></tr>
+        <tr><td class="l">간접비</td><td class="c">직접공사 14%</td><td class="r">약 18억</td><td class="l">설계·감리·인허가·분담금·제경비</td></tr>
+        <tr><td class="l">금융비·예비</td><td class="c">총사업비 ~11%</td><td class="r">약 24억</td><td class="l">PF 표준 금리·판매비·예비비</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 9. 개괄 추정 수지 - 손익 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Pro-forma · P&amp;L</div><h2 class="stitle serif">개괄 추정 수지 — 수입 · 지출 · 손익 (기본 가정)</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <div class="row fill" style="gap:18px; align-items:stretch;">
+      <div class="col" style="flex:1.1;">
+        <table style="height:100%;">
+          <thead><tr><th colspan="2">개괄 추정 사업수지 (기본 시나리오)</th></tr></thead>
+          <tbody>
+            <tr><td class="l"><b>수입 ① 근생 분양</b></td><td class="r">162억</td></tr>
+            <tr><td class="l"><b>수입 ② 주차 분양</b></td><td class="r">48억</td></tr>
+            <tr class="tot"><td class="l">수입 합계</td><td class="r">약 210억</td></tr>
+            <tr><td class="l">지출 ① 토지비</td><td class="r">45억</td></tr>
+            <tr><td class="l">지출 ② 공사비(직접)</td><td class="r">128억</td></tr>
+            <tr><td class="l">지출 ③ 간접비</td><td class="r">18억</td></tr>
+            <tr><td class="l">지출 ④ 금융비·예비</td><td class="r">24억</td></tr>
+            <tr class="tot"><td class="l">지출 합계</td><td class="r">약 215억</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col" style="flex:.9; gap:14px; justify-content:center;">
+        <div class="kpis">
+          <div class="kpi rd" style="flex:1"><div class="n">−5억</div><div class="l">추정 사업손익<br>(수입−지출)</div></div>
+          <div class="kpi rd" style="flex:1"><div class="n">−2%</div><div class="l">추정 사업이익률<br>(손익분기 부근)</div></div>
+        </div>
+        <div class="call warn"><span class="t">해석</span>표준 가정 하 <b>손익분기 부근</b>으로, 안전마진이 얇다. <b>주차 수익만으론 부족</b>하며, 근생 분양가·흡수율과 <b>토지 공급가</b>가 흑/적을 가른다(다음 장 민감도).</div>
+        <div class="estnote">개괄 추정 · 시행사 제공 수지 확보 시 실값으로 갱신</div>
+      </div>
+    </div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 10. 민감도 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Sensitivity</div><h2 class="stitle serif">민감도 — 토지가 · 근생 분양가가 좌우</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <table class="fill">
+      <thead><tr><th style="width:32%">시나리오</th><th>핵심 변동</th><th style="width:16%">추정 손익</th><th style="width:18%">사업이익률</th></tr></thead>
+      <tbody>
+        <tr><td class="l"><b>개선</b></td><td class="l">근생가 +15% · 토지 저가확보(−15%)</td><td class="r">+22억</td><td class="c" style="color:var(--green);font-weight:700">+9%<div class="sbar"><i style="width:100%;background:var(--green)"></i></div></td></tr>
+        <tr><td class="l">근생가 +10%</td><td class="l">근생 분양 단가 상향</td><td class="r">+11억</td><td class="c" style="color:var(--amber);font-weight:700">+4%<div class="sbar"><i style="width:55%;background:var(--amber)"></i></div></td></tr>
+        <tr style="background:#eef4fb"><td class="l"><b>기본 가정</b></td><td class="l">위 원단위 그대로</td><td class="r">−5억</td><td class="c" style="color:var(--mut);font-weight:700">−2% · 손익분기<div class="sbar"><i style="width:8%;background:#9aa6b5"></i></div></td></tr>
+        <tr><td class="l">근생 −10% · 주차 −15%</td><td class="l">분양가·흡수율 약세</td><td class="r">−28억</td><td class="c" style="color:var(--red);font-weight:700">−12%<div class="sbar"><i style="width:30%;background:var(--red)"></i></div></td></tr>
+        <tr style="background:#fcf2f1"><td class="l"><b>보수</b></td><td class="l">토지·공사 +12% · 근생 −15%</td><td class="r">−63억</td><td class="c" style="color:var(--red);font-weight:700">−28%<div class="sbar"><i style="width:60%;background:var(--red)"></i></div></td></tr>
+      </tbody>
+    </table>
+    <div class="call warn"><span class="t">민감도의 함의</span>사업성은 <b>토지 공급가와 근생 분양가</b>에 가장 민감하다. 우호적이면 한 자릿수 흑자, 불리하면 두 자릿수 적자로 폭이 크다 — <b>실제 토지가 확정과 근생 가치 전략</b>이 의사결정의 핵심이다.</div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 11. 리스크 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Risk &amp; Prerequisites</div><h2 class="stitle serif">리스크 · 사업 진행 필수조건</h2><div class="srule"></div></div>
+  <div class="sbody spread">
+    <table class="fill">
+      <thead><tr><th style="width:15%">구분</th><th>리스크</th><th style="width:15%">판단</th><th style="width:30%">대응</th></tr></thead>
+      <tbody>
+        <tr><td class="l"><b>인허가</b></td><td class="l">주차전용건축물 요건(70/30/50) 경계선 위반 여부</td><td class="c"><span class="tag g">요건 충족</span></td><td class="l">1층 근생 49.77% — 설계변경 시 재검증</td></tr>
+        <tr><td class="l"><b>수익모델</b></td><td class="l">주차 운영/분양/임대 미정, 주차 수요 미검증</td><td class="c"><span class="tag a">확인 필요</span></td><td class="l">주차 수요·요금 실사, 운영방식 조기 확정</td></tr>
+        <tr><td class="l"><b>근생 분양</b></td><td class="l">검단 상가 약세, 상층 흡수율</td><td class="c"><span class="tag r">시장 부담</span></td><td class="l">1층 소매 앵커 선임대, 상층 보수가</td></tr>
+        <tr><td class="l"><b>사업수지</b></td><td class="l">토지가·공사비 미확정 — 손익분기 부근</td><td class="c"><span class="tag a">민감</span></td><td class="l">토지 공급가 확정, 원단위 실값 검증</td></tr>
+        <tr><td class="l"><b>자금조달</b></td><td class="l">2026 하반기 PF 만기 정점·자금경색</td><td class="c"><span class="tag r">환경 부담</span></td><td class="l">신탁·책준·자기자본 신용보강 설계</td></tr>
+      </tbody>
+    </table>
+    <div class="call ok"><span class="t">사업 진행 필수조건</span>① 주차전용건축물 요건 유지(설계변경 시 재검증) · ② <b>토지 공급가 확정</b> · ③ 주차 운영방식·수요 실사 · ④ <b>근생 1층 앵커 선임대</b>와 층별 가격 전략 · ⑤ 신탁·책준·자기자본 신용보강.</div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 12. 종합 결론 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Conclusion</div><h2 class="stitle serif">종합 결론 및 권고</h2><div class="srule"></div></div>
+  <div class="sbody">
+    <ul class="clean">
+      <li><b>건축·법적 측면은 확정적.</b> 주차전용건축물 3대 요건(72.31%·27.69%·49.77%)을 모두 충족하고, 법정 밀도 한도 내에서 계획이 짜였다. 1층 근생 50% 경계선만 설계변경 시 유의.</li>
+      <li><b>표준 가정 하 사업성은 손익분기 부근.</b> 면적은 주차가 72%지만 수익 기여는 근생이 크며, 주차 단독 수익(연 0.9~1.3억)만으로는 사업비 회수에 한계가 분명하다.</li>
+      <li><b>성패는 토지 공급가와 근생 가치.</b> 두 변수에 따라 한 자릿수 흑자 ~ 두 자릿수 적자로 폭이 크다 — 실제 토지가 확정과 근생 전략이 의사결정의 핵심이다.</li>
+    </ul>
+    <div class="call ok big" style="border-left-width:8px; margin-top:8px; background:#eaf5ef;">
+      <span class="t" style="font-size:16.5px;">✓ 최종 권고</span>
+      <b>토지 공급가 확정과 주차·근생 수익 실사를 선행</b>해 개괄 추정을 실값으로 대체한 뒤 본 의사결정. 성패의 열쇠는 <b>① 토지가 확보 · ② 근생 1층 앵커 선임대 · ③ 주차 운영방식 확정</b> 세 가지다.
+    </div>
+  </div>
+  <div class="sfoot"><span>당하동 1250 주차전용건축물 · 분양성·사업성 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 13. 마무리 -->
+<section class="slide cover light" style="justify-content:center; align-items:flex-start;">
+  <div class="wm">당하동 1250 · 검단 P2</div>
+  <div class="ck">CLOSING REMARKS</div>
+  <h1 class="serif" style="font-size:38px;">핵심은 <b>토지 공급가 확정</b>과<br><b>근생 가치 · 주차 운영전략</b>이다.</h1>
+  <div class="cr"></div>
+  <div class="cm" style="font-size:13.5px; max-width:86%;">
+    본 자료는 건축 도면 기반 1차 검토이며 투자 권유가 아니다. 사업수지는 시장 표준 가정 기반 개괄 추정으로, 실제 토지 공급가·시행사 제공 수지·시장 실사로 재확인이 필요하다.
+    <br><br>검단신도시 당하동 1250 주차전용건축물 · 분양성·사업성 검토 발표자료 · 검토기준일 2026.06.26
+  </div>
+</section>
+
+</body>
+</html>
