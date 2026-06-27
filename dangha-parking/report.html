@@ -149,15 +149,19 @@
 
   .estnote{ font-size:12px; color:var(--gold-d); background:#fdf8ee; border:1px solid #ecdcb4; border-radius:6px; padding:7px 12px; }
 
-  /* closing */
+  /* closing — 웜 아크: 따뜻한 에스프레소 + 밝은 골드(표지의 차가운 네이비와 대비) */
   .closing{ padding:0; color:#fff; justify-content:center; }
-  .closing .bg{ position:absolute; inset:0; background:linear-gradient(120deg,#1c2740 0%,#11161f 100%); z-index:0; }
-  .closing .edge{ position:absolute; left:0; top:0; bottom:0; width:7px; background:linear-gradient(180deg,var(--gold) 0%,var(--gold-d) 100%); z-index:1; }
+  .closing .bg{ position:absolute; inset:0; z-index:0;
+    background:
+      radial-gradient(120% 92% at 80% 16%, rgba(208,166,82,.18) 0%, rgba(208,166,82,0) 44%),
+      linear-gradient(120deg,#251b12 0%,#1a130c 55%,#100b07 100%); }
+  .closing .edge{ position:absolute; left:0; top:0; bottom:0; width:7px; background:linear-gradient(180deg,#d7b667 0%,#9a7530 100%); z-index:1; }
   .closing .cnt{ position:relative; z-index:2; padding:0 40mm; }
-  .closing .ck{ color:var(--gold-b); letter-spacing:6px; font-size:13px; font-weight:800; }
-  .closing h1{ font-size:36px; font-weight:800; line-height:1.32; margin:16px 0; color:#fff; }
-  .closing h1 b{ color:var(--gold-b); }
-  .closing .cm{ font-size:13px; color:#aeb8c6; line-height:1.9; }
+  .closing .ck{ color:#d7b667; letter-spacing:6px; font-size:13px; font-weight:800; }
+  .closing .cr{ width:78px; height:4px; background:linear-gradient(90deg,#e3c27a,#a9802f); margin:18px 0; border-radius:2px; }
+  .closing h1{ font-size:36px; font-weight:800; line-height:1.32; margin:16px 0; color:#fbf3e2; }
+  .closing h1 b{ color:#e6c780; }
+  .closing .cm{ font-size:13px; color:#c4b49c; line-height:1.9; }
 </style>
 </head>
 <body>
@@ -411,6 +415,7 @@
   <div class="cnt">
     <div class="ck">REAL ESTATE SALES FEASIBILITY</div>
     <h1 class="serif">핵심은 <b>입지에 맞는 적정 분양가</b>와<br><b>1층 앵커 전략</b>이다.</h1>
+    <div class="cr"></div>
     <div class="cm">본 자료는 투자 권유가 아니며, 분양가·시세는 인근 실거래·직접 비교사례 기반 추정을 포함한다.<br>최종 의사결정 전 토지 공급가·층별 분양면적 확정과 현장 실사·전문가 검토를 전제로 한다. · 검토기준일 2026.06.27</div>
   </div>
 </section>
