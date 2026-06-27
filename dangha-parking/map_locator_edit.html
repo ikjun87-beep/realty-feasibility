@@ -53,15 +53,15 @@
 <script>
 // 확정 지번 주소(웹 검색) + 시작 좌표(보정 전 추정) — 사용자가 드래그로 정확히 보정
 const PLACES = [
-  {n:"① 당하동 1250 (대상지)",   q:"인천 서구 당하동 1250 (검단 P2-주9, 주차전용 대상지)", color:"#e0322d", ll:[37.60160,126.68690], big:true},
-  {n:"② The K Tower 검단",       q:"인천 서구 당하동 1237 (검단 C3-①-5)",                color:"#d98a0f", ll:[37.60205,126.68760]},
-  {n:"③ 선양법조타워(비교사례)", q:"인천 서구 당하동 1235-6 (지하1~지상7, 법조타운 인접)", color:"#2f6fb0", ll:[37.60120,126.68625]},
-  {n:"④ 아라역(인천1호선 I109)",  q:"인천 서구 당하동 1238 일원",                          color:"#566377", ll:[37.602386,126.688074]},
-  {n:"⑤ 검단 법조타운",          q:"인천지법 북부지원·지검(선양법조타워 인접)",            color:"#1f8d5b", ll:[37.60055,126.68490]},
+  {n:"① 당하동 1250 (대상지)",   q:"인천 서구 당하동 1250 (검단 P2-주9, 주차전용 대상지)", color:"#e0322d", ll:[37.59190,126.71185], big:true},
+  {n:"② The K Tower 검단",       q:"인천 서구 당하동 1237 (검단 C3-①-5)",                color:"#d98a0f", ll:[37.59165,126.70985]},
+  {n:"③ 선양법조타워(비교사례)", q:"인천 서구 당하동 1235-6 (KR법조타워 옆, OSM 1235-2=37.5915,126.7103)", color:"#2f6fb0", ll:[37.59158,126.71060]},
+  {n:"④ 아라역(인천1호선)",      q:"인천 서구 당하동 1238 (OSM 검증 37.5923,126.7133)",   color:"#566377", ll:[37.592259,126.713301]},
+  {n:"⑤ 검단 법조타운",          q:"인천지법 북부지원(OSM 검증 37.5897,126.7120)",        color:"#1f8d5b", ll:[37.589701,126.711991]},
 ];
 const sat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'© Esri'});
 const street = L.tileLayer('https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{maxZoom:20,attribution:'© CARTO'});
-const map = L.map('map',{zoomControl:true}).setView([37.6013,126.6868],17);
+const map = L.map('map',{zoomControl:true}).setView([37.5910,126.7116],17);
 let cur='sat'; sat.addTo(map);
 document.getElementById('seg').addEventListener('click',e=>{const b=e.target.dataset.b;if(!b)return;
   document.querySelectorAll('#seg button').forEach(x=>x.classList.toggle('on',x.dataset.b===b));
