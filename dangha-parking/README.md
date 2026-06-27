@@ -20,10 +20,12 @@
 그래파이트 네이비 + 골드 강조(파랑 절제). 표지 배경에 `cover_render.png` 슬롯(실사 렌더용) — 미제공 시 블루프린트 텍스처 폴백.
 **다방(Dabang) 디자인 규율 반영:** ① **Pretendard Variable** 단일 패밀리(세리프 제거) — 위계는 크기보다 굵기·위치로 ② **box-shadow 0** — 깊이는 1px 헤어라인(`#dfdfdf`) + 배경 톤(`#f5f5f5`)으로만 ③ 3계층 색 규율 — 골드=브랜드/강조, 회색=콘텐츠, 파란 틴트 제거(근생 경로 카드도 골드 틴트로 통일).
 
-## ⏳ 남은 작업(사용자 몫)
-1. **표지 실사 렌더 이미지** — `cover_render.png`(가로 16:9, 1600×900↑)를 이 폴더에 넣으면 표지에 자동 합성.
-   - 프롬프트: *Photorealistic architectural rendering of a modern 5-story parking-and-retail building in a Korean new town (검단신도시), dusk, glass-and-metal facade, warm-lit ground-floor retail, 3-sided street frontage, ㄷ-shaped massing. Building on the RIGHT; LEFT third dark sky for text. Muted graphite & navy with warm light, subtle gold. 16:9, cinematic. No text.*
-   - 이미지 탐색은 Pinterest(kr.pinterest.com) 우선 참고.
+## ✅ 표지 이미지 — 오리지널 SVG 황혼 렌더(완료)
+`cover_art.html`(저작권 클린 오리지널 SVG)을 헤드리스로 렌더해 `cover_render.png`(1600×900) 생성 → 표지 배경에 자동 합성. 황혼 커튼월·1층 리테일 글로우·셋백 코어·골드 코니스, 좌측 어둠으로 텍스트 가독 확보.
+> 외부 사진(Pinterest 등)은 저작권·부정확성 이슈로 사용하지 않고 직접 코딩으로 제작. 교체 원하면 동일 규격 PNG를 넣거나 `cover_art.html` 수정 후 재렌더.
+> 표지 스크림: `.cover .scrim`은 좌측만 진하게(텍스트), 우측은 열어 렌더가 보이게 설정. 폴백: 이미지 미제공 시 `.bg` 솔리드 #1b2738.
+
+**남은 사용자 몫: 없음(검토만).**
 
 ## ✅ 위치도 좌표 — VWorld 지번 지오코딩으로 확정
 모든 핀을 VWorld(국토부 공간정보) 지번 지오코더로 확정. 검증 앵커(KR법조타워 1235-2)가 OSM 좌표와 일치해 교차검증 완료.

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>표지 아트 — 당하동 1250 주차전용건축물 (오리지널 SVG 황혼 렌더)</title>
+<style>
+  *{margin:0;padding:0;} html,body{background:#0b1119;}
+  #stage{width:1600px;height:900px;overflow:hidden;}
+  svg{display:block;}
+</style>
+</head>
+<body>
+<div id="stage">
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"    stop-color="#0c1119"/>
+      <stop offset="0.45" stop-color="#162130"/>
+      <stop offset="0.78" stop-color="#27313d"/>
+      <stop offset="0.9"  stop-color="#463c2f"/>
+      <stop offset="1"    stop-color="#6a5232"/>
+    </linearGradient>
+    <radialGradient id="dusk" cx="0.74" cy="0.86" r="0.5">
+      <stop offset="0" stop-color="#9a7440" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#9a7440" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="leftdark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"    stop-color="#0a0f17" stop-opacity="0.97"/>
+      <stop offset="0.33" stop-color="#0b111a" stop-opacity="0.6"/>
+      <stop offset="0.58" stop-color="#0b111a" stop-opacity="0"/>
+    </linearGradient>
+
+    <linearGradient id="glassA" x1="0" y1="0" x2="1" y2="0.1">
+      <stop offset="0"   stop-color="#28384b"/>
+      <stop offset="0.5" stop-color="#1b2735"/>
+      <stop offset="1"   stop-color="#23303f"/>
+    </linearGradient>
+    <linearGradient id="glassB" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#1f2b39"/>
+      <stop offset="1"   stop-color="#151e29"/>
+    </linearGradient>
+    <linearGradient id="skyrefl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#5b7ea6" stop-opacity="0.22"/>
+      <stop offset="1"   stop-color="#5b7ea6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#ffffff" stop-opacity="0.07"/>
+      <stop offset="0.25" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="sideA" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0c121b"/>
+      <stop offset="1" stop-color="#121b25"/>
+    </linearGradient>
+    <linearGradient id="retail" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#c89642"/>
+      <stop offset="0.5" stop-color="#e8b95f"/>
+      <stop offset="1"   stop-color="#a9762c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f3cb7d" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#f3cb7d" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldline" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6c98a"/>
+      <stop offset="1" stop-color="#9a7530"/>
+    </linearGradient>
+
+    <!-- 커튼월 멀리언 그리드 (타워: 셀 27×64) -->
+    <pattern id="mullT" width="27" height="64" patternUnits="userSpaceOnUse" patternTransform="translate(905 250)">
+      <line x1="0" y1="0" x2="27" y2="0" stroke="#0b121b" stroke-width="2.4"/>
+      <line x1="0" y1="2"  x2="27" y2="2" stroke="#34465c" stroke-width="0.8" opacity="0.6"/>
+      <line x1="0" y1="0" x2="0"  y2="64" stroke="#0b121b" stroke-width="1.8"/>
+    </pattern>
+    <!-- 윙: 셀 28×60 -->
+    <pattern id="mullB" width="28" height="60" patternUnits="userSpaceOnUse" patternTransform="translate(600 460)">
+      <line x1="0" y1="0" x2="28" y2="0" stroke="#0a1018" stroke-width="2.2"/>
+      <line x1="0" y1="0" x2="0"  y2="60" stroke="#0a1018" stroke-width="1.6"/>
+    </pattern>
+  </defs>
+
+  <!-- 하늘 -->
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <rect width="1600" height="900" fill="url(#dusk)"/>
+  <!-- 지평선 원경 실루엣 -->
+  <g opacity="0.45" fill="#1a232f">
+    <rect x="60"  y="694" width="56" height="76"/>
+    <rect x="120" y="662" width="40" height="108"/>
+    <rect x="180" y="706" width="66" height="64"/>
+    <rect x="260" y="678" width="34" height="92"/>
+    <rect x="306" y="702" width="74" height="68"/>
+    <rect x="1500" y="684" width="58" height="86"/>
+    <rect x="1556" y="700" width="44" height="70"/>
+  </g>
+  <!-- 지면 -->
+  <rect x="0" y="762" width="1600" height="138" fill="#090e15"/>
+  <rect x="0" y="762" width="1600" height="3" fill="#1c2632"/>
+
+  <!-- ===== 전면 저층 윙 (좌측 돌출 · ㄷ매스 암시) ===== -->
+  <polygon points="600,460 600,762 566,762 566,494" fill="url(#sideA)"/>
+  <rect x="600" y="460" width="308" height="302" fill="url(#glassB)"/>
+  <rect x="600" y="460" width="308" height="120" fill="url(#skyrefl)"/>
+  <rect x="600" y="460" width="308" height="302" fill="url(#mullB)"/>
+  <rect x="600" y="460" width="308" height="302" fill="url(#sheen)"/>
+  <!-- 윙 켜진 창 (그리드 스냅: x=603+col*28, y=465+fl*60, 22×48) -->
+  <g fill="#eec07a">
+    <rect x="631" y="525" width="22" height="48"/>
+    <rect x="715" y="465" width="22" height="48" fill="#f2cd8c"/>
+    <rect x="827" y="585" width="22" height="48" fill="#e6b86e"/>
+    <rect x="659" y="645" width="22" height="48" fill="#f2cd8c"/>
+    <rect x="855" y="525" width="22" height="48"/>
+    <rect x="771" y="645" width="22" height="48" fill="#e6b86e"/>
+  </g>
+  <rect x="600" y="460" width="308" height="5" fill="url(#goldline)" opacity="0.85"/>
+
+  <!-- ===== 메인 타워 (우측 · 5~8층 + 셋백 코어) ===== -->
+  <polygon points="905,250 905,762 866,762 866,298" fill="url(#sideA)"/>
+  <!-- 셋백 상부 -->
+  <rect x="1178" y="188" width="204" height="62" fill="#1a2533"/>
+  <rect x="1178" y="188" width="204" height="62" fill="url(#mullT)"/>
+  <g fill="#f0cb86"><rect x="1206" y="200" width="21" height="40"/><rect x="1296" y="200" width="21" height="40" fill="#e6b86e"/></g>
+  <rect x="1178" y="188" width="204" height="4" fill="url(#goldline)" opacity="0.8"/>
+  <!-- 본체 -->
+  <rect x="905" y="250" width="540" height="512" fill="url(#glassA)"/>
+  <rect x="905" y="250" width="540" height="170" fill="url(#skyrefl)"/>
+  <!-- 켜진 코어 컬럼(엘리베이터/계단) -->
+  <g fill="#f0cb86" opacity="0.96">
+    <rect x="1151" y="319" width="21" height="52"/>
+    <rect x="1151" y="383" width="21" height="52"/>
+    <rect x="1151" y="447" width="21" height="52"/>
+    <rect x="1151" y="511" width="21" height="52"/>
+    <rect x="1151" y="575" width="21" height="52"/>
+    <rect x="1151" y="639" width="21" height="52"/>
+  </g>
+  <!-- 산개 점등 (그리드 스냅: x=908+col*27, y=255+fl*64, 21×52) -->
+  <g fill="#ecc07a">
+    <rect x="962"  y="319" width="21" height="52"/>
+    <rect x="1016" y="255" width="21" height="52" fill="#f2cd8c"/>
+    <rect x="1070" y="447" width="21" height="52" fill="#e6b86e"/>
+    <rect x="1259" y="319" width="21" height="52" fill="#f2cd8c"/>
+    <rect x="1340" y="383" width="21" height="52"/>
+    <rect x="1205" y="575" width="21" height="52" fill="#e6b86e"/>
+    <rect x="1394" y="511" width="21" height="52" fill="#f2cd8c"/>
+    <rect x="989"  y="639" width="21" height="52"/>
+    <rect x="1313" y="639" width="21" height="52" fill="#e6b86e"/>
+    <rect x="1097" y="575" width="21" height="52" fill="#f2cd8c"/>
+    <rect x="1286" y="511" width="21" height="52"/>
+    <rect x="1043" y="383" width="21" height="52" fill="#e6b86e"/>
+  </g>
+  <!-- 멀리언 + 시언 오버레이 -->
+  <rect x="905" y="250" width="540" height="512" fill="url(#mullT)"/>
+  <rect x="905" y="250" width="540" height="512" fill="url(#sheen)"/>
+  <!-- 코니스/엣지 골드 -->
+  <rect x="905" y="250" width="540" height="5" fill="url(#goldline)"/>
+  <rect x="1439" y="250" width="6" height="512" fill="url(#goldline)" opacity="0.5"/>
+
+  <!-- ===== 1층 리테일 ===== -->
+  <ellipse cx="1030" cy="746" rx="540" ry="62" fill="url(#glow)"/>
+  <rect x="600" y="702" width="845" height="60" fill="url(#retail)"/>
+  <!-- 쇼윈도 내부 음영(상단) -->
+  <rect x="600" y="702" width="845" height="16" fill="#7c5520" opacity="0.45"/>
+  <!-- 점포 멀리언 -->
+  <g fill="#0c1119" opacity="0.36">
+    <rect x="694" y="702" width="5" height="60"/><rect x="788" y="702" width="5" height="60"/>
+    <rect x="882" y="702" width="5" height="60"/><rect x="976" y="702" width="5" height="60"/>
+    <rect x="1070" y="702" width="5" height="60"/><rect x="1164" y="702" width="5" height="60"/>
+    <rect x="1258" y="702" width="5" height="60"/><rect x="1352" y="702" width="5" height="60"/>
+  </g>
+  <!-- 캐노피 + 사인 라인 -->
+  <rect x="600" y="698" width="845" height="6" fill="#f6db9e"/>
+  <rect x="600" y="694" width="845" height="4" fill="#1a2330" opacity="0.7"/>
+  <!-- 지면 반사 -->
+  <rect x="600" y="765" width="845" height="30" fill="url(#retail)" opacity="0.16"/>
+  <ellipse cx="1030" cy="772" rx="430" ry="14" fill="#f3cb7d" opacity="0.12"/>
+
+  <!-- 좌측 어둠 + 시네마틱 비네트 -->
+  <rect width="1600" height="900" fill="url(#leftdark)"/>
+  <rect width="1600" height="150" fill="#0a0f16" opacity="0.5"/>
+  <rect y="742" width="1600" height="158" fill="#0a0f16" opacity="0.4"/>
+</svg>
+</div>
+</body>
+</html>

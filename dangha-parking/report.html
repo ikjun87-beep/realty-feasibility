@@ -44,15 +44,15 @@
   .cover{ padding:0; color:#fff; justify-content:flex-end; }
   .cover .bg{ position:absolute; inset:0; z-index:0;
     background:#1b2738 url('cover_render.png') center/cover no-repeat; }
-  /* 렌더 미제공 시 폴백: 그래파이트 그라데이션 + 미세 블루프린트 라인 */
+  /* 렌더 이미지 위 미세 블루프린트 라인 텍스처(투명 베이스 — 이미지를 가리지 않음).
+     이미지 미제공 시엔 .bg의 솔리드 #1b2738가 폴백 배경이 된다. */
   .cover .bg::after{ content:""; position:absolute; inset:0;
     background:
-      linear-gradient(135deg,#222e40 0%,#1a2433 55%,#11161f 100%),
-      repeating-linear-gradient(90deg, rgba(255,255,255,.03) 0 1px, transparent 1px 64px),
-      repeating-linear-gradient(0deg, rgba(255,255,255,.03) 0 1px, transparent 1px 64px);
-    background-blend-mode:normal; mix-blend-mode:normal; opacity:1; z-index:-1; }
+      repeating-linear-gradient(90deg, rgba(255,255,255,.022) 0 1px, transparent 1px 70px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.022) 0 1px, transparent 1px 70px);
+    opacity:.6; z-index:-1; }
   .cover .scrim{ position:absolute; inset:0; z-index:1;
-    background:linear-gradient(100deg, rgba(15,21,31,.94) 0%, rgba(17,23,33,.80) 40%, rgba(17,23,33,.32) 100%); }
+    background:linear-gradient(100deg, rgba(13,18,26,.95) 0%, rgba(13,18,26,.86) 26%, rgba(14,20,29,.44) 50%, rgba(14,20,29,.12) 72%, rgba(14,20,29,.02) 100%); }
   .cover .edge{ position:absolute; left:0; top:0; bottom:0; width:7px; z-index:2;
     background:linear-gradient(180deg,var(--gold) 0%,var(--gold-d) 100%); }
   .cover .cnt{ position:relative; z-index:3; padding:0 40mm 24mm; }
