@@ -42,7 +42,7 @@
 
   /* COVER — 다크 그래파이트(이미지 없이 솔리드+텍스처) */
   .cover{ padding:0; color:#fff; justify-content:flex-end; }
-  .cover .bg{ position:absolute; inset:0; z-index:0; background:#1b2738; }
+  .cover .bg{ position:absolute; inset:0; z-index:0; background:#1b2738 url('cover_render_yangsan.png') center/cover no-repeat; }
   .cover .bg::after{ content:""; position:absolute; inset:0;
     background:
       radial-gradient(120% 90% at 82% 20%, rgba(179,135,58,.16) 0%, rgba(179,135,58,0) 46%),
@@ -62,6 +62,14 @@
   .cover .cm{ font-size:13px; line-height:1.95; margin-top:13px; color:#aeb8c6; }
   .cover .cbadge{ display:inline-block; border:1px solid var(--gold-b); color:#fff; background:rgba(179,135,58,.18);
     font-size:13px; font-weight:700; padding:6px 16px; border-radius:18px; margin-top:18px; }
+  .cover .cdisc{ font-size:11px; line-height:1.6; margin-top:14px; color:#8b97a6; max-width:560px; }
+
+  /* 위치도 figure */
+  .figbox{ border:1px solid var(--line); border-radius:9px; overflow:hidden; background:#fff; display:flex; flex-direction:column; }
+  .figbox .im{ position:relative; flex:1 1 auto; min-height:0; }
+  .figbox .im img{ width:100%; height:100%; object-fit:cover; background:var(--soft); display:block; }
+  .figbox .cap{ flex:0 0 auto; font-size:12.5px; color:var(--mut); padding:8px 12px; border-top:1px solid var(--line); background:var(--soft); line-height:1.45; }
+  .figbox .cap b{ color:var(--navy); }
 
   p.body{ font-size:16px; line-height:1.7; color:#2a3445; }
   .mut{ color:var(--mut); } .gold{ color:var(--gold-d); font-weight:800; }
@@ -186,6 +194,7 @@
     <div class="cs">경남 양산시 물금읍 가촌리 970-1·937 · 공동주택 600세대 + 근린생활</div>
     <div class="cm">수입−지출−현금흐름 자동산정(법령·약관 기준) · <b style="color:#e6c884">매출 − 지출 = 사업이익 = CF 누적시재 (잔차 0)</b><br>검토기준일 2024.09.01 · 신탁구조 하이브리드 개발신탁 · 산출 엔진 v3.x</div>
     <div class="cbadge">사업이익 197.8억 · 이익률 6.10%(매출)·6.50%(사업비) · BEP 93.9%</div>
+    <div class="cdisc">※ 본 자료는 <b style="color:#c7b48f">투자 권유가 아닙니다.</b> 수치는 입력 가정(분양률·단가·일정·금융조건)에 따라 변동하며, 사업성 가부 판정은 본 검토 범위 밖입니다. 최종 의사결정 전 토지·도급계약·금융조건 확정과 현장 실사·전문가(감정평가·신탁·세무) 검토를 전제로 합니다.</div>
   </div>
 </section>
 
@@ -243,7 +252,19 @@
   <div class="sfoot"><span>양산 물금 공동주택 · 사업수지 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
 </section>
 
-<!-- 4. 사업수지 한눈에 (등식 + 검증) -->
+<!-- 4. 입지 · 위치도 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Location Map</div><h2 class="stitle serif">입지 · 위치도 — 양산 물금 가촌리 970-1</h2><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="figbox" style="flex:1 1 auto;">
+      <div class="im"><img src="map_locator_yangsan.png" alt="양산 물금 가촌리 970-1 위치도"></div>
+      <div class="cap"><b>① 대상지(양산 물금 가촌리 970-1)</b> · ② 부산대학교 양산캠퍼스 · ③ 양산부산대학교병원 — <b>전 지점 VWorld 지번·도로명 좌표 확정</b>(핀=필지 중심점, 반경 500m). 물금신도시 내 대학·상급종합병원 인접 입지. 베이스맵 © CARTO·OpenStreetMap · 2024.09</div>
+    </div>
+  </div>
+  <div class="sfoot"><span>양산 물금 공동주택 · 사업수지 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
+</section>
+
+<!-- 5. 사업수지 한눈에 (등식 + 검증) -->
 <section class="slide">
   <div class="shead"><div class="skick">Feasibility Identity</div><h2 class="stitle serif">사업수지 — <b>매출 − 지출 = 이익 = CF</b> (잔차 0)</h2><div class="srule"></div></div>
   <div class="sbody spread">
@@ -413,33 +434,14 @@
   <div class="sfoot"><span>양산 물금 공동주택 · 사업수지 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
 </section>
 
-<!-- 10. 출처·면책 -->
-<section class="slide">
-  <div class="shead"><div class="skick">Sources &amp; Disclaimer</div><h2 class="stitle serif">출처 · 검증 · 면책</h2><div class="srule"></div></div>
-  <div class="sbody spread">
-    <table>
-      <thead><tr><th class="l">구분</th><th class="l">내용</th></tr></thead>
-      <tbody>
-        <tr><td class="l"><b>산출 엔진</b></td><td class="l">사업수지검토 표준툴(단일 HTML) · 헤드리스 산출(run_headless.js, Node+jsdom)</td></tr>
-        <tr><td class="l"><b>검증</b></td><td class="l">매출−지출 = CF 누적시재, <b>잔차 0(|Δ|&lt;1천원)</b> · 멱등성(반복 산출 동일값) · 엔진 오류 0 — PASS</td></tr>
-        <tr><td class="l"><b>근거</b></td><td class="l">취득세 2.03%·도급 5,600천원/평·학교용지 0.8%·광역교통 정밀산식·신탁보수 분양2%/건설3% 등 법령·약관·표준요율</td></tr>
-        <tr><td class="l"><b>가정</b></td><td class="l">분양률 직접입력 기준 · 신탁구조 하이브리드 자동판정(하자율 16.75%) · 부가세율 8.47%</td></tr>
-        <tr><td class="l"><b>참고(V23)</b></td><td class="l">원본 V23 사업수지 시트 매출 354,886·위탁이익 17,773백만(외부 대조값) — 엔진은 신탁보수·금융비를 완전 반영(보수적), 본 산출이 권위값</td></tr>
-      </tbody>
-    </table>
-    <div class="call"><span class="t">면책</span>본 자료는 <b>투자 권유가 아니다.</b> 수치는 입력 가정(분양률·단가·일정·금융조건)에 따라 변동하며, 사업성 가부 판정은 본 검토 범위 밖이다. 최종 의사결정 전 <b>토지·도급계약·금융조건 확정</b>과 현장 실사·전문가(감정평가·신탁·세무) 검토를 전제로 한다.</div>
-  </div>
-  <div class="sfoot"><span>양산 물금 공동주택 · 사업수지 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
-</section>
-
-<!-- 11. 마무리 -->
+<!-- 10. 마무리 -->
 <section class="slide closing">
   <div class="bg"></div><div class="edge"></div>
   <div class="cnt">
     <div class="ck">REAL ESTATE BUSINESS FEASIBILITY</div>
     <h1>수지는 <b>0원에서 검증</b>되고,<br>사업은 <b>완판 속도</b>에서 갈린다.</h1>
     <div class="cr"></div>
-    <div class="cm">매출 − 지출 = 사업이익 = 현금흐름 누적시재(잔차 0) — 세 값이 한 점으로 만날 때만 신뢰한다.<br>본 산출은 엔진 자동검토 결과이며, 입력 가정 확정·전문가 검토를 전제로 한다. · 검토기준일 2024.09.01</div>
+    <div class="cm">매출 − 지출 = 사업이익 = 현금흐름 누적시재(잔차 0) — 세 값이 한 점으로 만날 때만 신뢰한다.<br>본 자료는 <b style="color:#e6c780">투자 권유가 아니며</b>, 수치는 입력 가정에 따라 변동한다. 최종 의사결정 전 토지·도급계약·금융조건 확정과 현장 실사·전문가(감정평가·신탁·세무) 검토를 전제로 한다. · 검토기준일 2024.09.01</div>
   </div>
 </section>
 
