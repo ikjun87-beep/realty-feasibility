@@ -229,10 +229,10 @@ realty-feasibility/cashflow-report/
 
 - [x] **P1 학습:** cashflow-tool 입출력·계산·web툴·양산 수치 파악(Explore 완료).
 - [x] **P2 PRD:** 본 문서.
-- [ ] **P3 엔진 실행:** `run_headless.js`로 양산 RESULT 취득 → `engine_result_양산.json` 저장(잔차0 확인).
-- [ ] **P4 보고서 빌드:** 수지 파트(F~K) 슬라이드 신설 + 양산값 주입 → 렌더.
-- [ ] **P5 리뷰 루프:** A·B 평가 → ≥98 수렴.
-- [ ] **P6 확정·커밋:** PDF 재생성, 깃 반영, 메모리 업데이트.
+- [x] **P3 엔진 실행:** `run_headless.js`로 양산 RESULT 취득 → `engine_result_양산.json` 저장(잔차0 확인).
+- [x] **P4 보고서 빌드:** 수지 파트(F~K) 슬라이드 신설 + 양산값 주입 → 렌더(11장).
+- [x] **P5 리뷰 루프:** A·B 4라운드 평가 → **A 55/55 + B 디자인검수 통과, 합산 ≥98 수렴**(82→89→94→98). 항등식 잔차0·멱등 재확인.
+- [x] **P6 확정·커밋:** PDF 11p 재생성(297×167mm), 깃 반영(d7fc93f), 메모리 업데이트.
 
 ---
 
@@ -248,4 +248,5 @@ realty-feasibility/cashflow-report/
 
 ---
 
-> **다음 액션(자가확인 진행):** P3 — `node cashflow-tool/_verify/run_headless.js` 실행으로 양산 엔진 RESULT(잔차0) 취득 → P4 보고서 빌드 착수.
+> **상태(2026-07-02):** P1~P6 완료. 양산 사업수지 통합보고서 11장 확정본 커밋(d7fc93f). 렌더 파이프라인 = `render.mjs`(PNG)·`render_pdf.mjs`(PDF)·`render_map.mjs`(위치도), 로컬 전용(.gitignore). PDF 엔진 = Chrome 헤드리스(`@page 297mm 167mm`+`preferCSSPageSize`).
+> **다음 액션:** 신규 현장 적용 시 P3(엔진 실행)부터 반복. 리뷰 루프는 §9 루브릭(≥98) 그대로 재사용.
