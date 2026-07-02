@@ -45,15 +45,15 @@
   .cover .bg{ position:absolute; inset:0; z-index:0; background:#1b2738 url('cover_render_yangsan.png') center/cover no-repeat; }
   .cover .bg::after{ content:""; position:absolute; inset:0;
     background:
-      radial-gradient(120% 90% at 82% 20%, rgba(179,135,58,.16) 0%, rgba(179,135,58,0) 46%),
+      radial-gradient(120% 90% at 82% 20%, rgba(179,135,58,.09) 0%, rgba(179,135,58,0) 46%),
       repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0 1px, transparent 1px 70px),
       repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 70px); }
   .cover .scrim{ position:absolute; inset:0; z-index:1;
-    background:linear-gradient(100deg, rgba(13,18,26,.95) 0%, rgba(13,18,26,.7) 40%, rgba(14,20,29,.3) 100%); }
+    background:linear-gradient(100deg, rgba(14,26,52,.95) 0%, rgba(16,30,58,.74) 42%, rgba(20,36,64,.34) 100%); }
   .cover .edge{ position:absolute; left:0; top:0; bottom:0; width:7px; z-index:2;
     background:linear-gradient(180deg,var(--gold) 0%,var(--gold-d) 100%); }
   .cover .cnt{ position:relative; z-index:3; padding:0 40mm 24mm; }
-  .cover .wm{ position:absolute; right:20mm; top:13mm; z-index:3; font-size:11px; letter-spacing:3px; color:rgba(255,255,255,.55); font-weight:700; }
+  .cover .wm{ position:absolute; right:20mm; top:13mm; z-index:3; font-size:11px; letter-spacing:3px; color:rgba(230,200,132,.8); font-weight:700; }
   .cover .ck{ color:var(--gold-b); letter-spacing:6px; font-size:13.5px; font-weight:800; }
   .cover h1{ font-size:43px; font-weight:800; line-height:1.2; margin:14px 0 0; color:#fff; letter-spacing:-.5px; }
   .cover h1 b{ color:var(--gold-b); }
@@ -99,6 +99,8 @@
   table{ width:100%; border-collapse:collapse; font-size:14.5px; }
   th,td{ border:none; border-bottom:1px solid var(--line); padding:8px 12px; }
   th{ background:transparent; color:var(--navy); font-weight:800; text-align:center; font-size:13.5px; border-bottom:2px solid var(--navy); }
+  th.l{text-align:left;} th.r{text-align:right;} th.c{text-align:center;}
+  table.tight th, table.tight td{ padding:5px 12px; }
   td.l{text-align:left;} td.c{text-align:center;} td.r{text-align:right; font-variant-numeric:tabular-nums;}
   tbody tr:nth-child(even){ background:var(--soft); }
   tr.tot td{ background:var(--gold-l); font-weight:800; color:var(--navy); border-top:2px solid var(--gold); }
@@ -131,7 +133,7 @@
   .eq .t .v{ font-size:33px; font-weight:800; color:var(--navy); font-variant-numeric:tabular-nums; line-height:1; }
   .eq .t .u{ font-size:12.5px; color:var(--mut); margin-top:7px; }
   .eq .t.hl{ background:var(--gold-l); } .eq .t.hl .v{ color:var(--gold-d); }
-  .eq .op{ flex:0 0 40px; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:800; color:var(--gold); background:var(--soft); }
+  .eq .op{ flex:0 0 44px; display:flex; align-items:center; justify-content:center; font-size:34px; font-weight:900; color:#e6c884; background:var(--navy); }
   .seal{ display:inline-flex; align-items:center; gap:8px; border:2px solid var(--gold); color:var(--gold-d); background:var(--gold-l);
     font-weight:800; font-size:14.5px; padding:9px 18px; border-radius:30px; }
   .seal::before{ content:"\2713"; font-size:16px; font-weight:900; }
@@ -193,7 +195,7 @@
     <div class="cr"></div>
     <div class="cs">경남 양산시 물금읍 가촌리 970-1·937 · 공동주택 600세대 + 근린생활</div>
     <div class="cm">수입−지출−현금흐름 자동산정(법령·약관 기준) · <b style="color:#e6c884">매출 − 지출 = 사업이익 = CF 누적시재 (잔차 0)</b><br>검토기준일 2024.09.01 · 신탁구조 하이브리드 개발신탁 · 산출 엔진 v3.x</div>
-    <div class="cbadge">사업이익 197.8억 · 이익률 6.10%(매출)·6.50%(사업비) · BEP 93.9%</div>
+    <div class="cbadge">사업이익 197.8억<b style="color:#e6c884">(완판 100% 가정)</b> · 이익률 6.10%(매출)·6.50%(사업비) · BEP 93.9%</div>
     <div class="cdisc">※ 본 자료는 <b style="color:#c7b48f">투자 권유가 아닙니다.</b> 수치는 입력 가정(분양률·단가·일정·금융조건)에 따라 변동하며, 사업성 가부 판정은 본 검토 범위 밖입니다. 최종 의사결정 전 토지·도급계약·금융조건 확정과 현장 실사·전문가(감정평가·신탁·세무) 검토를 전제로 합니다.</div>
   </div>
 </section>
@@ -202,7 +204,7 @@
 <section class="slide">
   <div class="shead"><div class="skick">Executive Summary</div><h2 class="stitle serif">한눈에 보기 — 사업수지 핵심 지표</h2><div class="srule"></div></div>
   <div class="sbody spread">
-    <div class="lead">총분양수입 <b>3,242억</b>에 총사업비 <b>3,044억</b>, 사업이익 <b>197.8억</b>(이익률 매출대비 <b>6.10%</b>·사업비대비 6.50%).<br>손익분기 분양률 <b>93.9%</b> — 마진이 얇아 <b>분양 속도·완판이 사업의 핵심 변수</b>다.</div>
+    <div class="lead">총분양수입 <b>3,242억</b>에 총사업비 <b>3,044억</b>, 사업이익 <b>197.8억</b><span style="font-weight:800;color:var(--gold-d)">(완판 100% 가정)</span> · 이익률 매출대비 <b>6.10%</b>·사업비대비 6.50%.<br>손익분기 분양률 <b>93.9%</b> — 마진이 얇아 <b>분양 속도·완판이 사업의 핵심 변수</b>다.</div>
     <div class="kpis" style="height:165px;">
       <div class="kpi gd"><div class="n">197.8<small>억</small></div><div class="l">사업이익 (= CF 누적시재)<br>위탁자 기준, 잔차 0</div></div>
       <div class="kpi"><div class="n">6.50<small>%</small></div><div class="l">위탁자 이익률(사업비 대비)<br>매출대비 6.10% · 수탁 7.91%(사업비)</div></div>
@@ -232,11 +234,11 @@
           <div class="f"><span class="k">건폐/용적</span><span class="v">24.3% / 238.6%</span></div>
           <div class="f"><span class="k">공사기간</span><span class="v">34개월</span></div>
         </div>
-        <div class="call" style="margin-top:auto;"><span class="t">입지·상품 포지셔닝</span>부산·울산 생활권 <b>601세대</b> 대단지(용적률 238.6%·세대당 주차 1.24대). 전 타입 아파트는 <b>국민주택규모(전용 85㎡ 이하)</b>로 건물분 분양수입이 면세된다(상가 1호 제외).</div>
+        <div class="call" style="margin-top:auto;"><span class="t">입지·상품 포지셔닝</span>부산·울산 생활권 <b>600세대</b>(+상가 1호·총 601호) 대단지(용적률 238.6%·세대당 주차 1.24대). 전 타입 아파트는 <b>국민주택규모(전용 85㎡ 이하)</b>로 건물분 분양수입이 면세된다(상가 1호 제외).</div>
       </div>
       <div class="col">
-        <div class="call"><span class="t">신탁구조 — 하이브리드 개발신탁</span>토지관련비(A) ÷ 건설관련비(B) = 31,739 ÷ 189,475 = <b>16.75%</b> (＞15% 공격적 기준) → <b>하이브리드</b> 적용. 사업기간 중 토지비대출 무상환, 준공 후 분양수입이 신탁 고유계정차입보다 <b>우선 선상환</b>되는 구조. 선순위PF는 한도 0·비활성(이자 0).</div>
-        <div class="call gold"><span class="t">세대 구성 (601호)</span>68형 72 · 84A1 188 · 84B1 40 · 84A2 262 · 84B2 19 · 84C2 19 · 상가 1. 평균 분양 평단가 <b>15,872천원/공급평</b>(상가 포함 전체), <span style="white-space:nowrap">상가 단가 20,000천원/평</span>.</div>
+        <div class="call"><span class="t">신탁구조 — 하이브리드 개발신탁</span>토지관련비(A) ÷ 건설관련비(B) = 31,739 ÷ 189,475 = <b>16.75%</b> (기준 15% 상회) → <b>하이브리드</b> 적용. 사업기간 중 토지비대출 무상환, 준공 후 분양수입이 신탁 고유계정차입보다 <b>우선 선상환</b>되는 구조. 선순위PF는 한도 0·비활성(이자 0).</div>
+        <div class="call gold" style="margin-top:auto;"><span class="t">세대 구성 (아파트 600 + 상가 1 = 601호)</span>68형 72 · 84A1 188 · 84B1 40 · 84A2 262 · 84B2 19 · 84C2 19 · 상가 1. 평균 분양 평단가 <b>15,872천원/공급평</b>(상가 포함 전체), <span style="white-space:nowrap">상가 단가 20,000천원/평</span>.</div>
       </div>
     </div>
     <div>
@@ -258,7 +260,7 @@
   <div class="sbody">
     <div class="figbox" style="flex:1 1 auto;">
       <div class="im"><img src="map_locator_yangsan.png" alt="양산 물금 가촌리 970-1 위치도"></div>
-      <div class="cap"><b>① 대상지(양산 물금 가촌리 970-1)</b> · ② 부산대학교 양산캠퍼스 · ③ 양산부산대학교병원 — <b>전 지점 VWorld 지번·도로명 좌표 확정</b>(핀=필지 중심점, 반경 500m). 물금신도시 내 대학·상급종합병원 인접 입지. 베이스맵 © CARTO·OpenStreetMap · 2024.09</div>
+      <div class="cap"><b>① 대상지(양산 물금 가촌리 970-1)</b> · ② 부산대학교 양산캠퍼스 · ③ 양산부산대학교병원 — <b>전 지점 VWorld 지번·도로명 좌표 확정</b>(핀=필지 중심점, 반경 500m). 물금신도시 내 대학·상급종합병원 인접 입지. <span class="mut">검토기준 2024.09 · 베이스맵 출처는 지도 내 표기</span></div>
     </div>
   </div>
   <div class="sfoot"><span>양산 물금 공동주택 · 사업수지 검토</span><span class="cf">CONFIDENTIAL</span><span class="pg"></span></div>
@@ -280,10 +282,10 @@
       <div class="mut" style="font-size:13px; line-height:1.5;">월별 현금흐름을 끝까지 시뮬레이션한 최종 시재가 회계상 사업이익과 <b>1천원 미만</b>으로 일치할 때만 산출을 채택한다.</div>
     </div>
     <table>
-      <thead><tr><th class="l">구분</th><th>총수입</th><th>총지출</th><th>사업이익</th><th>이익률<br>(사업비대비)</th><th>BEP 분양률</th></tr></thead>
+      <thead><tr><th class="l">구분</th><th class="r">총수입</th><th class="r">총지출</th><th class="r">사업이익</th><th class="r">이익률<br>(사업비대비)</th><th class="r">BEP 분양률</th></tr></thead>
       <tbody>
         <tr><td class="l"><b>위탁자 기준</b></td><td class="r">324,220</td><td class="r">304,442</td><td class="r"><b>19,778</b></td><td class="r hl">6.50%</td><td class="r">93.90%</td></tr>
-        <tr><td class="l"><b>수탁자 기준</b> <span class="mut">(토지비 제외)</span></td><td class="r">324,220</td><td class="r">300,442</td><td class="r"><b>23,778</b></td><td class="r hl">7.91%</td><td class="r">92.67%</td></tr>
+        <tr><td class="l"><b>수탁자 기준</b> <span class="mut">(에쿼티 제외)</span></td><td class="r">324,220</td><td class="r">300,442</td><td class="r"><b>23,778</b></td><td class="r hl">7.91%</td><td class="r">92.67%</td></tr>
       </tbody>
       <caption>단위 백만원. 이익률 = 사업이익 ÷ 총지출(사업비 대비) — 매출 대비로는 위탁 6.10% / 수탁 7.33%. 수탁자 기준은 위탁자 에쿼티 제외. BEP = 손익분기 도달에 필요한 분양률.</caption>
     </table>
@@ -305,11 +307,11 @@
           <div class="li"><span class="sw" style="background:var(--gold)"></span><b>발코니 확장</b><span class="v">12,321 백만 · 3.8%</span></div>
           <div class="li"><span class="sw" style="background:var(--blue)"></span><b>매출 부가세</b><span class="v">1,229 백만 · 0.4%</span></div>
         </div>
-        <div class="call gold"><span class="t">평단가 · 물량</span>총 <b>601호</b> · 공급 <b>19,574평</b> · 평균 분양 평단가 <b>15,872천원/평</b>(상가 포함 전체 평균). <b>국민주택규모 아파트는 토지·건물 모두 면세</b>이며, 부가세는 <b>발코니 확장·근생 상가에만</b> 발생한다.</div>
+        <div class="call gold"><span class="t">평단가 · 물량</span>총 <b>601호</b> · 공급 <b>19,574평</b> · 평균 분양 평단가 <b>15,872천원/평</b> (상가 포함 전체 평균).</div>
       </div>
     </div>
-    <table>
-      <thead><tr><th class="l">수입 항목</th><th>금액(백만원)</th><th>비중</th><th class="l">비고</th></tr></thead>
+    <table class="tight">
+      <thead><tr><th class="l">수입 항목</th><th class="r">금액(백만원)</th><th class="r">비중</th><th class="l">비고</th></tr></thead>
       <tbody>
         <tr><td class="l">본분양 — 토지가분</td><td class="r">27,774</td><td class="r">8.6%</td><td class="l mut">분양가 × 토지비율 8.94% (면세)</td></tr>
         <tr><td class="l">본분양 — 건물가분</td><td class="r">282,896</td><td class="r">87.3%</td><td class="l mut">분양가 × (1−토지비율) · 국민주택규모 면세</td></tr>
@@ -338,7 +340,7 @@
       <div class="bar"><span class="bl">F. 부담금</span><span class="bt"><span class="bf" style="width:1.4%"></span></span><span class="bv"><b>4,377</b><span class="pc">1.4%</span></span></div>
     </div>
     <div class="row" style="gap:14px;">
-      <div class="call" style="flex:1;"><span class="t">건설·금융이 좌우</span>도급공사비 중심의 <b>B.건설 62.5%</b>가 압도적이고, <b>H.금융 8.5%</b>(PF·고유계정·중도금무이자)와 <b>D.판매 8.3%</b>가 뒤를 잇는다. 막대 길이는 총지출 대비 비중. 모든 항목은 법령·약관·표준요율로 역산 가능(취득세 2.03%·도급 5,600천원/평·학교용지 0.8% 등).</div>
+      <div class="call" style="flex:1;"><span class="t">건설·금융이 좌우</span>도급공사비 중심의 <b>B.건설 62.5%</b>가 압도적이고, <b>H.금융 8.5%</b>(PF·고유계정·중도금무이자)와 <b>D.판매 8.3%</b>가 뒤를 잇는다. 막대 길이는 <b>공급가액(303,213) 대비</b> 비중(개별 반올림으로 표시 합 100.1%). 모든 항목은 법령·약관·표준요율로 역산 가능(취득세 2.03%·도급 5,600천원/평·학교용지 0.8% 등).</div>
       <div class="call gold" style="flex:0 0 38%;"><span class="t">합계</span>공급가액 <b>303,213</b> + 지출분 부가세(매출VAT 상계분) <b>1,229</b> = <b>총지출(VAT포함) 304,442 백만</b>. <span class="mut">(8대 합 303,214, 단수 반올림 ±1)</span></div>
     </div>
   </div>
@@ -353,7 +355,7 @@
       <div class="col">
         <div class="lead" style="font-size:16px;">자금 조달 구조</div>
         <table>
-          <thead><tr><th class="l">조달원</th><th>한도</th><th>실행/잔액</th><th class="l">비고</th></tr></thead>
+          <thead><tr><th class="l">조달원</th><th class="r">한도</th><th class="r">실행/잔액</th><th class="l">비고</th></tr></thead>
           <tbody>
             <tr><td class="l">에쿼티(자기자본)</td><td class="r">4,000</td><td class="r">4,000</td><td class="l mut">위탁자 부담</td></tr>
             <tr><td class="l">하이브리드 토지비대출</td><td class="r">20,588</td><td class="r">16,405</td><td class="l mut">금리 8.5%·수수료 1.5%</td></tr>
@@ -367,6 +369,7 @@
       <div class="col">
         <div class="lead" style="font-size:16px;">금융비용 (H. 분류 합계 25,681 백만)</div>
         <table>
+          <thead><tr><th class="l">금융비용 항목</th><th class="r">금액(백만원)</th></tr></thead>
           <tbody>
             <tr><td class="l">사업비PF 각종수수료</td><td class="r">1,485</td></tr>
             <tr><td class="l">사업비PF 이자</td><td class="r">5,739</td></tr>
@@ -376,7 +379,7 @@
           </tbody>
           <caption>단위 백만원. 하이브리드 토지비대출 이자 4,299·취급수수료 309는 자가회전(selfRolling) 처리로 H분류 외 별도 반영.</caption>
         </table>
-        <div class="call gold" style="margin-top:auto;"><span class="t">하이브리드의 의미</span>토지관련비가 건설관련비 대비 커(<b>16.75%</b>) 사업기간 중 무상환, 준공 후 분양수입으로 <b>우선 선상환</b>. 그만큼 <b>준공 전 분양 진척</b>이 신탁계정대 차입·이자 규모를 결정한다.</div>
+        <div class="call gold" style="margin-top:auto;"><span class="t">하이브리드의 의미</span>토지관련비/건설관련비 <b>16.75%</b>(기준 15% 상회) — 준공 후 분양수입으로 <b>우선 선상환</b>. 분양 진척이 신탁계정대 차입·이자를 좌우한다.</div>
       </div>
     </div>
   </div>
@@ -398,6 +401,11 @@
           </tbody>
           <caption>단위 백만원. 매입세액이 매출세액을 초과 → 분기정산상 순환급 38.6억. 현금흐름에 분기별 납부/환급 이벤트로 반영.</caption>
         </table>
+        <div class="facts" style="margin-top:2px;">
+          <div class="f wide"><span class="k">매출VAT</span><span class="v">발코니 확장·근생 상가 <b>과세분</b>에서만 발생 (+1,229)</span></div>
+          <div class="f wide"><span class="k">매입VAT</span><span class="v">도급공사비 등 <b>과세 매입</b>에서 공제 (−5,094)</span></div>
+          <div class="f wide"><span class="k">면세</span><span class="v">국민주택규모 아파트 본체(토지·건물)는 <b>면세</b> → 매출VAT 최소</span></div>
+        </div>
         <div class="call ok" style="margin-top:auto;"><span class="t">현금흐름 반영</span>부가세는 분기별로 정산(납부·환급)되어 단순 손익이 아닌 <b>실제 현금 시점</b>으로 CF에 반영된다. 본 단지는 매입세액이 매출세액을 크게 초과해 <b>사업 초기 환급</b>이 발생, 초기 자금 부담을 일부 완화한다.</div>
       </div>
       <div class="col">
@@ -405,13 +413,13 @@
         <table>
           <thead><tr><th class="l">시나리오</th><th>방향성</th><th class="l">메커니즘</th></tr></thead>
           <tbody>
-            <tr><td class="l">조기 완판(6~12개월)</td><td class="r"><span class="tag g">이익 안정</span></td><td class="l mut">고유계정이자↓ ↔ 중도금무이자↑ 상쇄</td></tr>
-            <tr><td class="l">준공까지 분산</td><td class="r"><span class="tag a">이익 둔화</span></td><td class="l mut">신탁 차입·이자 증가</td></tr>
-            <tr><td class="l">미분양 발생</td><td class="r"><span class="tag r">급격 악화</span></td><td class="l mut">BEP 93.9% — 완판 근접 필요</td></tr>
+            <tr><td class="l">조기 완판(6~12개월)</td><td class="c"><span class="tag g">이익 안정</span></td><td class="l mut">고유계정이자↓ ↔ 중도금무이자↑ 상쇄</td></tr>
+            <tr><td class="l">준공까지 분산</td><td class="c"><span class="tag a">이익 둔화</span></td><td class="l mut">신탁 차입·이자 증가</td></tr>
+            <tr><td class="l">미분양 발생</td><td class="c"><span class="tag r">급격 악화</span></td><td class="l mut">BEP 93.9% — 완판 근접 필요</td></tr>
           </tbody>
           <caption>방향성 요약(정밀 시나리오 값은 엔진 토글로 재산출). 본 산출은 분양률 직접입력 기준.</caption>
         </table>
-        <div class="call warn" style="margin-top:auto;"><span class="t">정량 — 미분양 약 6% 초과면 적자 전환</span>BEP <b>93.9%</b> → <b>미분양 6.1% 초과(매출 기준, ≈37호↑)</b> 시 손익분기 미달. 근사 민감도: 분양률 95% → 사업이익 약 <b>36억</b>, 93.9% → <b>0</b>, 그 미만은 <b>적자</b>. <span class="mut">BEP 선형 근사 — 미분양 시 매출 감소와 신탁계정대 이자 증가가 동시 작용해 실제 하방은 선형보다 클 수 있음(정밀치는 엔진 재산출).</span></div>
+        <div class="call warn" style="margin-top:auto;"><span class="t">정량 — 미분양 약 6% 초과 시 손익분기 미달</span>BEP <b>93.9%</b> → <b>미분양 6.1% 초과(매출 기준, ≈37호↑)</b> 시 손익분기 미달. 근사 민감도: 분양률 95% → 사업이익 약 <b>36억</b>, 93.9% → <b>0</b>, 그 미만은 <b>이익 0 미만(손익분기 미달)</b>. <span class="mut">BEP 선형 근사 — 미분양 시 매출 감소와 신탁계정대 이자 증가가 동시 작용해 실제 하방은 선형보다 클 수 있음(정밀치는 엔진 재산출).</span></div>
       </div>
     </div>
   </div>

@@ -1,3 +1,11 @@
+# 렌더 도구 (로컬 전용 — 머신 고유 Chrome 경로 하드코딩)
+node_modules/
+package.json
+package-lock.json
+render.mjs
+render_map.mjs
+render_pdf.mjs
+
 # 리뷰·렌더 중간 산출물 (deliverable 아님)
 _rev_s*.png
 _s*.png
