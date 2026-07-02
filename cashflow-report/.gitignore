@@ -2,9 +2,7 @@
 node_modules/
 package.json
 package-lock.json
-render.mjs
-render_map.mjs
-render_pdf.mjs
+render*.mjs
 
 # 리뷰·렌더 중간 산출물 (deliverable 아님)
 _rev_s*.png

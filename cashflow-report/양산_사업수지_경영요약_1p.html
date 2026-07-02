@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>양산 물금 공동주택 사업수지 — 경영진 1페이지 요약</title>
+<style>
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+  :root{
+    --navy:#1b2738; --navy2:#2a3a55; --gold:#b3873a; --gold-d:#8a6420; --gold-l:#faf4e8; --gold-b:#c8a25a;
+    --ink:#21262d; --mut:#6b7684; --line:#e2e7ee; --soft:#f6f8fb;
+    --green:#1f8d5b; --amber:#c67f12; --red:#c0392b;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0; background:#5b6675; font-family:"Pretendard Variable",Pretendard,"Malgun Gothic",sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased;}
+  .page{ width:210mm; min-height:297mm; margin:8mm auto; background:#fff; position:relative; padding:16mm 17mm 14mm; }
+  @page{ size:A4; margin:0; }
+  @media print{ body{background:#fff;} .page{margin:0; box-shadow:none;} }
+
+  /* 헤더 밴드 */
+  .hd{ margin:-16mm -17mm 0; padding:13mm 17mm 9mm; background:linear-gradient(100deg,var(--navy) 0%,var(--navy2) 100%); color:#fff; position:relative; }
+  .hd::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:linear-gradient(180deg,var(--gold-b),var(--gold-d)); }
+  .hd .kick{ font-size:10.5px; letter-spacing:3px; color:var(--gold-b); font-weight:800; }
+  .hd h1{ font-size:22px; font-weight:800; margin:6px 0 0; letter-spacing:-.3px; }
+  .hd .sub{ font-size:11.5px; color:#c2ccd8; margin-top:6px; }
+
+  /* 헤드라인 배너 */
+  .head{ display:flex; gap:12px; align-items:flex-start; background:var(--gold-l); border:1px solid #ecdcb4; border-left:4px solid var(--gold); border-radius:9px; padding:13px 16px; margin:18px 0 4px; }
+  .head .lb{ flex:0 0 auto; font-size:10.5px; font-weight:800; color:var(--gold-d); letter-spacing:1px; padding-top:2px; }
+  .head .tx{ font-size:14.5px; line-height:1.55; color:var(--navy); font-weight:700; }
+  .head .tx b{ color:var(--gold-d); }
+
+  /* KPI 스트립 */
+  .kpis{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:16px 0; }
+  .kpi{ border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:8px; padding:11px 12px; background:#fff; }
+  .kpi.rd{ border-top-color:var(--red); } .kpi.rd .n{ color:var(--red); }
+  .kpi .n{ font-size:22px; font-weight:800; color:var(--navy); line-height:1; font-variant-numeric:tabular-nums; }
+  .kpi .n small{ font-size:12px; font-weight:700; margin-left:1px; }
+  .kpi .l{ font-size:10.5px; color:var(--mut); margin-top:5px; line-height:1.4; }
+
+  h2.sec{ font-size:14px; font-weight:800; color:var(--navy); margin:16px 0 7px; padding-bottom:5px; border-bottom:2px solid var(--navy); display:flex; align-items:center; gap:8px; }
+  h2.sec .tag{ font-size:9.5px; font-weight:800; letter-spacing:1px; color:#fff; background:var(--gold); padding:2px 7px; border-radius:4px; }
+  h2.sec.sw .tag{ background:var(--navy2); } h2.sec.nw .tag{ background:var(--gold-d); }
+
+  ul.b{ list-style:none; padding:0; margin:0; }
+  ul.b li{ font-size:12.7px; line-height:1.55; padding:5px 0 5px 20px; position:relative; border-bottom:1px solid var(--soft); }
+  ul.b li:last-child{ border-bottom:none; }
+  ul.b li::before{ content:""; position:absolute; left:3px; top:11px; width:7px; height:7px; background:var(--gold); border-radius:2px; transform:rotate(45deg); }
+  ul.b li b{ color:var(--navy); } ul.b li .src{ color:var(--mut); font-size:10.5px; }
+
+  /* Now What 옵션 */
+  .opts{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:9px; margin-top:4px; }
+  .opt{ border:1px solid var(--line); border-radius:8px; padding:10px 12px; background:var(--soft); }
+  .opt .t{ font-size:12px; font-weight:800; color:var(--navy); margin-bottom:5px; }
+  .opt .d{ font-size:11px; color:#38424f; line-height:1.5; }
+  .opt .p{ display:inline-block; margin-top:6px; font-size:9.5px; font-weight:800; color:#fff; background:var(--navy2); padding:2px 7px; border-radius:4px; }
+  .opt.rec{ background:var(--gold-l); border-color:var(--gold-b); }
+  .rec-line{ margin-top:9px; font-size:12.5px; line-height:1.55; background:#fff; border:1px solid var(--gold-b); border-left:4px solid var(--gold); border-radius:8px; padding:10px 14px; }
+  .rec-line b{ color:var(--gold-d); }
+
+  .cols{ display:grid; grid-template-columns:1fr 1fr; gap:22px; }
+  .risk li::before{ background:var(--red); border-radius:50%; transform:none; width:6px; height:6px; top:12px; }
+  .note{ margin-top:14px; font-size:10.5px; color:var(--mut); line-height:1.6; border-top:1px solid var(--line); padding-top:9px; }
+  .note b{ color:var(--gold-d); }
+  .foot{ display:flex; justify-content:space-between; font-size:9.5px; color:var(--mut); letter-spacing:.5px; margin-top:10px; }
+  .foot .cf{ color:var(--gold-d); font-weight:800; letter-spacing:2px; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hd">
+    <div class="kick">EXECUTIVE SUMMARY · REAL ESTATE FEASIBILITY</div>
+    <h1>양산 물금 공동주택 사업수지 — 경영진 1페이지 요약</h1>
+    <div class="sub">경남 양산시 물금읍 가촌리 970-1 · 공동주택 600세대 + 근생 1 · 하이브리드 개발신탁 · 검토기준일 2024.09.01</div>
+  </div>
+
+  <div class="head">
+    <div class="lb">HEADLINE</div>
+    <div class="tx">완판 가정 시 <b>사업이익 197.8억</b>이나, <b>손익분기 분양률(BEP) 93.9%</b>로 마진이 얇아 — <b>‘완판 속도’ 통제</b>가 사업 성패를 가르는 핵심 의사결정 변수입니다. <b>(가부 미판정 · 지표 제시)</b></div>
+  </div>
+
+  <div class="kpis">
+    <div class="kpi"><div class="n">197.8<small>억</small></div><div class="l">사업이익 (완판 100% 가정)<br>= CF 누적시재 · 잔차 0</div></div>
+    <div class="kpi"><div class="n">6.50<small>%</small></div><div class="l">위탁자 이익률(사업비 대비)<br>매출대비 6.10% · 수탁 7.91%</div></div>
+    <div class="kpi rd"><div class="n">93.9<small>%</small></div><div class="l">손익분기 분양률(BEP)<br>완판 근접 필요 — 얇은 마진</div></div>
+    <div class="kpi"><div class="n">3,242<small>억</small></div><div class="l">총분양수입<br>총사업비(VAT포함) 3,044억</div></div>
+  </div>
+
+  <h2 class="sec"><span class="tag">WHAT</span>무슨 일이 (정량)</h2>
+  <ul class="b">
+    <li>총분양수입 <b>3,242억</b> · 총사업비(VAT포함) <b>3,044억</b> · 사업이익 <b>197.8억</b>(완판 100% 가정, 위탁자 기준, 사업이익=총수입−지출=CF누적시재 <b>잔차 0</b>) <span class="src">[엔진 산출본]</span></li>
+    <li>이익률 매출대비 <b>6.10%</b> · 사업비대비 <b>6.50%</b>(수탁 기준 7.91%) <span class="src">[engine_result_양산.json]</span></li>
+    <li>규모 <b>600세대+상가1=601호</b>, 국민주택규모(전용 85㎡↓) 본체 <b>면세</b>, 부가세 <b>순환급 38.6억</b>(매입세액>매출세액)</li>
+  </ul>
+
+  <div class="cols">
+    <div>
+      <h2 class="sec sw"><span class="tag">SO WHAT</span>사업 임팩트</h2>
+      <ul class="b">
+        <li><b>BEP 93.9%</b> — 완판에 근접해야 이익 확보. <b>미분양 6.1%(약 37호) 초과 시 손익분기 미달</b></li>
+        <li>고레버리지: 에쿼티 <b>4,000</b>(총사업비 1.3%)·신탁계정대 <b>최대잔액 516.8억</b> → 분양수입 회수 시점에 자금부담 민감</li>
+        <li>근사 민감도: 분양률 95%→이익 약 <b>36억</b>, 93.9%→<b>0</b>, 그 미만은 이익 0 미만</li>
+      </ul>
+    </div>
+    <div>
+      <h2 class="sec"><span class="tag" style="background:var(--red)">RISKS</span>핵심 리스크</h2>
+      <ul class="b risk">
+        <li>미분양 6.1% 초과 시 <b>매출 감소 + 신탁계정대 이자 증가</b>가 동시 작용 → 실제 하방은 선형 근사보다 클 수 있음</li>
+        <li>토지·도급계약·금융조건 <b>미확정</b> — 가정(분양률·단가·금리) 변동 시 수치 변동</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec nw"><span class="tag">NOW WHAT</span>심사자 의사결정 옵션 <span style="font-size:10px;font-weight:600;color:var(--mut);letter-spacing:0;">(가부는 심사자 몫 · 지표 기반)</span></h2>
+  <div class="opts">
+    <div class="opt rec">
+      <div class="t">A. 완판 리스크 통제 조건부 검토</div>
+      <div class="d">사전청약·분양 진척 지표 관리, 중도금 무이자 구조 유지로 완판 속도 확보를 확정 전제 조건화.</div>
+      <span class="p" style="background:var(--gold-d);">P0</span>
+    </div>
+    <div class="opt">
+      <div class="t">B. 조건 재협상</div>
+      <div class="d">도급단가·금융조건 재협상으로 마진 두께(BEP 여유) 확보 후 재산출.</div>
+      <span class="p">P1</span>
+    </div>
+    <div class="opt">
+      <div class="t">C. 실수요 검증까지 보류</div>
+      <div class="d">분양 개시 전 실수요·경쟁물량 검증 완료 시점까지 확정 판단 보류.</div>
+      <span class="p">P1</span>
+    </div>
+  </div>
+  <div class="rec-line">권고: <b>옵션 A</b> — 지표상 완판 시 197.8억 확보가 가능하나 BEP 93.9%로 하방이 얇아, <b>‘분양 속도 통제’를 확정의 전제 조건</b>으로 두는 것을 권고드립니다. <span class="src">(사업성 가부 판정이 아니며, 최종 판단은 심사자 몫입니다.)</span></div>
+
+  <div class="note">
+    <b>NEXT REVIEW</b> — 분양 개시 시점(2025.02.28 예정) · 추적 KPI: 계약률 · 중도금 회수 · 신탁계정대 잔액.
+    &nbsp;·&nbsp; 본 요약은 엔진 산출본(잔차 0·멱등 검증) 기준이며 <b>투자 권유가 아닙니다.</b> 상세는 「양산 물금 공동주택 사업수지 검토 보고서」(11장) 참조.
+  </div>
+
+  <div class="foot">
+    <span>양산 물금 공동주택 · 사업수지 검토</span>
+    <span class="cf">CONFIDENTIAL</span>
+    <span>엔진 산출본 · 2024.09</span>
+  </div>
+</div>
+</body>
+</html>
