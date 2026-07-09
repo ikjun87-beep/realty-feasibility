@@ -5,3 +5,12 @@ __pycache__/
 
 # 참고용 외부 제안서 사본(대용량 PDF) — git 추적 제외
 _ref-proposals/
+
+# 지오코딩 API 키(로컬 전용)
+**/.kakao_key
+
+# 머신 고유 렌더 스크립트·의존성(로컬 전용, 재작성)
+**/render*.mjs
+**/node_modules
+# 파생 렌더 PNG(HTML에서 재생성 가능)
+**/_render/

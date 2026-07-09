@@ -10,6 +10,7 @@
   - `PRD_사업수지통합보고서.md`(로드맵·Phase) · `engine_result_양산.json`(엔진 진실값) · `양산_사업수지_보고서.html/.pdf`(11장) · `양산_사업수지_경영요약_1p.*`(임원 1p) · `양산_사업수지_ppt_프롬프트.txt`
 - `dangha-parking/` — 당하동 주차전용건축물 **분양성** 검토(report 12장 + deck 13장). `README.md`에 산출물 안내.
 - `ktower-geomdan/` — The K Tower 검단 **적정분양가·사업성** 검토(report + deck + `PRD.md`).
+- `대학로131/` — **(참고)** 대구 북구 대학로 131(= 산격동 1391-4) **매입·리모델링·수익 검토** 보고서의 `JN.md`·`CLAUDE.md` 사본. 실제 산출물(HTML SSOT·PDF·지도·build 스크립트)은 형제 폴더 `../대학로131_매입리모델링/`에 있음. 표지·표기 톤(정보전달 목적, 이모지·책임회피 문구 금지)과 위치 지오코딩 교훈 참고용.
 - 현장 폴더 공통 산출물: `report.html`/`deck.html`(SSOT) · `*.pdf`(파생) · `map_locator.*`(위치도) · `cover_art.html`→`cover_render*.png`(표지 배경)
 
 ## 기술·구조

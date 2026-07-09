@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>화성 향남 장짐지구 공동주택 신축사업 — 분양성·사업성 검토</title>
+<style>
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+  @page { size: 297mm 167mm; margin: 0; }
+  * { box-sizing: border-box; margin:0; padding:0; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  :root{
+    --ink:#21262d; --navy:#1b2738; --navy2:#2a3a55;
+    --gold:#b3873a; --gold-d:#8f6a2b; --gold-l:#f3ecdc; --gold-b:#d8c191;
+    --paper:#ffffff; --mut:#656565; --line:#dfdfdf; --soft:#f5f5f5;
+    --blue:#2f6fb0; --red:#c0392b; --amber:#c98a1a; --green:#1e8e5a;
+  }
+  body{ font-family:"Pretendard","Malgun Gothic",sans-serif; color:var(--ink); background:#5b6675; font-weight:400;
+    counter-reset:slidepg; word-break:keep-all; overflow-wrap:break-word; -webkit-font-smoothing:antialiased; }
+  .slide{ width:297mm; height:167mm; background:#fff; position:relative; overflow:hidden;
+    page-break-after:always; margin:0 auto 6mm; padding:13mm 15mm 10mm;
+    display:flex; flex-direction:column; counter-increment:slidepg; }
+  .shead{ flex:0 0 auto; margin:-13mm -15mm 13px -15mm; padding:12mm 15mm 11px 15mm; position:relative;
+    background:linear-gradient(105deg,#16212f 0%,#26384f 56%,#1a2636 100%); border-bottom:2px solid var(--gold); }
+  .shead::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px;
+    background:linear-gradient(180deg,var(--gold) 0%,var(--gold-d) 100%); }
+  .skick{ font-size:11px; letter-spacing:4px; color:var(--gold-b); font-weight:800; text-transform:uppercase; }
+  .stitle{ font-size:27px; font-weight:800; color:#f3f6fb; margin-top:4px; line-height:1.16; letter-spacing:-.3px; }
+  .stitle b{ color:#e6c884; }
+  .srule{ width:54px; height:4px; background:var(--gold); margin:10px 0 0; border-radius:2px; }
+  .sbody{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; gap:13px; min-height:0; }
+  .sbody.top{ justify-content:flex-start; }
+  .sfoot{ flex:0 0 auto; display:flex; align-items:center; justify-content:space-between;
+    border-top:1px solid var(--gold-l); padding-top:6px; margin-top:9px; font-size:10px; color:var(--mut); }
+  .sfoot .cf{ color:var(--gold); font-weight:800; letter-spacing:2px; }
+  .sfoot .pg{ color:var(--navy); font-weight:800; }
+  .sfoot .pg::after{ content: counter(slidepg, decimal-leading-zero); }
+
+  .cover{ padding:0; color:#fff; justify-content:flex-end;
+    background:radial-gradient(120% 90% at 82% 18%, #26384f 0%, #1b2738 52%, #131e2c 100%); }
+  .cover .edge{ position:absolute; left:0; top:0; bottom:0; width:7px; z-index:2;
+    background:linear-gradient(180deg,var(--gold) 0%,var(--gold-d) 100%); }
+  .cover .tex{ position:absolute; inset:0; z-index:0;
+    background:repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0 1px, transparent 1px 70px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 70px); }
+  .cover .wm{ position:absolute; right:20mm; top:14mm; z-index:3; font-size:11px; letter-spacing:3px; color:rgba(230,200,132,.8); font-weight:700; }
+  .cover .cnt{ position:relative; z-index:3; padding:0 24mm 22mm; }
+  .cover .ck{ color:var(--gold-b); letter-spacing:6px; font-size:13px; font-weight:800; }
+  .cover h1{ font-size:40px; font-weight:800; line-height:1.2; margin:14px 0 0; color:#fff; letter-spacing:-.5px; }
+  .cover h1 b{ color:var(--gold-b); }
+  .cover .cr{ width:76px; height:4px; background:var(--gold); margin:18px 0 16px; border-radius:2px; }
+  .cover .cs{ font-size:16px; line-height:1.7; color:#e7ecf3; }
+  .cover .cm{ font-size:12.5px; line-height:1.9; margin-top:12px; color:#aeb8c6; }
+  .cover .cbadge{ display:inline-block; border:1px solid var(--gold-b); color:#fff; background:rgba(179,135,58,.18);
+    font-size:12px; font-weight:700; padding:6px 15px; border-radius:18px; margin-top:16px; }
+  .cover .cdisc{ font-size:11px; line-height:1.6; margin-top:13px; color:#8b97a6; max-width:600px; }
+
+  p.body{ font-size:15px; line-height:1.7; color:#2a3445; }
+  .mut{ color:var(--mut); } .gold{ color:var(--gold-d); font-weight:800; }
+  .row{ display:flex; gap:14px; } .row.fill{ flex:1 1 auto; min-height:0; }
+  .col{ flex:1; display:flex; flex-direction:column; gap:12px; }
+  .lead{ font-size:17px; line-height:1.55; color:var(--navy); font-weight:700; }
+  .lead b{ color:var(--gold-d); }
+
+  .kpis{ display:flex; gap:13px; }
+  .kpi{ flex:1; border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:11px;
+    padding:13px 15px; background:#fff; display:flex; flex-direction:column; justify-content:center; }
+  .kpi .n{ font-size:28px; font-weight:800; color:var(--navy); line-height:1.05; }
+  .kpi .n small{ font-size:15px; font-weight:800; }
+  .kpi .l{ font-size:12px; color:var(--mut); margin-top:7px; line-height:1.4; }
+  .kpi.gd .n{ color:var(--gold-d);} .kpi.gr .n{ color:var(--green);}
+
+  .card{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:13px 16px; }
+  .card h3{ font-size:14px; font-weight:800; color:var(--navy); margin:0 0 9px; padding-bottom:7px; border-bottom:1px solid var(--line); }
+
+  .call{ border:1px solid var(--line); border-left:4px solid var(--gold); background:#fff; border-radius:8px; padding:12px 16px;
+    font-size:14px; line-height:1.6; }
+  .call.warn{ border-left-color:var(--red); } .call.amber{ border-left-color:var(--amber); background:#fffaf0; }
+  .call.gold{ border-left-color:var(--gold); background:var(--gold-l); }
+  .call.ok{ border-left-color:var(--green); background:#f1faf5; }
+  .call .t{ font-weight:800; color:var(--navy); font-size:14px; display:block; margin-bottom:5px; }
+
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; }
+  th,td{ border:none; border-bottom:1px solid var(--line); padding:7px 11px; }
+  th{ color:var(--navy); font-weight:800; text-align:center; font-size:13px; border-bottom:2px solid var(--navy); }
+  th.l{text-align:left;} td.l{text-align:left;} td.c{text-align:center;} td.r{text-align:right; font-variant-numeric:tabular-nums;} th.r{text-align:right;}
+  tbody tr:nth-child(even){ background:var(--soft); }
+  tr.tot td{ background:var(--gold-l); font-weight:800; color:var(--navy); border-top:2px solid var(--gold); }
+  td.hl{ background:#fbf6ea; font-weight:800; color:var(--gold-d); }
+  caption{ caption-side:bottom; text-align:left; font-size:11px; color:var(--mut); padding:7px 2px 0; line-height:1.5; }
+
+  ul.clean{ list-style:none; padding:0; }
+  ul.clean li{ font-size:14.5px; line-height:1.5; margin:8px 0; padding-left:24px; position:relative; }
+  ul.clean li b{ color:var(--gold-d); }
+  ul.clean li::before{ content:""; position:absolute; left:0; top:6px; width:9px; height:9px; background:var(--gold); border-radius:2px; transform:rotate(45deg); }
+
+  .facts{ display:grid; grid-template-columns:1fr 1fr; gap:0 18px; }
+  .facts .f{ display:flex; border-bottom:1px solid var(--line); padding:8px 2px; font-size:13.5px; }
+  .facts .f.wide{ grid-column:1 / -1; }
+  .facts .f .k{ width:96px; color:var(--gold-d); font-weight:800; flex:0 0 auto; }
+  .facts .f .v{ color:#2a3445; }
+
+  .tag{ display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:800; padding:3px 9px; border-radius:6px; color:#fff; white-space:nowrap; }
+  .tag.r{ background:var(--red); } .tag.a{ background:var(--amber); } .tag.g{ background:var(--green); } .tag.b{ background:var(--blue); }
+
+  .eq{ display:flex; align-items:stretch; gap:0; text-align:center; border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+  .eq .t{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:18px 8px; background:#fff; }
+  .eq .t .lab{ font-size:12.5px; color:var(--mut); font-weight:700; margin-bottom:8px; }
+  .eq .t .v{ font-size:28px; font-weight:800; color:var(--navy); font-variant-numeric:tabular-nums; line-height:1; }
+  .eq .t .u{ font-size:11.5px; color:var(--mut); margin-top:6px; }
+  .eq .t.hl{ background:var(--gold-l); } .eq .t.hl .v{ color:var(--gold-d); }
+  .eq .op{ flex:0 0 40px; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:900; color:#e6c884; background:var(--navy); }
+  .seal{ display:inline-flex; align-items:center; gap:8px; border:2px solid var(--gold); color:var(--gold-d); background:var(--gold-l);
+    font-weight:800; font-size:13.5px; padding:8px 16px; border-radius:30px; }
+  .seal.gr{ border-color:var(--green); color:#177a4b; background:#f1faf5; }
+
+  .bars{ display:flex; flex-direction:column; gap:8px; }
+  .bar{ display:grid; grid-template-columns:150px 1fr 150px; align-items:center; gap:11px; font-size:13px; }
+  .bar .bl{ font-weight:800; color:var(--navy); }
+  .bar .bt{ height:20px; background:var(--soft); border-radius:5px; overflow:hidden; }
+  .bar .bf{ display:block; height:100%; min-width:3px; background:linear-gradient(90deg,#2a3a55,#1b2738); border-radius:5px; }
+  .bar.gold .bf{ background:linear-gradient(90deg,var(--gold-b),var(--gold-d)); }
+  .bar.gr .bf{ background:linear-gradient(90deg,#4bbд88,#1e8e5a); background:linear-gradient(90deg,#5bc48d,#1e8e5a); }
+  .bar .bv{ text-align:right; font-variant-numeric:tabular-nums; color:#2a3445; }
+  .bar .bv b{ color:var(--navy); } .bar .bv .pc{ color:var(--gold-d); font-weight:800; margin-left:7px; }
+
+  .figbox{ border:1px solid var(--line); border-radius:9px; overflow:hidden; background:#fff; display:flex; flex-direction:column; }
+  .figbox img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .figbox .cap{ font-size:12px; color:var(--mut); padding:7px 11px; border-top:1px solid var(--line); background:var(--soft); }
+  .figbox .cap b{ color:var(--navy); }
+  .est{ font-size:11px; color:var(--gold-d); background:#fdf8ee; border:1px solid #ecdcb4; border-radius:6px; padding:6px 11px; }
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="slide cover">
+  <div class="edge"></div><div class="tex"></div>
+  <div class="wm">REALTY FEASIBILITY REVIEW</div>
+  <div class="cnt">
+    <div class="ck">경기 화성특례시 · 향남읍 장짐리 228-1</div>
+    <h1>향남 장짐지구 <b>공동주택</b> 신축사업<br>분양성 · 사업성 검토</h1>
+    <div class="cr"></div>
+    <div class="cs">공동주택 1,885세대 · 대지 32,059평 · 사업이익 약 989억(엑셀) — 분양성 독립검증 결과 사업성 확인</div>
+    <div class="cm">시장조사보고서(리버티랜드)·PF대출 IM(부국증권)·사업수지(혼합형 토지신탁 VER13) + 국토교통부 실거래가 독립검증</div>
+    <span class="cbadge">검토본 · 지표 기반 결론</span>
+    <div class="cdisc">본 자료는 제공 원자료와 공공데이터에 근거한 지표 제시이며, 인허가·금융조건 확정을 전제로 함. 확정 전 값은 [추정]·[확인필요]로 표기. 검토기준 2026.</div>
+  </div>
+</section>
+
+<!-- 02 검토 결론 (양산식·선제시) -->
+<section class="slide">
+  <div class="shead"><div class="skick">Conclusion First</div><div class="stitle">검토 결과 — <b>분양성·사업성 확인</b></div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="lead">독립 검증(국토부 실거래) 및 시장조사가 <b>적정분양가 1,530~1,550만원/평</b>을 지지하고, 사업수지 가정(1,400만원/평)은 이보다 보수적이다. 엑셀 항등식 기준 <b>사업이익 약 989억</b>이며, 적정가 반영 시 상방 여력이 있다.</div>
+    <div class="kpis">
+      <div class="kpi gr"><div class="n">989<small>억</small></div><div class="l">사업이익 (보수·엑셀 권위값)</div></div>
+      <div class="kpi"><div class="n">10.8<small>%</small></div><div class="l">수익률 (매출 대비)</div></div>
+      <div class="kpi gd"><div class="n">~1,700<small>억</small></div><div class="l">적정분양가 반영 시 상방 [추정]</div></div>
+      <div class="kpi"><div class="n">−9~10<small>%</small></div><div class="l">엑셀 분양가의 보수성 (시세 대비)</div></div>
+    </div>
+    <div class="row">
+      <div class="call ok" style="flex:1"><span class="t">① 분양성 있음</span>인근 신축(2024) 실거래 <b>1,904만/평</b> &gt; 적정분양가 1,530~1,550 &gt; 사업수지 가정 <b>1,400</b>. 분양가가 시세보다 낮아 즉시 프리미엄·완판 동력.</div>
+      <div class="call ok" style="flex:1"><span class="t">② 사업성 있음</span>총수입 9,171억 − 지출 8,182억 = <b>이익 989억</b>(잔차 0). 화성 3년 공급부족·직주근접 배후가 흡수를 뒷받침.</div>
+      <div class="call gold" style="flex:1"><span class="t">③ 전제·유의</span>인허가 변경·PF 금리·시공사 <b>확정 필요</b>. 확정 시 상기 지표 유지 가능. 본 검토는 지표 제시.</div>
+    </div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 03 사업개요·법규 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Project Overview</div><div class="stitle">사업 개요 · <b>법규</b></div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="row fill" style="align-items:flex-start">
+      <div class="card" style="flex:1.1">
+        <h3>사업 제원</h3>
+        <div class="facts">
+          <div class="f wide"><div class="k">소재지</div><div class="v">경기 화성특례시 만세구 향남읍 장짐리 228-1 일원</div></div>
+          <div class="f"><div class="k">용도지역</div><div class="v">제2종일반주거</div></div>
+          <div class="f"><div class="k">지구단위</div><div class="v">제1종지구단위계획구역</div></div>
+          <div class="f"><div class="k">대지면적</div><div class="v">105,981㎡ (32,059평)</div></div>
+          <div class="f"><div class="k">연면적</div><div class="v">297,049㎡ (89,857평)</div></div>
+          <div class="f"><div class="k">건폐율</div><div class="v">14.55% (법정 20%↓)</div></div>
+          <div class="f"><div class="k">용적률</div><div class="v">196.65% (법정 200%↓)</div></div>
+          <div class="f"><div class="k">규모</div><div class="v">지하2 ~ 지상18~24층, 20개동</div></div>
+          <div class="f"><div class="k">세대수</div><div class="v">1,885세대</div></div>
+          <div class="f"><div class="k">주차</div><div class="v">2,529대 (법정 1,821대)</div></div>
+        </div>
+      </div>
+      <div class="col" style="flex:1">
+        <div class="card">
+          <h3>주택 타입 구성</h3>
+          <table class="tight">
+            <thead><tr><th class="l">타입</th><th class="r">전용(㎡)</th><th class="r">세대수</th><th class="r">비중</th></tr></thead>
+            <tbody>
+              <tr><td class="l">59A</td><td class="r">59.92</td><td class="r">336</td><td class="r">17.8%</td></tr>
+              <tr><td class="l">84형</td><td class="r">84.95</td><td class="r">1,549</td><td class="r">82.2%</td></tr>
+              <tr class="tot"><td class="l">계</td><td class="r">—</td><td class="r">1,885</td><td class="r">100%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="call warn"><span class="t">인허가 [확인필요]</span>주택사업계획승인 완료('14.04.16) 후 지구단위·사업계획 <b>변경 예정</b>. 변경 승인 일정이 착공·분양 시점 변수.</div>
+      </div>
+    </div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 04 입지·위치도 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Location</div><div class="stitle">입지 · <b>위치도</b></div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="row fill">
+      <div class="figbox" style="flex:1.55">
+        <img src="map_locator.png" alt="화성 향남 장짐리 228-1 위치도">
+        <div class="cap"><b>대상지</b> 경기 화성 향남읍 장짐리 228-1 (좌표 Kakao 지번 지오코딩 확정) · 반경 500m · © CARTO·OpenStreetMap</div>
+      </div>
+      <div class="col" style="flex:1">
+        <div class="card" style="flex:1">
+          <h3>입지 특성</h3>
+          <ul class="clean">
+            <li><b>산단 직주근접</b> — 향남산업단지 약 0.2km, 종사자 3.4만·통근율 62%</li>
+            <li><b>교육 연접</b> — 화성고·화성중 약 0.4km (단지컨셉 S.K.Y City)</li>
+            <li><b>생활 인프라</b> — 향남읍 구도심 1.2km·향남2지구 신도시 2.4km</li>
+            <li><b>광역</b> — 서해안고속도로·39·43번 국도, 트리플역세권 <span class="tag a" style="font-size:10px;padding:1px 6px">계획</span></li>
+          </ul>
+        </div>
+        <div class="est">향남지구 외곽 입지 · 인근 향남1지구·구도심 15년 이상 노후화 → 신규 대단지 희소성 (출처: 시장조사보고서)</div>
+      </div>
+    </div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 05 시장 수급 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Market — Supply/Demand</div><div class="stitle">시장 환경 · <b>수급</b></div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="lead">화성시 <b>연평균 소진 약 8,000세대</b> 대비 대상지 1,885세대는 시 전체의 <b>약 23%</b>. '25년 이후 3년간 입주물량 부족 → <b>공급자 우위</b> 시장.</div>
+    <div class="row fill">
+      <div class="card" style="flex:1.2">
+        <h3>화성시 아파트 수급 전망 (부족 − / 과잉 +)</h3>
+        <div class="bars">
+          <div class="bar"><span class="bl">'25</span><div class="bt"><span class="bf gold" style="width:12%"></span></div><span class="bv"><b>+890</b> <span class="pc">과잉</span></span></div>
+          <div class="bar"><span class="bl">'26</span><div class="bt"><span class="bf" style="width:67%"></span></div><span class="bv"><b>−5,134</b> <span class="pc">부족</span></span></div>
+          <div class="bar"><span class="bl">'27</span><div class="bt"><span class="bf" style="width:100%"></span></div><span class="bv"><b>−7,689</b> <span class="pc">부족</span></span></div>
+          <div class="bar"><span class="bl">'28</span><div class="bt"><span class="bf" style="width:67%"></span></div><span class="bv"><b>−5,123</b> <span class="pc">부족</span></span></div>
+        </div>
+        <div class="est" style="margin-top:10px">출처: 시장조사보고서(리버티랜드). 화성시 인구·필요세대·입주예정 기준. 기간 '25~'28.</div>
+      </div>
+      <div class="col" style="flex:1">
+        <div class="card" style="flex:1">
+          <h3>수요·거래 여건</h3>
+          <ul class="clean">
+            <li><b>61~85㎡ 66.4%</b> · 41~60㎡ 22.3% → 대상지 84·59㎡ 구성과 부합</li>
+            <li>화성시 평당가 <b>2025년 +14.4%</b> 상승(공공데이터)</li>
+            <li>비규제지역 유지 시 <b>풍선효과</b>·최근 향남권 분양 대부분 조기 완판</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 06 수요검토 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Demand</div><div class="stitle">수요 <b>검토</b></div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="kpis">
+      <div class="kpi"><div class="n">3.4<small>만명</small></div><div class="l">인근 산단 종사자</div></div>
+      <div class="kpi gd"><div class="n">62<small>%</small></div><div class="l">지역 내 통근 비율</div></div>
+      <div class="kpi"><div class="n">3,800<small>세대</small></div><div class="l">향남권 유효수요 [추정]</div></div>
+      <div class="kpi gr"><div class="n">368<small>건</small></div><div class="l">향남읍 매매 실거래(최근12개월)</div></div>
+    </div>
+    <div class="row fill">
+      <div class="card" style="flex:1">
+        <h3>수요 기반</h3>
+        <ul class="clean">
+          <li><b>자체수요 기반</b> — 향남·발안산단 대규모 고용, 직주근접 실수요</li>
+          <li><b>노후화 대체수요</b> — 향남1지구·인근 15년↑ 노후단지, 신규 대단지 희소</li>
+          <li><b>규모 프리미엄</b> — 향남권 단일 최대 1,885세대 (커뮤니티·관리 우위)</li>
+          <li><b>거래 활발</b> — 최근 12개월 향남읍 아파트 매매 368건(국토부 신고)</li>
+        </ul>
+      </div>
+      <div class="call amber" style="flex:.9; align-self:center">
+        <span class="t">신뢰도</span>유효수요 3,800세대·종사자 3.4만·통근율 62%는 시장조사 인용값 [추정]. 매매 368건·평당가 상승은 국토부 실거래 확인값.
+      </div>
+    </div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 07 분양성 독립검증 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Independent Verification</div><div class="stitle">분양성 <b>독립 검증</b> — 국토부 실거래</div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="row fill" style="align-items:flex-start">
+      <div class="card" style="flex:1.25">
+        <h3>향남읍 84㎡ 실거래 평단가 (최근 12개월, 매매)</h3>
+        <table class="tight">
+          <thead><tr><th class="l">단지</th><th class="c">준공</th><th class="r">평단가(만원)</th><th class="r">매매가</th></tr></thead>
+          <tbody>
+            <tr><td class="l hl">한양수자인디에스티지 (2024, 945세대)</td><td class="c">2024</td><td class="r hl">1,904</td><td class="r">4.90억</td></tr>
+            <tr><td class="l">모아미래도에듀파크 서봉4단지</td><td class="c">2018</td><td class="r">1,801</td><td class="r">4.63억</td></tr>
+            <tr><td class="l">서봉마을 모아엘가</td><td class="c">2015</td><td class="r">1,693</td><td class="r">4.35억</td></tr>
+            <tr><td class="l">향남지구 우미린</td><td class="c">2008</td><td class="r">1,557</td><td class="r">4.00억</td></tr>
+          </tbody>
+          <caption>출처: 국토교통부 실거래가 신고(만세구, 향남읍 368건 중 84㎡대). 신축일수록 고가.</caption>
+        </table>
+      </div>
+      <div class="col" style="flex:1">
+        <div class="call ok"><span class="t">나의 적정분양가 산출</span>인근 최신 신축(2024) 실거래 <b>1,904만/평</b> × 분양–매매 통상 갭(0.80~0.82) ≈ <b>1,530~1,560만/평</b>. → 나의 독립 적정분양가 <b>약 1,550만/평</b> [추정].</div>
+        <div class="call gold"><span class="t">흡수(분양성) 판정</span>분양가 가정(1,400) &lt; 실거래·적정가(1,530~1,900) → <b>분양 즉시 프리미엄</b>. 매매 활발·공급부족과 결합해 흡수력 양호.</div>
+      </div>
+    </div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 08 적정분양가 삼각비교 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Triangulation</div><div class="stitle">적정분양가 <b>삼각 비교</b></div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="card">
+      <h3>3.3㎡(평)당 분양가 — 출처별 비교</h3>
+      <div class="bars">
+        <div class="bar"><span class="bl">인근 신축 실거래(2024)</span><div class="bt"><span class="bf" style="width:100%"></span></div><span class="bv"><b>1,904</b>만 <span class="pc">시장 실측</span></span></div>
+        <div class="bar gr"><span class="bl">나의 독립 적정분양가</span><div class="bt"><span class="bf" style="width:81%"></span></div><span class="bv"><b>~1,550</b>만 <span class="pc">MOLIT 기반</span></span></div>
+        <div class="bar gr"><span class="bl">시장조사(리버티랜드)</span><div class="bt"><span class="bf" style="width:80%"></span></div><span class="bv"><b>1,530</b>만 <span class="pc">외부 산정</span></span></div>
+        <div class="bar gold"><span class="bl">엑셀 사업수지 가정</span><div class="bt"><span class="bf" style="width:74%"></span></div><span class="bv"><b>1,400</b>만 <span class="pc">권위·보수</span></span></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="call ok" style="flex:1.2"><span class="t">판정</span>나의 독립 추정(1,550)과 시장조사(1,530)가 <b>수렴</b>. 엑셀 가정(1,400)은 이보다 <b>−9~10% 보수적</b>, 실거래(1,904) 대비 −26%. → 사업수지는 <b>보수적 전제</b>이며 상방 여력 존재.</div>
+      <div class="call amber" style="flex:1"><span class="t">상방 시나리오 [추정]</span>적정가(1,530) 반영 시 아파트 매출 8,680억 → 약 <b>9,486억(+806억)</b>. 판매·부가세 일부 차감 후 사업이익 <b>약 1,600~1,800억</b> 여력.</div>
+    </div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 09 사업수지 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Feasibility</div><div class="stitle">사업 <b>수지</b> — 항등식(엑셀)</div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="eq">
+      <div class="t"><div class="lab">총수입 (VAT 포함)</div><div class="v">9,170.8</div><div class="u">억원 · 매출합계</div></div>
+      <div class="op">−</div>
+      <div class="t"><div class="lab">총지출</div><div class="v">8,181.8</div><div class="u">억원 · VAT 포함</div></div>
+      <div class="op">=</div>
+      <div class="t hl"><div class="lab">사업이익</div><div class="v">989.0</div><div class="u">억원</div></div>
+    </div>
+    <div class="row" style="align-items:center; margin-top:2px">
+      <span class="seal gr">항등식 잔차 0 · 엑셀 권위값</span>
+      <div class="mut" style="font-size:12.5px; flex:1">사업이익 = 총수입 − 지출(VAT 포함). 엑셀 사업수지표 기준. 현금흐름표 CF 누적시재 대조로 멱등 재검증 예정.</div>
+    </div>
+    <div class="kpis" style="margin-top:4px">
+      <div class="kpi gr"><div class="n">989<small>억</small></div><div class="l">사업이익 (보수 가정)</div></div>
+      <div class="kpi"><div class="n">10.8<small>%</small></div><div class="l">수익률 (매출 대비)</div></div>
+      <div class="kpi"><div class="n">12.1<small>%</small></div><div class="l">수익률 (원가 대비)</div></div>
+      <div class="kpi gd"><div class="n">9,126<small>억</small></div><div class="l">총분양매출 (VAT 제외, IM)</div></div>
+    </div>
+    <div class="est">단위 환산: 엑셀 천원 → 억원. 사업이익 989.0억(≈98,895,615천원). 분양가 1,400만/평(보수) 가정 기준 — 적정가 반영 시 상방(슬라이드 08).</div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 10 지출구성·민감도 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Cost & Sensitivity</div><div class="stitle">지출 <b>구성</b> · 민감도 (총 8,182억)</div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="bars" style="margin:auto 0">
+      <div class="bar"><span class="bl">건축비</span><div class="bt"><span class="bf" style="width:100%"></span></div><span class="bv"><b>4,512</b>억 <span class="pc">55.1%</span></span></div>
+      <div class="bar gold"><span class="bl">토지비</span><div class="bt"><span class="bf" style="width:32%"></span></div><span class="bv"><b>1,453</b>억 <span class="pc">17.8%</span></span></div>
+      <div class="bar"><span class="bl">금융비</span><div class="bt"><span class="bf" style="width:26%"></span></div><span class="bv"><b>1,178</b>억 <span class="pc">14.4%</span></span></div>
+      <div class="bar"><span class="bl">부대비</span><div class="bt"><span class="bf" style="width:8.6%"></span></div><span class="bv"><b>390</b>억 <span class="pc">4.8%</span></span></div>
+      <div class="bar"><span class="bl">판매비</span><div class="bt"><span class="bf" style="width:7.6%"></span></div><span class="bv"><b>343</b>억 <span class="pc">4.2%</span></span></div>
+      <div class="bar"><span class="bl">제세공과</span><div class="bt"><span class="bf" style="width:4.6%"></span></div><span class="bv"><b>207</b>억 <span class="pc">2.5%</span></span></div>
+      <div class="bar"><span class="bl">용역비</span><div class="bt"><span class="bf" style="width:3.9%"></span></div><span class="bv"><b>176</b>억 <span class="pc">2.1%</span></span></div>
+    </div>
+    <div class="call amber"><span class="t">민감도 [주목]</span>건축비(4,512억)와 금융비(1,178억)가 지출의 <b>약 70%</b>. 공사비 단가·PF 금리(현재 T.B.D)가 사업이익의 핵심 변수. 반면 수입 측은 분양가 보수 가정(상방)으로 완충. 납부부가세 −76억(환급) 반영.</div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 11 자금구조·PF + 리스크 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Financing & Risk</div><div class="stitle">자금 구조 · <b>PF · 리스크</b></div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="row fill" style="align-items:flex-start">
+      <div class="card" style="flex:1.05">
+        <h3>PF · 신탁 구조</h3>
+        <div class="facts">
+          <div class="f"><div class="k">사업방식</div><div class="v">혼합형 토지신탁</div></div>
+          <div class="f"><div class="k">금융주관</div><div class="v">부국증권㈜</div></div>
+          <div class="f"><div class="k">차주(시행)</div><div class="v">신보에이치앤씨㈜</div></div>
+          <div class="f"><div class="k">시공사</div><div class="v">T.B.D (책임준공)</div></div>
+          <div class="f"><div class="k">Tr-A 대출</div><div class="v">1,490억 (군인공제회 960 포함)</div></div>
+          <div class="f"><div class="k">Exit LTV</div><div class="v">49.41%</div></div>
+          <div class="f wide"><div class="k">대출기간</div><div class="v">50개월 (준비 10 + 공사 37 + 정산 3)</div></div>
+        </div>
+      </div>
+      <div class="card" style="flex:1.1">
+        <h3>주요 리스크 · 확인 항목</h3>
+        <table class="tight">
+          <tbody>
+            <tr><td class="l">인허가 변경 승인 일정</td><td class="c"><span class="tag r">높음</span></td></tr>
+            <tr><td class="l">PF 금리·시공사·신탁사 T.B.D</td><td class="c"><span class="tag r">높음</span></td></tr>
+            <tr><td class="l">미매입부지 토지 확보 완결성</td><td class="c"><span class="tag a">중간</span></td></tr>
+            <tr><td class="l">공사비 단가 상승</td><td class="c"><span class="tag a">중간</span></td></tr>
+            <tr><td class="l">분양가(보수 가정 → 상방 여지)</td><td class="c"><span class="tag g">낮음</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="est">등급은 지표 제시용 상대 표기. 현장보고서(하길리 404)는 대상지(장짐리 228-1)와 3.4km 이격 → 별개 건 가능, 원용 주의.</div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+<!-- 12 종합결론 -->
+<section class="slide">
+  <div class="shead"><div class="skick">Final Conclusion</div><div class="stitle">종합 결론 — <b>사업이익 실현 가능</b></div><div class="srule"></div></div>
+  <div class="sbody">
+    <div class="eq">
+      <div class="t"><div class="lab">분양성 (독립검증)</div><div class="v" style="font-size:22px">확인</div><div class="u">실거래·시장조사 수렴</div></div>
+      <div class="op">+</div>
+      <div class="t"><div class="lab">사업성 (엑셀 항등식)</div><div class="v" style="font-size:22px">확인</div><div class="u">이익 989억·잔차0</div></div>
+      <div class="op">=</div>
+      <div class="t hl"><div class="lab">사업이익 실현 가능 범위</div><div class="v" style="font-size:23px">989~1,700억</div><div class="u">보수 → 적정가 [추정]</div></div>
+    </div>
+    <div class="row fill">
+      <div class="card" style="flex:1.15">
+        <h3>결론 요지</h3>
+        <ul class="clean">
+          <li><b>분양성</b> — 국토부 실거래(신축 1,904만/평)와 시장조사(1,530)가 사업수지 가정(1,400)이 보수적임을 확인. 분양 즉시 프리미엄 여력.</li>
+          <li><b>사업성</b> — 총수입−지출 = 사업이익 <b>989억</b>(수익률 10.8%), 적정가 반영 시 약 1,700억 상방.</li>
+          <li><b>실행 조건</b> — 인허가 변경 승인·PF 금리/시공사 확정 시 상기 지표 유지 가능.</li>
+        </ul>
+      </div>
+      <div class="col" style="flex:1">
+        <div class="seal gr" style="align-self:flex-start">검토 결과 · 분양성·사업성 확인</div>
+        <div class="call warn"><span class="t">한계·전제</span>제공 원자료·공공데이터 기준의 지표 제시. 인허가·금융·공사비 확정 전이며, 확정값으로 재검증 시 수치 변동 가능. 본 검토는 <b>지표 제시</b>이며 투자 권유가 아님.</div>
+      </div>
+    </div>
+  </div>
+  <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
+</section>
+
+</body>
+</html>
