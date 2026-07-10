@@ -1,0 +1,380 @@
+<title>강화 화도면 내리 3필지 지적 검토</title>
+<style>
+:root{
+  --paper:#F4F1EA; --surface:#FBFAF6; --ink:#212B31; --muted:#6C7681; --faint:#95948C;
+  --line:#DED8CB; --line2:#C9C2B2;
+  --dae:#C24A2A;      /* 대지 */
+  --myo:#7C63A6;      /* 묘지 */
+  --road:#5E86A0;     /* 도로 */
+  --good:#3E7C59; --warn:#B8862B; --crit:#B5482E;
+  --accent:#C24A2A;
+  --shadow:0 1px 2px rgba(40,30,15,.06),0 6px 20px rgba(40,30,15,.05);
+  --mono:ui-monospace,"Cascadia Code","JetBrains Mono","D2Coding",monospace;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#12161A; --surface:#1A2026; --ink:#E9E4DA; --muted:#93A0AC; --faint:#6B7681;
+  --line:#2A323A; --line2:#39434C;
+  --dae:#E27A55; --myo:#A98FD6; --road:#7FA9C4;
+  --good:#5CA87B; --warn:#D6A94E; --crit:#E0725A; --accent:#E27A55;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 26px rgba(0,0,0,.35);
+}}
+:root[data-theme="light"]{
+  --paper:#F4F1EA; --surface:#FBFAF6; --ink:#212B31; --muted:#6C7681; --faint:#95948C;
+  --line:#DED8CB; --line2:#C9C2B2; --dae:#C24A2A; --myo:#7C63A6; --road:#5E86A0;
+  --good:#3E7C59; --warn:#B8862B; --crit:#B5482E; --accent:#C24A2A;
+  --shadow:0 1px 2px rgba(40,30,15,.06),0 6px 20px rgba(40,30,15,.05);
+}
+:root[data-theme="dark"]{
+  --paper:#12161A; --surface:#1A2026; --ink:#E9E4DA; --muted:#93A0AC; --faint:#6B7681;
+  --line:#2A323A; --line2:#39434C; --dae:#E27A55; --myo:#A98FD6; --road:#7FA9C4;
+  --good:#5CA87B; --warn:#D6A94E; --crit:#E0725A; --accent:#E27A55;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 26px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+  line-height:1.6;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum" 0}
+.wrap{max-width:1180px;margin:0 auto;padding:34px 22px 80px}
+.tnum{font-variant-numeric:tabular-nums;font-family:var(--mono)}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:700}
+h1{font-size:clamp(26px,4vw,40px);line-height:1.12;margin:.28em 0 .18em;letter-spacing:-.01em;text-wrap:balance;font-weight:800}
+h1 .adr{font-family:var(--mono);font-weight:700}
+.sub{color:var(--muted);font-size:16px;max-width:60ch}
+header{position:relative}
+.tbtn{position:absolute;top:2px;right:0;background:var(--surface);border:1px solid var(--line2);
+  color:var(--muted);border-radius:999px;padding:7px 13px;font:600 12px/1 var(--sans);cursor:pointer}
+.tbtn:hover{color:var(--ink);border-color:var(--accent)}
+.tbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:26px 0 8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:15px 16px;box-shadow:var(--shadow)}
+.stat .k{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700}
+.stat .v{font-size:25px;font-weight:800;margin-top:5px;letter-spacing:-.01em}
+.stat .v small{font-size:14px;color:var(--muted);font-weight:600}
+.stat.warnbox .v{color:var(--warn)}
+
+.grid{display:grid;grid-template-columns:1.55fr 1fr;gap:16px;margin-top:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow)}
+.card .hd{padding:14px 18px 0}
+.card .hd h2{margin:0;font-size:15px;letter-spacing:.02em}
+.card .hd .note{color:var(--faint);font-size:12px;margin-top:2px}
+.mapwrap{padding:12px}
+svg.map{width:100%;height:auto;display:block;background:
+  repeating-linear-gradient(0deg,transparent 0 39px,color-mix(in srgb,var(--line) 45%,transparent) 39px 40px),
+  repeating-linear-gradient(90deg,transparent 0 39px,color-mix(in srgb,var(--line) 45%,transparent) 39px 40px);
+  border-radius:8px;border:1px solid var(--line)}
+polygon.p{transition:fill .12s,stroke-width .12s;cursor:default}
+polygon.other{fill:var(--surface);stroke:var(--line2);stroke-width:.8}
+polygon.road{fill:color-mix(in srgb,var(--road) 26%,transparent);stroke:var(--road);stroke-width:.8}
+polygon.dae{fill:color-mix(in srgb,var(--dae) 30%,transparent);stroke:var(--dae);stroke-width:2.4}
+polygon.myo{fill:color-mix(in srgb,var(--myo) 30%,transparent);stroke:var(--myo);stroke-width:2.4}
+polygon.p:hover{fill:color-mix(in srgb,var(--accent) 42%,transparent)}
+line.front{stroke:var(--good);stroke-width:5;stroke-linecap:round;opacity:.92}
+.plabel{font:700 12px var(--sans);fill:var(--ink);pointer-events:none;paint-order:stroke;
+  stroke:var(--surface);stroke-width:3px}
+.mtag{font:700 10px var(--sans);fill:var(--crit);pointer-events:none;paint-order:stroke;stroke:var(--surface);stroke-width:3px}
+.legend{display:flex;flex-wrap:wrap;gap:12px 16px;padding:12px 16px 4px;font-size:12.5px;color:var(--muted)}
+.legend b{color:var(--ink);font-weight:600}
+.sw{display:inline-block;width:13px;height:13px;border-radius:3px;vertical-align:-2px;margin-right:5px;border:1px solid rgba(0,0,0,.15)}
+.scalebar{display:flex;align-items:center;gap:8px;padding:2px 16px 14px;color:var(--faint);font-size:11.5px}
+.scalebar .bar{height:6px;border:1px solid var(--ink);border-top:none;background:linear-gradient(90deg,var(--ink) 50%,transparent 50%)}
+
+#tip{position:fixed;pointer-events:none;z-index:20;background:var(--ink);color:var(--paper);
+  padding:7px 10px;border-radius:8px;font-size:12px;box-shadow:var(--shadow);opacity:0;transition:opacity .1s;max-width:220px}
+#tip b{font-size:13px}#tip .r{color:color-mix(in srgb,var(--paper) 70%,transparent);font-family:var(--mono)}
+
+.findings{display:flex;flex-direction:column;gap:10px;padding:14px 16px 18px}
+.f{border-left:3px solid var(--line2);padding:9px 12px;background:color-mix(in srgb,var(--paper) 60%,transparent);border-radius:0 8px 8px 0}
+.f.crit{border-color:var(--crit)} .f.warn{border-color:var(--warn)} .f.good{border-color:var(--good)}
+.f .t{font-weight:700;font-size:13.5px;display:flex;align-items:center;gap:7px}
+.f .d{font-size:12.5px;color:var(--muted);margin-top:3px}
+.pill{font:700 10px/1 var(--sans);padding:3px 7px;border-radius:999px;letter-spacing:.04em}
+.pill.crit{background:color-mix(in srgb,var(--crit) 18%,transparent);color:var(--crit)}
+.pill.warn{background:color-mix(in srgb,var(--warn) 20%,transparent);color:var(--warn)}
+.pill.good{background:color-mix(in srgb,var(--good) 18%,transparent);color:var(--good)}
+
+section.blk{margin-top:34px}
+section.blk>h2{font-size:19px;letter-spacing:-.01em;margin:0 0 4px;display:flex;align-items:baseline;gap:9px}
+section.blk>h2 .n{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
+section.blk>.lead{color:var(--muted);font-size:14px;margin:0 0 16px}
+
+.tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}
+table{border-collapse:collapse;width:100%;min-width:640px;background:var(--surface);font-size:13.5px}
+th,td{padding:11px 13px;text-align:right;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left}
+thead th{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);background:color-mix(in srgb,var(--paper) 50%,transparent)}
+tbody tr:last-child td{border-bottom:none}
+tbody tr.tot td{font-weight:800;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+td .jm{display:inline-block;padding:2px 8px;border-radius:6px;font-weight:700;font-size:12px}
+td .jm.dae{background:color-mix(in srgb,var(--dae) 18%,transparent);color:var(--dae)}
+td .jm.myo{background:color-mix(in srgb,var(--myo) 20%,transparent);color:var(--myo)}
+
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:6px}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 14px;box-shadow:var(--shadow);position:relative}
+.step .n{font-family:var(--mono);font-size:12px;color:var(--accent);font-weight:700}
+.step .t{font-weight:700;font-size:14px;margin:3px 0 4px}
+.step .d{font-size:12px;color:var(--muted)}
+.step .arm{position:absolute;right:-8px;top:50%;color:var(--line2);font-size:16px;z-index:1}
+
+.lots{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.lot{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:var(--surface);box-shadow:var(--shadow)}
+.lot .h{display:flex;justify-content:space-between;align-items:baseline}
+.lot .h .name{font-weight:800;font-size:16px}
+.lot .h .sz{font-family:var(--mono);font-weight:700;color:var(--accent)}
+.lot .src{font-size:12px;color:var(--muted);margin-top:6px}
+.lot .price{margin-top:9px;padding-top:9px;border-top:1px dashed var(--line2);font-size:13px}
+.lot .price b{font-size:17px}
+.callout{background:color-mix(in srgb,var(--warn) 12%,transparent);border:1px solid color-mix(in srgb,var(--warn) 35%,transparent);
+  border-radius:12px;padding:14px 16px;font-size:13.5px;margin-top:14px}
+.callout b{color:var(--warn)}
+.pricegrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:8px}
+.pc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:var(--shadow)}
+.pc .m{font-size:12px;color:var(--faint);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.pc .b{font-size:15px;font-weight:800;margin:4px 0}
+.pc .s{font-size:12.5px;color:var(--muted)}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--faint);font-size:12px}
+footer code{font-family:var(--mono);color:var(--muted)}
+.disc{color:var(--faint);font-size:11.5px;margin-top:8px}
+@media (max-width:820px){.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr 1fr}.lots,.pricegrid{grid-template-columns:1fr}.step .arm{display:none}}
+</style>
+
+<div class="wrap">
+<header>
+  <button class="tbtn" id="tbtn" aria-label="테마 전환">◐ 테마</button>
+  <div class="eyebrow">지적 실측 검토 · VWorld 연속지적도 API</div>
+  <h1>강화 화도면 내리 <span class="adr">144-1 · 140-1 · 140-3</span><br>전원주택부지 3분할 타당성 진단</h1>
+  <p class="sub">국토교통부 공간정보(VWorld) 연속지적도에서 3필지와 주변 118개 필지를 실측 취득해 <b>형상·면적·도로접함·지목</b>을 진단했습니다. 아래 지도는 실제 지적 경계입니다.</p>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<div class="grid">
+  <div class="card">
+    <div class="hd"><h2>실측 지적도 <span style="color:var(--faint);font-weight:500">(마우스를 필지에 올리면 상세)</span></h2></div>
+    <div class="mapwrap"><svg class="map" id="svg" preserveAspectRatio="xMidYMid meet"></svg></div>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--dae)"></i><b>144-1 대지</b></span>
+      <span><i class="sw" style="background:var(--myo)"></i><b>140-1·140-3 묘지</b></span>
+      <span><i class="sw" style="background:var(--road)"></i>도로·구거</span>
+      <span><i class="sw" style="background:var(--surface);border-color:var(--line2)"></i>주변 필지</span>
+      <span><i class="sw" style="background:var(--good)"></i>도로 접함(프론티지)</span>
+    </div>
+    <div class="scalebar"><span>축척</span><span class="bar" id="sbar"></span><span id="sbarlbl">50 m</span></div>
+  </div>
+
+  <div class="card">
+    <div class="hd"><h2>핵심 진단</h2><div class="note">매각 성립을 좌우하는 3가지</div></div>
+    <div class="findings">
+      <div class="f good"><div class="t"><span class="pill good">지목</span>지목만 묘지 · 실제 분묘 없음(현장확인)</div>
+        <div class="d">140-1·140-3은 지목이 <b>묘(墓)</b>지만 <b>실제 분묘 없음</b>이 현장 확인됨 → <b>개장·이장 불요, 분묘기지권 리스크 없음</b>. <b>지목변경(묘지→대/전)</b>만으로 전원주택부지 전환 가능(절차·비용 대폭 단축).</div></div>
+      <div class="f crit"><div class="t"><span class="pill crit">진입</span>140-1은 맹지</div>
+        <div class="d">140-1(55평)은 <b>도로 접함 0m</b>. 단독 획지 불가 → 인접 필지와 합쳐 진입로를 공유해야 함.</div></div>
+      <div class="f warn"><div class="t"><span class="pill warn">진입</span>140-3 도로 2.7m</div>
+        <div class="d">140-3(289평)은 도로 접함이 <b>2.7m</b>뿐 → 건축 진입(통상 4m↑) 부족. <b>144-1의 도로변(42m)을 관통하는 공유 진입로</b> 확보가 관건.</div></div>
+      <div class="f good"><div class="t"><span class="pill good">우량</span>144-1은 도로변 대지</div>
+        <div class="d">144-1(212평)은 <b>이미 대지 + 도로 42m 접함</b>. 3획지 중 가장 상품성 높고, 뒤 필지 진입로의 출발점.</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="blk">
+  <h2><span class="n">01</span>필지별 실측 제원</h2>
+  <p class="lead">면적은 연속지적도 폴리곤 기준 산출값(공부 면적과 ±오차 가능), 공시지가는 2025년 기준.</p>
+  <div class="tblwrap"><table id="ptbl">
+    <thead><tr><th>지번</th><th>지목</th><th>면적(㎡)</th><th>면적(평)</th><th>공시지가(원/㎡)</th><th>공시 총액(원)</th><th>도로 접함</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <p class="disc">※ 공시지가 총액은 시장가가 아닌 과세·하한 기준 참고치입니다. 실제 매매가는 아래 산정 방법으로 별도 검토합니다.</p>
+</section>
+
+<section class="blk">
+  <h2><span class="n">02</span>분할 방법 — 실무 순서</h2>
+  <p class="lead">지목이 묘지이고 뒤 필지가 맹지이므로, 단순 지적분할이 아니라 아래 순서를 밟아야 “깔끔한 3획지”가 나옵니다.</p>
+  <div class="steps">
+    <div class="step"><div class="n">STEP 1</div><div class="t">현황·경계 측량</div><div class="d"><b>분묘 없음 확인됨(이장 불요)</b>. 지적측량으로 경계·도로 확정, 규제 저촉 확인.</div><div class="arm">→</div></div>
+    <div class="step"><div class="n">STEP 2</div><div class="t">진입로 확보</div><div class="d">144-1 도로변(42m)에서 뒤로 <b>4m↑ 공유 진입로</b> 설계. 476-5 구거 점용 병행 검토.</div><div class="arm">→</div></div>
+    <div class="step"><div class="n">STEP 3</div><div class="t">개발행위허가</div><div class="d">형질변경·지목변경(묘지→대). 강화군 조례 분할 최소면적 준수.</div><div class="arm">→</div></div>
+    <div class="step"><div class="n">STEP 4</div><div class="t">합병 후 재분할</div><div class="d">3필지 합병 → 도로·형상 최적화한 <b>3획지 균등 재분할</b>(지적측량).</div><div class="arm">→</div></div>
+    <div class="step"><div class="n">STEP 5</div><div class="t">대지조성·매각</div><div class="d">성·복토, 상하수·전기 인입 후 <b>대지</b>로 매각(회전율↑).</div></div>
+  </div>
+  <div class="callout"><b>주의</b> — 화도면(마니산·갯벌 인접, 접경지역)은 <b>군사시설보호·문화재(역사문화환경)·습지·비오톱</b> 규제가 중첩될 수 있습니다. STEP 진입 전 <b>토지이용계획확인원 1장</b>으로 저촉 여부를 먼저 확정하세요.</div>
+</section>
+
+<section class="blk">
+  <h2><span class="n">03</span>3획지 분할 개념안</h2>
+  <p class="lead">실측 폴리곤을 래스터 계산해 <b>면적 균등(각 ≈185평)</b>으로 자른 분할도입니다. 남측 도로에서 <b>공유 진입로</b>가 올라가며 A·B·C 모두 접도. <b>측량·토목설계 전 개념</b>으로, 실제 분할선은 지적측량으로 확정합니다.</p>
+  <div class="card" style="padding:14px;margin-bottom:14px">
+    <svg id="splitmap" style="width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--line);border-radius:8px" role="img" aria-label="면적 균등 분할도"></svg>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--dae)"></i>144-1 대</span>
+      <span><i class="sw" style="background:var(--myo)"></i>140 묘(분묘없음)</span>
+      <span><i class="sw" style="background:var(--wood,#C98A52)"></i>공유 진입로 4m</span>
+      <span><span style="display:inline-block;width:16px;border-top:2px dashed var(--accent);vertical-align:3px"></span> 분할선(면적균등)</span>
+    </div>
+  </div>
+  <div class="lots">
+    <div class="lot"><div class="h"><span class="name">획지 A</span><span class="sz">≈185평</span></div>
+      <div class="src">144-1 도로변부 (대지·기존 도로 42m 직접 접함) — <b>즉시 상품성 최상</b></div>
+      <div class="price">추정 <b>1.7~2.3억</b> <span style="color:var(--muted)">평당 90~125만</span></div></div>
+    <div class="lot"><div class="h"><span class="name">획지 B</span><span class="sz">≈185평</span></div>
+      <div class="src">144-1 후면 + 140-3 일부 — 공유 진입로 접함. 지목변경 대상(분묘 없음)</div>
+      <div class="price">추정 <b>1.4~1.9억</b> <span style="color:var(--muted)">평당 78~105만</span></div></div>
+    <div class="lot"><div class="h"><span class="name">획지 C</span><span class="sz">≈185평</span></div>
+      <div class="src">140-3 후면 + 140-1(맹지 해소) — 진입로 끝단. 지목변경 대상(분묘 없음)</div>
+      <div class="price">추정 <b>1.3~1.7억</b> <span style="color:var(--muted)">평당 68~90만</span></div></div>
+  </div>
+  <div class="callout" style="background:color-mix(in srgb,var(--good) 10%,transparent);border-color:color-mix(in srgb,var(--good) 32%,transparent)">
+    <b style="color:var(--good)">3획지 합산 매각가 밴드 ≈ 4.4억 ~ 5.9억</b> (총 555.5평). <b>국토부 실거래 853건(24개월) 반영</b> — 내리(內里) 대·전 52건 중앙 <b>평당 84만원</b>(하위 56~상위 126만). <b>분묘 없음 확인으로 이장비가 빠져</b> 개발원가가 낮아지고 순가치는 상방입니다. <b>진입로·토목·인입 비용</b>과 <b>마니산/바다 조망 유무</b>가 ±20% 이상 좌우합니다.
+  </div>
+</section>
+
+<section class="blk">
+  <h2><span class="n">04</span>매매가 산정 방법 (3각 검증)</h2>
+  <p class="lead">세 방법을 교차 검증했습니다. <b>국토부 실거래 853건(화도면·24개월)</b>을 반영해 밴드를 확정했고, 잔여 변수는 조성·조망·현장 상태입니다.</p>
+  <div class="pricegrid">
+    <div class="pc"><div class="m">① 비교사례법 <span style="color:var(--good)">✓실측</span></div><div class="b">내리 대·전 중앙 84만/평</div><div class="s">국토부 실거래 853건 중 <b>내리 대·전 52건</b> 기준 하위56·중앙84·상위126만/평. 계획관리 지목 대 90만·전 70만.</div></div>
+    <div class="pc"><div class="m">② 공시지가 배율법 <span style="color:var(--good)">✓실측</span></div><div class="b">공시 대비 약 1.9배</div><div class="s">144-1 공시 44만/평 → 내리 대 실거래 중앙 84만/평 = <b>배율 1.9배</b>. 공시총액 <span class="tnum" id="gosiInline"></span>원.</div></div>
+    <div class="pc"><div class="m">③ 원가법(개발자관점)</div><div class="b">원가+조성비+이윤</div><div class="s">매입원가 + 인허가·진입로·토목·인입 + 이윤 = <b>매각 최저선</b>. <b>분묘 없어 이장비 0</b> → 원가 경감.</div></div>
+  </div>
+</section>
+
+<section class="blk">
+  <h2><span class="n">05</span>“분묘 없는 묘지” 사실확인</h2>
+  <p class="lead">‘분묘 없는 묘지가 감정평가를 높게 받고 건축 제한이 없어 경매에서 인기’라는 통설을 공식 자료로 검증했습니다. — <b>절반은 맞고 절반은 과장</b>입니다.</p>
+  <div class="findings" style="padding:0;gap:10px">
+    <div class="f good"><div class="t"><span class="pill good">사실</span>분묘 있는 땅은 저평가·기피된다</div>
+      <div class="d">타인 분묘가 있으면 <b>분묘기지권</b>(관습법상 물권)이 성립할 수 있어, 토지주가 그 부분을 못 쓰고 이장도 강제 못 함. 경매에서 <b>유찰↑·낙찰가↓·경쟁률↓</b>. → 뒤집으면 <b>“분묘 없는(이장 완료) 묘지”는 이 하자가 없어 상대적으로 유리</b>하다는 건 <b>맞습니다.</b></div></div>
+    <div class="f crit"><div class="t"><span class="pill crit">과장</span>“감정평가를 높게 받는다”</div>
+      <div class="d">묘지 지목 자체는 <b>대지·전보다 평가액이 낮은</b> 게 일반적(본 건도 묘지 47천~71천/㎡ vs 대지 133천/㎡). 정확히는 <b>“분묘 있는 묘지보다 높다”</b>일 뿐, 절대적으로 높은 게 아닙니다.</div></div>
+    <div class="f crit"><div class="t"><span class="pill crit">틀림</span>“건축행위·제한이 없다”</div>
+      <div class="d">묘지에 집을 지으려면 <b>개발행위허가 + 지목변경(묘지→대)</b>이 필수(지목변경 시 취득세 부과). 분묘가 없으면 <b>이장 절차가 생략돼 절차·비용이 가벼워질 뿐</b>, ‘제한 없음’은 아닙니다.</div></div>
+    <div class="f warn"><div class="t"><span class="pill warn">참고</span>2021 대법원 판례 변경</div>
+      <div class="d">시효취득한 분묘기지권자도 <b>토지주가 청구하면 지료(사용료)를 내야 함</b>(대법원 2021.4.29. 2017다228007 전합). 장사법상 분묘 설치기간은 <b>30년(+1회 30년 연장)</b>, 무연분묘는 <b>공고 후 개장</b> 절차.</div></div>
+  </div>
+  <div class="callout" style="background:color-mix(in srgb,var(--good) 10%,transparent);border-color:color-mix(in srgb,var(--good) 32%,transparent)"><b style="color:var(--good)">본 건 = 최상 시나리오(ⓐ)</b> — 140-1·140-3은 <b>지목만 묘지, 실제 분묘 없음(현장 확인 완료)</b>. 따라서 개장·이장·분묘기지권 이슈가 <b>전혀 없고</b>, <b>지목변경(묘지→대/전)만으로</b> 전원주택부지로 전환됩니다. 위 ‘과장/틀림’ 항목의 감가 요인이 본 건엔 적용되지 않아 가치·매각성이 계획관리 대지 수준에 근접합니다.</div>
+</section>
+
+<footer>
+  <div>데이터 출처: <code>VWorld 연속지적도(LP_PA_CBND_BUBUN)·용도지역(LT_C_UQ112)·getcoord</code> · 공시지가 2025 · 실거래 <code>data.go.kr RTMSDataSvcLandTrade</code> 화도면 853건/24개월 · 법적근거 <code>장사 등에 관한 법률</code>, 대법원 2021.4.29. 2017다228007 전합, 법제처 찾기쉬운 생활법령 · 스크립트 <code>fetch_parcels/neighbors_map/build_report.py</code></div>
+  <div class="disc">본 자료는 공개 지적·공시 데이터 기반 <b>사전 검토</b>입니다. 실제 분할·건축·매각은 지적측량·토지이용계획확인원·현장 분묘조사·강화군청 인허가 협의를 거쳐 확정해야 합니다. 면적은 연속지적도 폴리곤 계산값으로 공부(公簿) 면적과 다를 수 있습니다.</div>
+</footer>
+</div>
+
+<div id="tip"></div>
+<script>
+/*__DATA__*/
+const $=s=>document.querySelector(s), NS="http://www.w3.org/2000/svg";
+const won=n=>n.toLocaleString('ko-KR');
+
+// 통계 타일
+$('#stats').innerHTML=[
+  ['총 면적',`${DATA.summary.totalPyeong}<small> 평</small>`,`${won(DATA.summary.totalM2)}㎡ · 3필지`,''],
+  ['용도지역','계획관리','건폐율40%·용적100%·건축가능',''],
+  ['공시지가 총액',`${(DATA.summary.gosiTotal/1e8).toFixed(2)}<small> 억원</small>`,`2025년 기준(시장가 아님)`,''],
+  ['핵심 과제','지목변경2·맹지1','분묘 없음 확인 → 이장 불요',' warnbox'],
+].map(([k,v,s,c])=>`<div class="stat${c}"><div class="k">${k}</div><div class="v">${v}</div><div class="s" style="font-size:12px;color:var(--muted);margin-top:2px">${s}</div></div>`).join('');
+$('#gosiInline').textContent=won(DATA.summary.gosiTotal);
+
+// SVG 지도
+const svg=$('#svg'); svg.setAttribute('viewBox',DATA.viewBox);
+const order={other:0,road:1,target:2};
+DATA.parcels.slice().sort((a,b)=>order[a.cls]-order[b.cls]).forEach(p=>{
+  const el=document.createElementNS(NS,'polygon');
+  el.setAttribute('points',p.pts.map(q=>q.join(',')).join(' '));
+  let cls='p '+(p.cls==='target'?(p.jimok==='대'?'dae':'myo'):p.cls);
+  el.setAttribute('class',cls);
+  el.addEventListener('mousemove',e=>showTip(e,p));
+  el.addEventListener('mouseleave',hideTip);
+  svg.appendChild(el);
+});
+// 프론티지(도로접함) 선
+(DATA.frontage||[]).forEach(f=>{
+  const l=document.createElementNS(NS,'line');
+  l.setAttribute('x1',f.x1);l.setAttribute('y1',f.y1);l.setAttribute('x2',f.x2);l.setAttribute('y2',f.y2);
+  l.setAttribute('class','front');svg.appendChild(l);
+});
+// 라벨
+DATA.parcels.filter(p=>p.cls==='target').forEach(p=>{
+  const xs=p.pts.map(q=>q[0]),ys=p.pts.map(q=>q[1]);
+  const cx=xs.reduce((a,b)=>a+b)/xs.length, cy=ys.reduce((a,b)=>a+b)/ys.length;
+  const t=document.createElementNS(NS,'text');
+  t.setAttribute('x',cx);t.setAttribute('y',cy);t.setAttribute('text-anchor','middle');
+  t.setAttribute('class','plabel');t.textContent=`${p.label}·${p.jimok}`;
+  svg.appendChild(t);
+  const t2=document.createElementNS(NS,'text');
+  t2.setAttribute('x',cx);t2.setAttribute('y',cy+15);t2.setAttribute('text-anchor','middle');
+  t2.setAttribute('class','plabel');t2.setAttribute('style','font-size:10px;fill:var(--muted)');
+  t2.textContent=`${p.pyeong}평`; svg.appendChild(t2);
+});
+// 맹지 태그(140-1)
+const m1=DATA.parcels.find(p=>p.label==='140-1');
+if(m1){const xs=m1.pts.map(q=>q[0]),ys=m1.pts.map(q=>q[1]);
+  const t=document.createElementNS(NS,'text');
+  t.setAttribute('x',xs.reduce((a,b)=>a+b)/xs.length);t.setAttribute('y',ys.reduce((a,b)=>a+b)/ys.length+28);
+  t.setAttribute('text-anchor','middle');t.setAttribute('class','mtag');t.textContent='⚠ 맹지';svg.appendChild(t);}
+
+// 축척바
+$('#sbar').style.width=DATA.summary.scaleBar_px+'px';
+$('#sbarlbl').textContent=DATA.summary.scaleBar_m+' m';
+
+// 툴팁
+const tip=$('#tip');
+function showTip(e,p){
+  const road=(DATA.frontage||[]).filter(f=>f.label===p.label);
+  const front=road.length?`도로접함 ${road.reduce((a,b)=>a+b.len,0).toFixed(1)}m`:(p.cls==='target'?'도로 미접(맹지)':'');
+  tip.innerHTML=`<b>${p.jibun||p.label||'필지'}</b> <span class="r">${p.jimokFull}</span><br>`+
+    `<span class="r">${won(p.area)}㎡ · ${p.pyeong}평</span>`+(front?`<br><span class="r">${front}</span>`:'');
+  tip.style.opacity=1;
+  const pad=14;let x=e.clientX+pad,y=e.clientY+pad;
+  if(x+230>innerWidth)x=e.clientX-230;
+  tip.style.left=x+'px';tip.style.top=y+'px';
+}
+function hideTip(){tip.style.opacity=0}
+
+// 필지 테이블
+const tb=$('#ptbl tbody');
+const tgs=DATA.parcels.filter(p=>p.cls==='target').sort((a,b)=>a.label.localeCompare(b.label));
+const GOSI={'144-1':133100,'140-1':46700,'140-3':70700};
+const FRONT={'144-1':'42.0m ✅','140-1':'0m ⚠ 맹지','140-3':'2.7m ⚠'};
+let tot={a:0,p:0,g:0};
+tgs.forEach(p=>{const g=GOSI[p.label]||0,gt=Math.round(p.area*g);tot.a+=p.area;tot.p+=p.pyeong;tot.g+=gt;
+  const cls=p.jimok==='대'?'dae':'myo';
+  tb.insertAdjacentHTML('beforeend',`<tr><td><b>${p.label}</b></td>
+    <td style="text-align:left"><span class="jm ${cls}">${p.jimokFull}</span></td>
+    <td class="tnum">${won(p.area)}</td><td class="tnum">${p.pyeong}</td>
+    <td class="tnum">${won(g)}</td><td class="tnum">${won(gt)}</td>
+    <td style="text-align:left">${FRONT[p.label]||'—'}</td></tr>`);});
+tb.insertAdjacentHTML('beforeend',`<tr class="tot"><td>합계</td><td></td>
+  <td class="tnum">${won(tot.a)}</td><td class="tnum">${tot.p.toFixed(1)}</td>
+  <td></td><td class="tnum">${won(tot.g)}</td><td></td></tr>`);
+
+// 면적 균등 분할도
+(function(){const s=DATA.split; if(!s)return; const el=$('#splitmap'); el.setAttribute('viewBox',s.viewBox);
+  const mk=(t,a,txt)=>{const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);if(txt!=null)e.textContent=txt;el.appendChild(e);return e;};
+  const vb=s.viewBox.split(' ').map(Number),W=vb[2],H=vb[3];
+  // 도로 표식(남측=하단)
+  mk('rect',{x:0,y:H-14,width:W,height:14,fill:'color-mix(in srgb,var(--road) 40%,transparent)'});
+  mk('text',{x:W/2,y:H-3,'text-anchor':'middle','font-size':10,fill:'var(--muted)'},'기존 간선도로(1896) · 프론티지 42m ▲');
+  // 진입로
+  mk('polygon',{points:s.driveway.map(p=>p.join(',')).join(' '),fill:'#C98A52',opacity:.85});
+  // 필지 외곽
+  s.parcels.forEach(p=>{mk('polygon',{points:p.pts.map(q=>q.join(',')).join(' '),
+    fill:p.jimok==='대'?'color-mix(in srgb,var(--dae) 22%,transparent)':'color-mix(in srgb,var(--myo) 22%,transparent)',
+    stroke:p.jimok==='대'?'var(--dae)':'var(--myo)','stroke-width':1.6});});
+  // 분할선(점선)
+  s.cutlines.forEach(c=>mk('line',{x1:c[0],y1:c[1],x2:c[2],y2:c[3],stroke:'var(--accent)','stroke-width':2.4,'stroke-dasharray':'7 5'}));
+  // 획지 라벨+면적
+  s.lots.forEach(l=>{mk('text',{x:l.cx,y:l.cy-4,'text-anchor':'middle','font-size':17,'font-weight':800,fill:'var(--ink)',
+      style:'paint-order:stroke;stroke:var(--surface);stroke-width:4px'},'획지 '+l.label);
+    mk('text',{x:l.cx,y:l.cy+14,'text-anchor':'middle','font-size':12,'font-weight':700,fill:'var(--accent)',
+      style:'paint-order:stroke;stroke:var(--surface);stroke-width:3px'},l.pyeong+'평');});
+})();
+
+// 테마 토글
+const root=document.documentElement;
+$('#tbtn').addEventListener('click',()=>{
+  const cur=root.getAttribute('data-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+  root.setAttribute('data-theme',cur==='dark'?'light':'dark');
+});
+</script>
