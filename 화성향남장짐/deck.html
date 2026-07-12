@@ -9,10 +9,12 @@
   * { box-sizing: border-box; margin:0; padding:0; }
   html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   :root{
-    --ink:#21262d; --navy:#1b2738; --navy2:#2a3a55;
-    --gold:#b3873a; --gold-d:#8f6a2b; --gold-l:#f3ecdc; --gold-b:#d8c191;
-    --paper:#ffffff; --mut:#656565; --line:#dfdfdf; --soft:#f5f5f5;
-    --blue:#2f6fb0; --red:#c0392b; --amber:#c98a1a; --green:#1e8e5a;
+    /* Option2 하이브리드: 블루 라이트 + 골드 최소(헤더 엣지만). Brandlogy 무드 반영 */
+    --ink:#222222; --navy:#17263a; --navy2:#2a3f5a;
+    --gold:#b3873a; --gold-d:#96702a; --gold-l:#f6efe0; --gold-b:#d8c191;
+    --blue:#1456f0; --blue-d:#1d4ed8; --blue-l:#eef4ff; --blue-b:#bfdbfe; --sky:#3b82f6;
+    --paper:#ffffff; --mut:#8e8e93; --line:#e5e7eb; --soft:#f7f9fc;
+    --red:#c0392b; --amber:#c98a1a; --green:#16a34a;
   }
   body{ font-family:"Pretendard","Malgun Gothic",sans-serif; color:var(--ink); background:#5b6675; font-weight:400;
     counter-reset:slidepg; word-break:keep-all; overflow-wrap:break-word; -webkit-font-smoothing:antialiased; }
@@ -20,62 +22,63 @@
     page-break-after:always; margin:0 auto 6mm; padding:13mm 15mm 10mm;
     display:flex; flex-direction:column; counter-increment:slidepg; }
   .shead{ flex:0 0 auto; margin:-13mm -15mm 13px -15mm; padding:12mm 15mm 11px 15mm; position:relative;
-    background:linear-gradient(105deg,#16212f 0%,#26384f 56%,#1a2636 100%); border-bottom:2px solid var(--gold); }
+    background:#fff; border-bottom:1px solid var(--line); }
   .shead::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px;
     background:linear-gradient(180deg,var(--gold) 0%,var(--gold-d) 100%); }
-  .skick{ font-size:11px; letter-spacing:4px; color:var(--gold-b); font-weight:800; text-transform:uppercase; }
-  .stitle{ font-size:27px; font-weight:800; color:#f3f6fb; margin-top:4px; line-height:1.16; letter-spacing:-.3px; }
-  .stitle b{ color:#e6c884; }
-  .srule{ width:54px; height:4px; background:var(--gold); margin:10px 0 0; border-radius:2px; }
+  .skick{ font-size:11px; letter-spacing:4px; color:var(--blue); font-weight:800; text-transform:uppercase; }
+  .stitle{ font-size:27px; font-weight:800; color:var(--navy); margin-top:4px; line-height:1.16; letter-spacing:-.3px; }
+  .stitle b{ color:#1456f0; }
+  .srule{ width:54px; height:4px; background:var(--blue); margin:10px 0 0; border-radius:2px; }
   .sbody{ flex:1 1 auto; display:flex; flex-direction:column; justify-content:center; gap:13px; min-height:0; }
   .sbody.top{ justify-content:flex-start; }
   .sfoot{ flex:0 0 auto; display:flex; align-items:center; justify-content:space-between;
-    border-top:1px solid var(--gold-l); padding-top:6px; margin-top:9px; font-size:10px; color:var(--mut); }
-  .sfoot .cf{ color:var(--gold); font-weight:800; letter-spacing:2px; }
+    border-top:1px solid var(--blue-l); padding-top:6px; margin-top:9px; font-size:10px; color:var(--mut); }
+  .sfoot .cf{ color:var(--blue); font-weight:800; letter-spacing:2px; }
   .sfoot .pg{ color:var(--navy); font-weight:800; }
   .sfoot .pg::after{ content: counter(slidepg, decimal-leading-zero); }
 
-  .cover{ padding:0; color:#fff; justify-content:flex-end;
-    background:radial-gradient(120% 90% at 82% 18%, #26384f 0%, #1b2738 52%, #131e2c 100%); }
+  .cover{ padding:0; color:var(--ink); justify-content:flex-end;
+    background:linear-gradient(120deg,#ffffff 0%,var(--blue-l) 60%,#f3f7fc 100%); }
   .cover .edge{ position:absolute; left:0; top:0; bottom:0; width:7px; z-index:2;
     background:linear-gradient(180deg,var(--gold) 0%,var(--gold-d) 100%); }
   .cover .tex{ position:absolute; inset:0; z-index:0;
-    background:repeating-linear-gradient(90deg, rgba(255,255,255,.02) 0 1px, transparent 1px 70px),
-      repeating-linear-gradient(0deg, rgba(255,255,255,.02) 0 1px, transparent 1px 70px); }
-  .cover .wm{ position:absolute; right:20mm; top:14mm; z-index:3; font-size:11px; letter-spacing:3px; color:rgba(230,200,132,.8); font-weight:700; }
+    background:radial-gradient(120% 85% at 84% 14%, rgba(20,86,240,.10) 0%, rgba(20,86,240,0) 48%),
+      repeating-linear-gradient(90deg, rgba(19,38,63,.025) 0 1px, transparent 1px 70px),
+      repeating-linear-gradient(0deg, rgba(19,38,63,.025) 0 1px, transparent 1px 70px); }
+  .cover .wm{ position:absolute; right:20mm; top:14mm; z-index:3; font-size:11px; letter-spacing:3px; color:var(--blue); font-weight:700; }
   .cover .cnt{ position:relative; z-index:3; padding:0 24mm 22mm; }
-  .cover .ck{ color:var(--gold-b); letter-spacing:6px; font-size:13px; font-weight:800; }
-  .cover h1{ font-size:40px; font-weight:800; line-height:1.2; margin:14px 0 0; color:#fff; letter-spacing:-.5px; }
-  .cover h1 b{ color:var(--gold-b); }
-  .cover .cr{ width:76px; height:4px; background:var(--gold); margin:18px 0 16px; border-radius:2px; }
-  .cover .cs{ font-size:16px; line-height:1.7; color:#e7ecf3; }
-  .cover .cm{ font-size:12.5px; line-height:1.9; margin-top:12px; color:#aeb8c6; }
-  .cover .cbadge{ display:inline-block; border:1px solid var(--gold-b); color:#fff; background:rgba(179,135,58,.18);
+  .cover .ck{ color:var(--blue); letter-spacing:6px; font-size:13px; font-weight:800; }
+  .cover h1{ font-size:40px; font-weight:800; line-height:1.2; margin:14px 0 0; color:var(--navy); letter-spacing:-.5px; }
+  .cover h1 b{ color:var(--blue); }
+  .cover .cr{ width:76px; height:4px; background:var(--blue); margin:18px 0 16px; border-radius:2px; }
+  .cover .cs{ font-size:16px; line-height:1.7; color:#45515e; }
+  .cover .cm{ font-size:12.5px; line-height:1.9; margin-top:12px; color:var(--mut); }
+  .cover .cbadge{ display:inline-block; border:1px solid var(--blue-b); color:var(--blue-d); background:var(--blue-l);
     font-size:12px; font-weight:700; padding:6px 15px; border-radius:18px; margin-top:16px; }
-  .cover .cdisc{ font-size:11px; line-height:1.6; margin-top:13px; color:#8b97a6; max-width:600px; }
+  .cover .cdisc{ font-size:11px; line-height:1.6; margin-top:13px; color:var(--mut); max-width:600px; }
 
   p.body{ font-size:15px; line-height:1.7; color:#2a3445; }
-  .mut{ color:var(--mut); } .gold{ color:var(--gold-d); font-weight:800; }
+  .mut{ color:var(--mut); } .gold{ color:var(--blue-d); font-weight:800; }
   .row{ display:flex; gap:14px; } .row.fill{ flex:1 1 auto; min-height:0; }
   .col{ flex:1; display:flex; flex-direction:column; gap:12px; }
   .lead{ font-size:17px; line-height:1.55; color:var(--navy); font-weight:700; }
-  .lead b{ color:var(--gold-d); }
+  .lead b{ color:var(--blue-d); }
 
   .kpis{ display:flex; gap:13px; }
-  .kpi{ flex:1; border:1px solid var(--line); border-top:3px solid var(--gold); border-radius:11px;
+  .kpi{ flex:1; border:1px solid var(--line); border-top:3px solid var(--blue); border-radius:11px;
     padding:13px 15px; background:#fff; display:flex; flex-direction:column; justify-content:center; }
   .kpi .n{ font-size:28px; font-weight:800; color:var(--navy); line-height:1.05; }
   .kpi .n small{ font-size:15px; font-weight:800; }
   .kpi .l{ font-size:12px; color:var(--mut); margin-top:7px; line-height:1.4; }
-  .kpi.gd .n{ color:var(--gold-d);} .kpi.gr .n{ color:var(--green);}
+  .kpi.gd .n{ color:var(--blue-d);} .kpi.gr .n{ color:var(--green);}
 
   .card{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:13px 16px; }
   .card h3{ font-size:14px; font-weight:800; color:var(--navy); margin:0 0 9px; padding-bottom:7px; border-bottom:1px solid var(--line); }
 
-  .call{ border:1px solid var(--line); border-left:4px solid var(--gold); background:#fff; border-radius:8px; padding:12px 16px;
+  .call{ border:1px solid var(--line); border-left:4px solid var(--blue); background:#fff; border-radius:8px; padding:12px 16px;
     font-size:14px; line-height:1.6; }
   .call.warn{ border-left-color:var(--red); } .call.amber{ border-left-color:var(--amber); background:#fffaf0; }
-  .call.gold{ border-left-color:var(--gold); background:var(--gold-l); }
+  .call.gold{ border-left-color:var(--blue); background:var(--blue-l); }
   .call.ok{ border-left-color:var(--green); background:#f1faf5; }
   .call .t{ font-weight:800; color:var(--navy); font-size:14px; display:block; margin-bottom:5px; }
 
@@ -84,19 +87,19 @@
   th{ color:var(--navy); font-weight:800; text-align:center; font-size:13px; border-bottom:2px solid var(--navy); }
   th.l{text-align:left;} td.l{text-align:left;} td.c{text-align:center;} td.r{text-align:right; font-variant-numeric:tabular-nums;} th.r{text-align:right;}
   tbody tr:nth-child(even){ background:var(--soft); }
-  tr.tot td{ background:var(--gold-l); font-weight:800; color:var(--navy); border-top:2px solid var(--gold); }
-  td.hl{ background:#fbf6ea; font-weight:800; color:var(--gold-d); }
+  tr.tot td{ background:var(--blue-l); font-weight:800; color:var(--navy); border-top:2px solid var(--blue); }
+  td.hl{ background:#eef4ff; font-weight:800; color:var(--blue-d); }
   caption{ caption-side:bottom; text-align:left; font-size:11px; color:var(--mut); padding:7px 2px 0; line-height:1.5; }
 
   ul.clean{ list-style:none; padding:0; }
   ul.clean li{ font-size:14.5px; line-height:1.5; margin:8px 0; padding-left:24px; position:relative; }
-  ul.clean li b{ color:var(--gold-d); }
-  ul.clean li::before{ content:""; position:absolute; left:0; top:6px; width:9px; height:9px; background:var(--gold); border-radius:2px; transform:rotate(45deg); }
+  ul.clean li b{ color:var(--blue-d); }
+  ul.clean li::before{ content:""; position:absolute; left:0; top:6px; width:9px; height:9px; background:var(--blue); border-radius:2px; transform:rotate(45deg); }
 
   .facts{ display:grid; grid-template-columns:1fr 1fr; gap:0 18px; }
   .facts .f{ display:flex; border-bottom:1px solid var(--line); padding:8px 2px; font-size:13.5px; }
   .facts .f.wide{ grid-column:1 / -1; }
-  .facts .f .k{ width:96px; color:var(--gold-d); font-weight:800; flex:0 0 auto; }
+  .facts .f .k{ width:96px; color:var(--blue-d); font-weight:800; flex:0 0 auto; }
   .facts .f .v{ color:#2a3445; }
 
   .tag{ display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:800; padding:3px 9px; border-radius:6px; color:#fff; white-space:nowrap; }
@@ -107,9 +110,9 @@
   .eq .t .lab{ font-size:12.5px; color:var(--mut); font-weight:700; margin-bottom:8px; }
   .eq .t .v{ font-size:28px; font-weight:800; color:var(--navy); font-variant-numeric:tabular-nums; line-height:1; }
   .eq .t .u{ font-size:11.5px; color:var(--mut); margin-top:6px; }
-  .eq .t.hl{ background:var(--gold-l); } .eq .t.hl .v{ color:var(--gold-d); }
-  .eq .op{ flex:0 0 40px; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:900; color:#e6c884; background:var(--navy); }
-  .seal{ display:inline-flex; align-items:center; gap:8px; border:2px solid var(--gold); color:var(--gold-d); background:var(--gold-l);
+  .eq .t.hl{ background:var(--blue-l); } .eq .t.hl .v{ color:var(--blue-d); }
+  .eq .op{ flex:0 0 40px; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:900; color:#1456f0; background:var(--navy); }
+  .seal{ display:inline-flex; align-items:center; gap:8px; border:2px solid var(--blue); color:var(--blue-d); background:var(--blue-l);
     font-weight:800; font-size:13.5px; padding:8px 16px; border-radius:30px; }
   .seal.gr{ border-color:var(--green); color:#177a4b; background:#f1faf5; }
 
@@ -117,17 +120,17 @@
   .bar{ display:grid; grid-template-columns:150px 1fr 150px; align-items:center; gap:11px; font-size:13px; }
   .bar .bl{ font-weight:800; color:var(--navy); }
   .bar .bt{ height:20px; background:var(--soft); border-radius:5px; overflow:hidden; }
-  .bar .bf{ display:block; height:100%; min-width:3px; background:linear-gradient(90deg,#2a3a55,#1b2738); border-radius:5px; }
-  .bar.gold .bf{ background:linear-gradient(90deg,var(--gold-b),var(--gold-d)); }
+  .bar .bf{ display:block; height:100%; min-width:3px; background:linear-gradient(90deg,#3b82f6,#1456f0); border-radius:5px; }
+  .bar.gold .bf{ background:linear-gradient(90deg,var(--blue-b),var(--blue-d)); }
   .bar.gr .bf{ background:linear-gradient(90deg,#4bbд88,#1e8e5a); background:linear-gradient(90deg,#5bc48d,#1e8e5a); }
   .bar .bv{ text-align:right; font-variant-numeric:tabular-nums; color:#2a3445; }
-  .bar .bv b{ color:var(--navy); } .bar .bv .pc{ color:var(--gold-d); font-weight:800; margin-left:7px; }
+  .bar .bv b{ color:var(--navy); } .bar .bv .pc{ color:var(--blue-d); font-weight:800; margin-left:7px; }
 
   .figbox{ border:1px solid var(--line); border-radius:9px; overflow:hidden; background:#fff; display:flex; flex-direction:column; }
   .figbox img{ width:100%; height:100%; object-fit:cover; display:block; }
   .figbox .cap{ font-size:12px; color:var(--mut); padding:7px 11px; border-top:1px solid var(--line); background:var(--soft); }
   .figbox .cap b{ color:var(--navy); }
-  .est{ font-size:11px; color:var(--gold-d); background:#fdf8ee; border:1px solid #ecdcb4; border-radius:6px; padding:6px 11px; }
+  .est{ font-size:11px; color:var(--blue-d); background:#fdf8ee; border:1px solid #ecdcb4; border-radius:6px; padding:6px 11px; }
 </style>
 </head>
 <body>
@@ -293,25 +296,19 @@
 
 <!-- 07 분양성 독립검증 -->
 <section class="slide">
-  <div class="shead"><div class="skick">Independent Verification</div><div class="stitle">분양성 <b>독립 검증</b> — 국토부 실거래</div><div class="srule"></div></div>
+  <div class="shead"><div class="skick">Independent Verification</div><div class="stitle">분양성 <b>독립 검증</b> — 적정분양가 산출 논리</div><div class="srule"></div></div>
   <div class="sbody">
-    <div class="row fill" style="align-items:flex-start">
-      <div class="card" style="flex:1.25">
-        <h3>향남읍 84㎡ 실거래 평단가 (최근 12개월, 매매)</h3>
-        <table class="tight">
-          <thead><tr><th class="l">단지</th><th class="c">준공</th><th class="r">평단가(만원)</th><th class="r">매매가</th></tr></thead>
-          <tbody>
-            <tr><td class="l hl">한양수자인디에스티지 (2024, 945세대)</td><td class="c">2024</td><td class="r hl">1,904</td><td class="r">4.90억</td></tr>
-            <tr><td class="l">모아미래도에듀파크 서봉4단지</td><td class="c">2018</td><td class="r">1,801</td><td class="r">4.63억</td></tr>
-            <tr><td class="l">서봉마을 모아엘가</td><td class="c">2015</td><td class="r">1,693</td><td class="r">4.35억</td></tr>
-            <tr><td class="l">향남지구 우미린</td><td class="c">2008</td><td class="r">1,557</td><td class="r">4.00억</td></tr>
-          </tbody>
-          <caption>출처: 국토교통부 실거래가 신고(만세구, 향남읍 368건 중 84㎡대). 신축일수록 고가.</caption>
-        </table>
-      </div>
+    <div class="kpis">
+      <div class="kpi"><div class="n">1,904<small>만/평</small></div><div class="l">인근 최신 신축 실거래<br>(2024 한양수자인, 전용기준)</div></div>
+      <div class="kpi"><div class="n">×0.80<small>~0.82</small></div><div class="l">분양–매매 통상 갭<br>(신축 프리미엄 반영)</div></div>
+      <div class="kpi gd"><div class="n">~1,550<small>만/평</small></div><div class="l">나의 독립 적정분양가<br>[추정] · 시장조사 1,530과 수렴</div></div>
+      <div class="kpi gr"><div class="n">1,400<small>만/평</small></div><div class="l">엑셀 분양가 가정<br>(권위값 · 보수)</div></div>
+    </div>
+    <div class="row fill">
+      <div class="call ok" style="flex:1"><span class="t">산출 논리 (독립 검증)</span>국토부 실거래(향남읍 84㎡ 매매 368건, 최근 12개월)에서 인근 최신 신축(2024) 전용 평단가 <b>1,904만</b>을 확인 → 분양–매매 통상 갭 <b>0.80~0.82</b> 적용 → 독립 적정분양가 <b>약 1,550만/평</b>. 외부 시장조사(리버티랜드) <b>1,530</b>과 수렴해 상호 검증.</div>
       <div class="col" style="flex:1">
-        <div class="call ok"><span class="t">나의 적정분양가 산출</span>인근 최신 신축(2024) 실거래 <b>1,904만/평</b> × 분양–매매 통상 갭(0.80~0.82) ≈ <b>1,530~1,560만/평</b>. → 나의 독립 적정분양가 <b>약 1,550만/평</b> [추정].</div>
-        <div class="call gold"><span class="t">흡수(분양성) 판정</span>공급기준 정합 시 분양가 <b>1,400</b> ≈ 인근 신축 매매시세(~1,410), 적정분양가 <b>1,530</b> 대비 −8.5%(상방 여력 ~9%). 매매 활발·공급부족과 결합해 흡수력 양호. <span class="mut">전용기준 실거래(1,900대)와의 직접 비교는 기준 상이.</span></div>
+        <div class="call gold"><span class="t">흡수(분양성) 판정</span>공급기준 정합 시 분양가 <b>1,400</b> ≈ 인근 신축 매매시세(~1,410), 적정가 <b>1,530</b> 대비 −8.5%(상방 여력 ~9%). 3년 공급부족·매매 활발과 결합해 흡수력 양호.</div>
+        <div class="call warn"><span class="t">기준 유의</span>실거래(1,904)는 <b>전용기준</b>, 분양가·적정가는 <b>공급기준</b> — 직접 비교는 기준 상이. 거리순 정량 비교는 <b>다음 장(인근 실거래 비교표)</b> 참조.</div>
       </div>
     </div>
   </div>
@@ -320,28 +317,29 @@
 
 <!-- 07b 인근 실거래 비교표(거리순) -->
 <section class="slide">
-  <div class="shead"><div class="skick">Comparable Sales · 거리순</div><div class="stitle">인근 실거래 <b>비교표</b> — 장짐리 반경 4km · 7개 단지</div><div class="srule"></div></div>
+  <div class="shead"><div class="skick">Comparable Sales · 거리순</div><div class="stitle">인근 실거래 <b>비교표</b> — 지도 번호 연동 · 7개 단지</div><div class="srule"></div></div>
   <div class="sbody">
-    <table class="tight">
-      <thead><tr>
-        <th class="l">사업장 (단지)</th><th class="c">준공</th><th class="r">거리(km)</th>
-        <th class="r">전용(㎡)</th><th class="r">공급(㎡)</th>
-        <th class="r">평단가<br>전용(만원)</th><th class="r">평단가<br>공급환산(만원)</th>
-      </tr></thead>
-      <tbody>
-        <tr><td class="l"><b>장짐마을 신성발안 미소지움</b> <span class="mut">· 현장 인접</span></td><td class="c">2005</td><td class="r">0.2</td><td class="r">85.0</td><td class="r">114.8</td><td class="r">1,031</td><td class="r">763</td></tr>
-        <tr><td class="l">향남지구 우미린</td><td class="c">2008</td><td class="r">1.2</td><td class="r">85.0</td><td class="r">114.8</td><td class="r">1,557</td><td class="r">1,152</td></tr>
-        <tr><td class="l">향남지웰 2차 (넓은마을)</td><td class="c">2010</td><td class="r">1.4</td><td class="r">84.8</td><td class="r">114.7</td><td class="r">1,451</td><td class="r">1,073</td></tr>
-        <tr><td class="l">살구꽃마을 대방노블랜드</td><td class="c">2008</td><td class="r">1.7</td><td class="r">85.0</td><td class="r">114.8</td><td class="r">1,478</td><td class="r">1,094</td></tr>
-        <tr><td class="l">모아미래도 에듀파크 4단지</td><td class="c">2018</td><td class="r">2.7</td><td class="r">85.0</td><td class="r">114.9</td><td class="r">1,801</td><td class="r">1,333</td></tr>
-        <tr><td class="l">서봉마을 모아엘가</td><td class="c">2015</td><td class="r">3.0</td><td class="r">85.0</td><td class="r">114.8</td><td class="r">1,693</td><td class="r">1,253</td></tr>
-        <tr class="tot"><td class="l">향남역 한양수자인 디에스티지 <span class="mut">· 최신 신축</span></td><td class="c">2024</td><td class="r">4.2</td><td class="r">85.0</td><td class="r">114.9</td><td class="r">1,904</td><td class="r">1,409</td></tr>
-      </tbody>
-      <caption>출처: 국토교통부 실거래가(만세구 향남읍, 최근 12개월, 84㎡대 매매 중위). 거리 = 장짐리 228-1 직선거리(Kakao 좌표). 공급면적·공급환산 평단가 = 전용률 74% 가정 [추정]. 준공·역세권일수록 고가.</caption>
-    </table>
+    <div class="row fill" style="align-items:stretch; gap:14px;">
+      <div class="figbox" style="flex:1.02"><img src="map_comps.png" style="object-fit:contain; background:#eef1f5;"><div class="cap"><b>인근 실거래 비교사례 지도</b> — 핀 번호 = 우측 표 № 번호. <b>빨강</b>=본 사업지 · <b>파랑 1~7</b>=비교단지(거리순).</div></div>
+      <div class="col" style="flex:1.32; gap:8px;">
+        <table class="tight">
+          <thead><tr><th class="c">№</th><th class="l">단지</th><th class="c">준공</th><th class="r">거리<br>km</th><th class="r">평단가<br>전용</th><th class="r">평단가<br>공급환산</th></tr></thead>
+          <tbody>
+            <tr><td class="c"><b>1</b></td><td class="l"><b>미소지움</b> <span class="mut">·현장인접</span></td><td class="c">2005</td><td class="r">0.2</td><td class="r">1,031</td><td class="r">763</td></tr>
+            <tr><td class="c">2</td><td class="l">향남지구 우미린</td><td class="c">2008</td><td class="r">1.2</td><td class="r">1,557</td><td class="r">1,152</td></tr>
+            <tr><td class="c">3</td><td class="l">향남지웰 2차</td><td class="c">2010</td><td class="r">1.4</td><td class="r">1,451</td><td class="r">1,073</td></tr>
+            <tr><td class="c">4</td><td class="l">대방노블랜드</td><td class="c">2008</td><td class="r">1.7</td><td class="r">1,478</td><td class="r">1,094</td></tr>
+            <tr><td class="c">5</td><td class="l">모아에듀파크 4단지</td><td class="c">2018</td><td class="r">2.7</td><td class="r">1,801</td><td class="r">1,333</td></tr>
+            <tr><td class="c">6</td><td class="l">서봉마을 모아엘가</td><td class="c">2015</td><td class="r">3.0</td><td class="r">1,693</td><td class="r">1,253</td></tr>
+            <tr class="tot"><td class="c"><b>7</b></td><td class="l">향남역 한양수자인 <span class="mut">·최신신축</span></td><td class="c">2024</td><td class="r">4.2</td><td class="r">1,904</td><td class="r">1,409</td></tr>
+          </tbody>
+          <caption>국토부 실거래(향남읍 84㎡ 매매 중위, 12개월). 전용 ≈85㎡·공급 ≈114.8㎡(전용률 74% 가정[추정]). 평단가 만원/평.</caption>
+        </table>
+      </div>
+    </div>
     <div class="row" style="gap:12px;">
-      <div class="call ok" style="flex:1;"><span class="t">분양단가 검토 — 기준 일치 시</span>실거래 평단가는 <b>전용기준</b>(신축 1,900대), 분양가는 통상 <b>공급기준</b>. 같은 공급기준으로 맞추면 인근 신축 매매 ≈ <b>1,330~1,410만/평</b> → 본 사업 분양가 가정 <b>1,400</b>은 현 신축 <b>매매시세와 대등</b>. 시장조사 적정 <b>1,530</b> 대비 −8.5%(상방 여력 ~9%).</div>
-      <div class="call gold" style="flex:0 0 40%;"><span class="t">판정 · 확인필요</span>분양성 <b>우호 유지</b> — 적정분양가(1,530) 반영 시 이익 상방. 다만 기존 "실거래 대비 −26% 즉시 프리미엄"은 전용·공급 <b>기준 혼용</b> 결과 → 공급기준으론 <b>시세 근접</b>이 보수적. <b>[확인필요]</b> 엑셀 분양가 1,400의 면적기준(전용/공급).</div>
+      <div class="call ok" style="flex:1;"><span class="t">분양단가 검토 — 기준 일치 시</span>실거래는 <b>전용기준</b>(신축 1,900대), 분양가는 <b>공급기준</b>. 같은 공급기준이면 인근 신축 매매 ≈ <b>1,330~1,410만/평</b> → 분양가 가정 <b>1,400</b>은 신축 <b>매매시세와 대등</b>, 시장조사 적정 <b>1,530</b> 대비 −8.5%.</div>
+      <div class="call gold" style="flex:0 0 40%;"><span class="t">판정 · 확인필요</span>분양성 <b>우호 유지</b>(적정가 반영 시 상방). "실거래 대비 −26% 프리미엄"은 기준 혼용 결과 → 공급기준으론 <b>시세 근접</b>. <b>[확인필요]</b> 엑셀 분양가 1,400 면적기준(전용/공급).</div>
     </div>
   </div>
   <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>

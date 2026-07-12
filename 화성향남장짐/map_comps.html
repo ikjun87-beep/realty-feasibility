@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>인근 실거래 비교사례 — 거리순 7개 (장짐리 228-1)</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+  *{box-sizing:border-box;} html,body{margin:0;height:100%;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#21262d;}
+  :root{--navy:#1b2738;--navy2:#2a3a55;--gold:#b3873a;--gold-d:#8f6a2b;--red:#c0392b;--mut:#656565;--line:#dfdfdf;}
+  #wrap{position:relative;width:1500px;height:940px;overflow:hidden;}
+  #map{position:absolute;inset:0;background:#eef1f5;}
+  .leaflet-container{font-family:inherit;}
+  .card{position:absolute;z-index:1000;background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:12px;}
+  .title{left:20px;top:20px;padding:16px 20px 15px;max-width:430px;border-top:4px solid var(--gold);}
+  .title .kick{font-size:11px;letter-spacing:3px;color:var(--gold-d);font-weight:800;}
+  .title h1{font-size:20px;margin:6px 0 0;color:var(--navy);font-weight:800;letter-spacing:-0.5px;line-height:1.25;}
+  .title .sub{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.5;}
+  .legend{right:20px;top:20px;padding:14px 18px;width:340px;}
+  .legend h2{font-size:12px;margin:0 0 9px;color:var(--navy);font-weight:800;}
+  .li{display:flex;align-items:center;gap:9px;margin:6px 0;}
+  .li .pn{flex:0 0 20px;height:20px;border-radius:50%;color:#fff;font-size:11px;font-weight:800;text-align:center;line-height:20px;background:var(--navy2);}
+  .li.site .pn{background:var(--red);}
+  .li .tx{font-size:11.5px;line-height:1.3;} .li .tx b{color:var(--navy);} .li .tx span{color:var(--gold-d);font-weight:700;}
+  .pin{position:relative;}
+  .pin .num{position:absolute;left:0;right:0;top:9px;text-align:center;font-weight:800;font-size:12px;color:#1b2738;}
+  .pin.big .num{font-size:13px;top:15px;color:#c0392b;}
+  .halo{width:56px;height:56px;border-radius:50%;background:rgba(192,57,43,.22);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
+  .leaflet-tooltip.nm{background:var(--navy);border:none;color:#fff;font-weight:700;font-size:12px;padding:3px 10px;border-radius:7px;}
+  .leaflet-tooltip.nm::before{border-top-color:var(--navy);}
+</style></head>
+<body><div id="wrap"><div id="map"></div>
+  <div class="card title"><div class="kick">COMPARABLE SALES · 거리순</div><h1>인근 실거래 비교사례 — 7개 단지</h1>
+    <div class="sub">본 사업지(장짐리 228-1) 기준 직선거리순 · 국토부 실거래 84㎡ 매매(최근 12개월)</div></div>
+  <div class="card legend"><h2>범례 (번호 = 비교표 행 번호)</h2>
+    <div class="li site"><span class="pn">본</span><span class="tx"><b>장짐리 228-1</b> — 본 사업(1,885세대)</span></div>
+    <div class="li"><span class="pn">1</span><span class="tx"><b>미소지움</b> <span>2005·0.2km·1,031</span></span></div>
+    <div class="li"><span class="pn">2</span><span class="tx"><b>우미린</b> <span>2008·1.2km·1,557</span></span></div>
+    <div class="li"><span class="pn">3</span><span class="tx"><b>향남지웰2차</b> <span>2010·1.4km·1,451</span></span></div>
+    <div class="li"><span class="pn">4</span><span class="tx"><b>대방노블랜드</b> <span>2008·1.7km·1,478</span></span></div>
+    <div class="li"><span class="pn">5</span><span class="tx"><b>모아에듀파크4</b> <span>2018·2.7km·1,801</span></span></div>
+    <div class="li"><span class="pn">6</span><span class="tx"><b>모아엘가</b> <span>2015·3.0km·1,693</span></span></div>
+    <div class="li"><span class="pn">7</span><span class="tx"><b>한양수자인</b> <span>2024·4.2km·1,904</span></span></div>
+  </div>
+</div>
+<script>
+const SITE={n:"장짐리 228-1 (본 사업)", ll:[37.139655,126.911075]};
+const PLACES=[
+  {num:1, n:"장짐마을 신성발안 미소지움", pr:"준공 2005 · 0.2km · 전용 1031만/평", ll:[37.137645,126.910997], by:2005, ppe:1031, pps:763},
+  {num:2, n:"향남지구 우미린", pr:"준공 2008 · 1.2km · 전용 1557만/평", ll:[37.129780,126.917179], by:2008, ppe:1557, pps:1152},
+  {num:3, n:"향남지웰 2차", pr:"준공 2010 · 1.4km · 전용 1451만/평", ll:[37.128763,126.919605], by:2010, ppe:1451, pps:1073},
+  {num:4, n:"살구꽃마을 대방노블랜드", pr:"준공 2008 · 1.7km · 전용 1478만/평", ll:[37.130151,126.925303], by:2008, ppe:1478, pps:1094},
+  {num:5, n:"모아미래도 에듀파크 4단지", pr:"준공 2018 · 2.7km · 전용 1801만/평", ll:[37.116402,126.903460], by:2018, ppe:1801, pps:1333},
+  {num:6, n:"서봉마을 모아엘가", pr:"준공 2015 · 3.0km · 전용 1693만/평", ll:[37.112688,126.913296], by:2015, ppe:1693, pps:1253},
+  {num:7, n:"향남역 한양수자인", pr:"준공 2024 · 4.2km · 전용 1904만/평", ll:[37.102213,126.903123], by:2024, ppe:1904, pps:1409},
+];
+const base=L.tileLayer('https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{maxZoom:20,crossOrigin:true,attribution:'© CARTO · OpenStreetMap'});
+const map=L.map('map',{zoomControl:false,attributionControl:true}); base.addTo(map);
+L.control.scale({imperial:false,position:'bottomright'}).addTo(map);
+function pinIcon(num,color,big){const w=big?42:31,h=big?54:41;const halo=big?'<div class="halo"></div>':'';
+  const svg=`<svg width="${w}" height="${h}" viewBox="0 0 30 40"><path d="M15 0C6.7 0 0 6.7 0 15c0 10.5 13 23.5 14.2 24.6a1.1 1.1 0 0 0 1.6 0C17 38.5 30 25.5 30 15 30 6.7 23.3 0 15 0z" fill="${color}" stroke="#fff" stroke-width="2"/><circle cx="15" cy="15" r="6.5" fill="rgba(255,255,255,.92)"/></svg>`;
+  return L.divIcon({className:'',html:`<div class="pin ${big?'big':''}">${halo}${svg}<span class="num">${num}</span></div>`,iconSize:[w,h],iconAnchor:[w/2,h],tooltipAnchor:[0,-h+8]});}
+const lls=[];
+L.marker(SITE.ll,{icon:pinIcon('본','#c0392b',true)}).addTo(map).bindTooltip(SITE.n,{className:'nm',direction:'top'}); lls.push(SITE.ll);
+L.circle(SITE.ll,{radius:500,color:'#c0392b',weight:1.3,dashArray:'5 5',fill:false,opacity:.8}).addTo(map);
+PLACES.forEach(p=>{L.marker(p.ll,{icon:pinIcon(p.num,'#2a3a55',false)}).addTo(map).bindTooltip(p.num+'. '+p.n,{className:'nm',direction:'top'}); lls.push(p.ll);});
+map.fitBounds(lls,{paddingTopLeft:[90,120],paddingBottomRight:[90,60],maxZoom:15});
+base.on('load',()=>{window.__MAP_TILES_DONE=true;});
+</script></body></html>
