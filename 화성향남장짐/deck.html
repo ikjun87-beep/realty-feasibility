@@ -70,7 +70,7 @@
   .kpi .n{ font-size:28px; font-weight:800; color:var(--navy); line-height:1.05; }
   .kpi .n small{ font-size:15px; font-weight:800; }
   .kpi .l{ font-size:12px; color:var(--mut); margin-top:7px; line-height:1.4; }
-  .kpi.gd .n{ color:var(--blue-d);} .kpi.gr .n{ color:var(--green);}
+  .kpi.gd .n{ color:var(--blue-d);} .kpi.gr .n{ color:var(--green);} .kpi.gr{ border-top-color:var(--green);} .kpi.rd .n{ color:var(--red);} .kpi.rd{ border-top-color:var(--red);}
 
   .card{ background:#fff; border:1px solid var(--line); border-radius:10px; padding:13px 16px; }
   .card h3{ font-size:14px; font-weight:800; color:var(--navy); margin:0 0 9px; padding-bottom:7px; border-bottom:1px solid var(--line); }
@@ -143,7 +143,7 @@
     <div class="ck">경기 화성특례시 · 향남읍 장짐리 228-1</div>
     <h1>향남 장짐지구 <b>공동주택</b> 신축사업<br>분양성 · 사업성 검토</h1>
     <div class="cr"></div>
-    <div class="cs">공동주택 1,885세대 · 대지 32,059평 · 사업이익 약 989억(엑셀) — 분양성 독립검증 결과 사업성 확인</div>
+    <div class="cs">공동주택 1,885세대 · 대지 32,059평 · 사업이익 약 989억(엑셀) — 분양성 독립검증 — 지표상 우호</div>
     <div class="cm">시장조사보고서(리버티랜드)·PF대출 IM(부국증권)·사업수지(혼합형 토지신탁 VER13) + 국토교통부 실거래가 독립검증</div>
     <span class="cbadge">검토본 · 지표 기반 결론</span>
     <div class="cdisc">본 자료는 제공 원자료와 공공데이터에 근거한 지표 제시이며, 인허가·금융조건 확정을 전제로 함. 확정 전 값은 [추정]·[확인필요]로 표기. 검토기준 2026.</div>
@@ -152,7 +152,7 @@
 
 <!-- 02 검토 결론 (양산식·선제시) -->
 <section class="slide">
-  <div class="shead"><div class="skick">Conclusion First</div><div class="stitle">검토 결과 — <b>분양성·사업성 확인</b></div><div class="srule"></div></div>
+  <div class="shead"><div class="skick">Conclusion First</div><div class="stitle">검토 결과 — <b>분양성·사업성 지표 우호</b></div><div class="srule"></div></div>
   <div class="sbody">
     <div class="lead">독립 검증(국토부 실거래) 및 시장조사가 <b>적정분양가 1,530~1,550만원/평</b>을 지지하고, 사업수지 가정(1,400만원/평)은 이보다 보수적이다. 엑셀 항등식 기준 <b>사업이익 약 989억</b>이며, 적정가 반영 시 상방 여력이 있다.</div>
     <div class="kpis">
@@ -286,8 +286,16 @@
           <li><b>거래 활발</b> — 최근 12개월 향남읍 아파트 매매 368건(국토부 신고)</li>
         </ul>
       </div>
-      <div class="call amber" style="flex:.9; align-self:center">
-        <span class="t">신뢰도</span>유효수요 3,800세대·종사자 3.4만·통근율 62%는 시장조사 인용값 [추정]. 매매 368건·평당가 상승은 국토부 실거래 확인값.
+      <div class="col" style="flex:.95">
+        <div class="card" style="flex:1">
+          <h3>수급 전망 — 공급자 우위 (약 3년)</h3>
+          <ul class="clean">
+            <li>화성시 연평균 소진 <b>약 8,000세대</b> → 대상지 1,885세대 = 전체 <b>약 23%</b></li>
+            <li>입주물량 부족(부족−): '26 <b>−5,134</b> · '27 <b>−7,689</b> · '28 −5,123세대</li>
+            <li>면적 거래비중 61~85㎡ <b>66.4%</b> → 84·59㎡ 중심 상품과 부합</li>
+          </ul>
+        </div>
+        <div class="call"><span class="t">신뢰도</span>유효수요 3,800·종사자 3.4만·통근율 62%는 시장조사 인용값 <b>[추정]</b>. 매매 368건·평당가 상승은 국토부 실거래 <b>확인값</b>.</div>
       </div>
     </div>
   </div>
@@ -305,9 +313,9 @@
       <div class="kpi gr"><div class="n">1,400<small>만/평</small></div><div class="l">엑셀 분양가 가정<br>(권위값 · 보수)</div></div>
     </div>
     <div class="row fill">
-      <div class="call ok" style="flex:1"><span class="t">산출 논리 (독립 검증)</span>국토부 실거래(향남읍 84㎡ 매매 368건, 최근 12개월)에서 인근 최신 신축(2024) 전용 평단가 <b>1,904만</b>을 확인 → 분양–매매 통상 갭 <b>0.80~0.82</b> 적용 → 독립 적정분양가 <b>약 1,550만/평</b>. 외부 시장조사(리버티랜드) <b>1,530</b>과 수렴해 상호 검증.</div>
+      <div class="call ok" style="flex:1; display:flex; flex-direction:column; justify-content:center"><span class="t">산출 논리 (독립 검증)</span>국토부 실거래(향남읍 84㎡ 매매 368건, 최근 12개월)에서 인근 최신 신축(2024) 전용 평단가 <b>1,904만</b>을 확인 → 분양–매매 통상 갭 <b>0.80~0.82</b> 적용 → 독립 적정분양가 <b>약 1,550만/평</b>. 외부 시장조사(리버티랜드) <b>1,530</b>과 수렴해 상호 검증.</div>
       <div class="col" style="flex:1">
-        <div class="call gold"><span class="t">흡수(분양성) 판정</span>공급기준 정합 시 분양가 <b>1,400</b> ≈ 인근 신축 매매시세(~1,410), 적정가 <b>1,530</b> 대비 −8.5%(상방 여력 ~9%). 3년 공급부족·매매 활발과 결합해 흡수력 양호.</div>
+        <div class="call ok"><span class="t">흡수(분양성) 판정</span>분양가 <b>1,400</b>은 매출 역산상 <b>공급기준 확정</b> → 인근 신축 매매시세(공급환산 ~1,410)와 대등, 적정가 <b>1,530</b> 대비 −8.5%(상방 여력 ~9%). 3년 공급부족·매매 활발과 결합해 흡수력 양호.</div>
         <div class="call warn"><span class="t">기준 유의</span>실거래(1,904)는 <b>전용기준</b>, 분양가·적정가는 <b>공급기준</b> — 직접 비교는 기준 상이. 거리순 정량 비교는 <b>다음 장(인근 실거래 비교표)</b> 참조.</div>
       </div>
     </div>
@@ -333,13 +341,13 @@
             <tr><td class="c">6</td><td class="l">서봉마을 모아엘가</td><td class="c">2015</td><td class="r">3.0</td><td class="r">1,693</td><td class="r">1,253</td></tr>
             <tr class="tot"><td class="c"><b>7</b></td><td class="l">향남역 한양수자인 <span class="mut">·최신신축</span></td><td class="c">2024</td><td class="r">4.2</td><td class="r">1,904</td><td class="r">1,409</td></tr>
           </tbody>
-          <caption>국토부 실거래(향남읍 84㎡ 매매 중위, 12개월). 전용 ≈85㎡·공급 ≈114.8㎡(전용률 74% 가정[추정]). 평단가 만원/평.</caption>
+          <caption>국토부 실거래(향남읍 84㎡ 매매 중위, 12개월). 전용 ≈85㎡·공급 ≈114.8㎡(전용률 74.4% — 본사업 84형 매출 역산 확인). 평단가 만원/평. 구축 comp는 참고시세, 벤치마크는 신축(№5·7).</caption>
         </table>
       </div>
     </div>
     <div class="row" style="gap:12px;">
       <div class="call ok" style="flex:1;"><span class="t">분양단가 검토 — 기준 일치 시</span>실거래는 <b>전용기준</b>(신축 1,900대), 분양가는 <b>공급기준</b>. 같은 공급기준이면 인근 신축 매매 ≈ <b>1,330~1,410만/평</b> → 분양가 가정 <b>1,400</b>은 신축 <b>매매시세와 대등</b>, 시장조사 적정 <b>1,530</b> 대비 −8.5%.</div>
-      <div class="call gold" style="flex:0 0 40%;"><span class="t">판정 · 확인필요</span>분양성 <b>우호 유지</b>(적정가 반영 시 상방). "실거래 대비 −26% 프리미엄"은 기준 혼용 결과 → 공급기준으론 <b>시세 근접</b>. <b>[확인필요]</b> 엑셀 분양가 1,400 면적기준(전용/공급).</div>
+      <div class="call ok" style="flex:0 0 40%;"><span class="t">판정 · 기준 확정</span>분양성 <b>우호</b>(적정가 반영 시 상방). 엑셀 매출 역산(84형 4.836억×1,549 + 59형 3.540억×336 = <b>8,680억</b> ≡ 엑셀)으로 <b>분양가 1,400 = 공급기준 확정</b>·전용률 74.4%. "실거래 −26%"는 전용/공급 혼용 착시 — 공급기준 <b>시세 근접</b>이 실제.</div>
     </div>
   </div>
   <div class="sfoot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg"></span></div>
@@ -415,7 +423,7 @@
 <section class="slide">
   <div class="shead"><div class="skick">Financing & Risk</div><div class="stitle">자금 구조 · <b>PF · 리스크</b></div><div class="srule"></div></div>
   <div class="sbody">
-    <div class="row fill" style="align-items:flex-start">
+    <div class="row fill">
       <div class="card" style="flex:1.05">
         <h3>PF · 신탁 구조</h3>
         <div class="facts">
@@ -448,14 +456,14 @@
 
 <!-- 12 종합결론 -->
 <section class="slide">
-  <div class="shead"><div class="skick">Final Conclusion</div><div class="stitle">종합 결론 — <b>사업이익 실현 가능</b></div><div class="srule"></div></div>
+  <div class="shead"><div class="skick">Final Conclusion</div><div class="stitle">종합 결론 — <b>지표상 사업이익 실현 여력</b></div><div class="srule"></div></div>
   <div class="sbody">
     <div class="eq">
       <div class="t"><div class="lab">분양성 (독립검증)</div><div class="v" style="font-size:22px">확인</div><div class="u">실거래·시장조사 수렴</div></div>
       <div class="op">+</div>
       <div class="t"><div class="lab">사업성 (엑셀 항등식)</div><div class="v" style="font-size:22px">확인</div><div class="u">이익 989억·잔차0</div></div>
       <div class="op">=</div>
-      <div class="t hl"><div class="lab">사업이익 실현 가능 범위</div><div class="v" style="font-size:23px">989~1,700억</div><div class="u">보수 → 적정가 [추정]</div></div>
+      <div class="t hl"><div class="lab">사업이익 실현 여력 범위</div><div class="v" style="font-size:23px">989~1,700억</div><div class="u">보수 → 적정가 [추정]</div></div>
     </div>
     <div class="row fill">
       <div class="card" style="flex:1.15">
@@ -467,7 +475,7 @@
         </ul>
       </div>
       <div class="col" style="flex:1">
-        <div class="seal gr" style="align-self:flex-start">검토 결과 · 분양성·사업성 확인</div>
+        <div class="seal gr" style="align-self:flex-start">검토 결과 · 분양성·사업성 지표 우호</div>
         <div class="call warn"><span class="t">한계·전제</span>제공 원자료·공공데이터 기준의 지표 제시. 인허가·금융·공사비 확정 전이며, 확정값으로 재검증 시 수치 변동 가능. 본 검토는 <b>지표 제시</b>이며 투자 권유가 아님.</div>
       </div>
     </div>
