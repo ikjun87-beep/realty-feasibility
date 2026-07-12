@@ -14,3 +14,6 @@ _ref-proposals/
 **/node_modules
 # 파생 렌더 PNG(HTML에서 재생성 가능)
 **/_render/
+
+# 외부 저작물(@jay.pm.ai 카탈로그) 리스킨본 — 로컬 참조 전용, public 재배포 금지
+시각카탈로그/
