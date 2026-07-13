@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8">
+<title>인근 실거래 비교사례 — 카카오맵 (장짐리 228-1)</title>
+<style>
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css");
+  *{box-sizing:border-box;} html,body{margin:0;height:100%;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#21262d;}
+  :root{--navy:#17263a;--blue:#1456f0;--gold:#b3873a;--gold-d:#8f6a2b;--red:#c0392b;--mut:#656565;--line:#dfdfdf;}
+  #wrap{position:relative;width:1500px;height:940px;overflow:hidden;}
+  #map{position:absolute;inset:0;background:#eef1f5;}
+  .card{position:absolute;z-index:1000;background:rgba(255,255,255,.975);border:1px solid var(--line);border-radius:12px;}
+  .title{left:20px;top:20px;padding:16px 20px 15px;max-width:430px;border-top:4px solid var(--gold);}
+  .title .kick{font-size:11px;letter-spacing:3px;color:var(--gold-d);font-weight:800;}
+  .title h1{font-size:20px;margin:6px 0 0;color:var(--navy);font-weight:800;letter-spacing:-0.5px;line-height:1.25;}
+  .title .sub{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.5;}
+  /* 라벨(오버레이) — deck 톤앤매너 동일: 흰 배경 · 1px 헤어라인 · 그림자 0 */
+  .lb{position:relative;background:rgba(255,255,255,.97);border:1px solid #c9d4e3;
+      border-radius:7px;padding:4px 9px;text-align:center;font-size:12.5px;line-height:1.35;font-weight:700;
+      color:var(--navy);white-space:nowrap;box-shadow:none;}
+  .lb b{display:block;color:var(--blue);font-size:13px;}
+  /* 방향별 배치 — 핀 기준 */
+  .lb.t{transform:translate(-50%,calc(-100% - 44px));}
+  .lb.t::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;
+      border-top-color:#c9d4e3;border-bottom:0;}
+  .lb.r{transform:translate(14px,calc(-100% - 12px));}
+  .lb.l{transform:translate(calc(-100% - 14px),calc(-100% - 12px));}
+  .lb.b{transform:translate(-50%,6px);}
+  .lb.site{border:2px solid var(--red);} .lb.site b{color:var(--red);}
+  .lb.site.t::after{border-top-color:var(--red);}
+  .pin{width:30px;height:40px;transform:translate(-50%,-100%);}
+  .err{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;
+       gap:10px;background:#fff;color:var(--red);font-weight:700;font-size:15px;z-index:2000;}
+  .err small{color:var(--mut);font-weight:400;font-size:13px;}
+</style></head>
+<body><div id="wrap"><div id="map"></div>
+  <div id="err" class="err" style="display:none">카카오맵 JavaScript 키가 필요합니다
+    <small>.kakao_js_key 파일에 JS 키 저장 + 개발자콘솔 플랫폼에 http://localhost:8766 등록</small></div>
+</div>
+<script>
+const SITE={lab:"본 사업지", sub:"장짐리 228-1 · 1,885세대", ll:[37.139655,126.911075]};
+const PLACES=[
+  {num:1, dir:"r", short:"미소지움",      by:2005, ppe:1031, ll:[37.137645,126.910997]},
+  {num:2, dir:"l", short:"우미린",        by:2008, ppe:1557, ll:[37.129780,126.917179]},
+  {num:3, dir:"b", short:"향남지웰2차",   by:2010, ppe:1451, ll:[37.128763,126.919605]},
+  {num:4, dir:"r", short:"대방노블랜드",  by:2008, ppe:1478, ll:[37.130151,126.925303]},
+  {num:5, dir:"l", short:"모아에듀파크4", by:2018, ppe:1801, ll:[37.116402,126.903460]},
+  {num:6, dir:"r", short:"모아엘가",      by:2015, ppe:1693, ll:[37.112688,126.913296]},
+  {num:7, dir:"l", short:"한양수자인",    by:2024, ppe:1904, ll:[37.102213,126.903123]},
+];
+const STATION={lab:"서해선 향남역", sub:"1.89km · 2024 개통", ll:[37.122706,126.912633]};
+
+function pinSVG(num,color){
+  return `<svg class="pin" viewBox="0 0 30 40"><path d="M15 0C6.7 0 0 6.7 0 15c0 10.5 13 23.5 14.2 24.6a1.1 1.1 0 0 0 1.6 0C17 38.5 30 25.5 30 15 30 6.7 23.3 0 15 0z" fill="${color}" stroke="#fff" stroke-width="2"/><circle cx="15" cy="15" r="6.5" fill="#fff"/><text x="15" y="19" text-anchor="middle" font-size="11" font-weight="800" fill="${color}" font-family="Pretendard">${num}</text></svg>`;
+}
+function init(){
+  const map = new kakao.maps.Map(document.getElementById('map'), {
+    center: new kakao.maps.LatLng(37.121, 126.911), level: 7,
+    mapTypeId: kakao.maps.MapTypeId.HYBRID,   // 위성 + 지명/도로 라벨 (카카오 스카이뷰 하이브리드)
+  });
+  const bounds = new kakao.maps.LatLngBounds();
+  const add=(ll,pinHtml,labHtml,cls,zi)=>{
+    const pos=new kakao.maps.LatLng(ll[0],ll[1]); bounds.extend(pos);
+    new kakao.maps.CustomOverlay({map,position:pos,content:pinHtml,xAnchor:0,yAnchor:0,zIndex:zi||3});
+    new kakao.maps.CustomOverlay({map,position:pos,content:`<div class="lb ${cls||'t'}">${labHtml}</div>`,xAnchor:0,yAnchor:0,zIndex:(zi||3)+1});
+  };
+  add(SITE.ll, pinSVG('본','#c0392b'), `<b>${SITE.lab}</b>${SITE.sub}`, 'site t', 20);
+  PLACES.forEach(p=> add(p.ll, pinSVG(p.num,'#1456f0'), `<b>${p.num}. ${p.short}</b>${p.by}·${p.ppe}만`, p.dir||'t'));
+  add(STATION.ll, pinSVG('역','#16a34a'), `<b>${STATION.lab}</b>${STATION.sub}`, 'l');
+  map.setBounds(bounds, 70, 60, 60, 60);
+  // 반경 500m
+  new kakao.maps.Circle({map, center:new kakao.maps.LatLng(SITE.ll[0],SITE.ll[1]), radius:500,
+    strokeWeight:2, strokeColor:'#c0392b', strokeOpacity:.95, strokeStyle:'dashed', fillOpacity:0});
+  kakao.maps.event.addListener(map,'tilesloaded',()=>{ setTimeout(()=>{window.__MAP_TILES_DONE=true;},700); });
+}
+// JS 키는 렌더 스크립트가 주입한다 (아래 상수)
+const KEY="__KAKAO_JS_KEY__";
+if(KEY.startsWith("__")){ document.getElementById('err').style.display='flex'; window.__MAP_TILES_DONE=true; }
+else{
+  const sc=document.createElement('script');
+  sc.src=`https://dapi.kakao.com/v2/maps/sdk.js?appkey=${KEY}&autoload=false`;
+  sc.onload=()=>kakao.maps.load(init);
+  sc.onerror=()=>{document.getElementById('err').style.display='flex'; window.__MAP_TILES_DONE=true;};
+  document.head.appendChild(sc);
+}
+</script></body></html>

@@ -12,6 +12,8 @@
   *{box-sizing:border-box;} html,body{margin:0;height:100%;font-family:"Pretendard","Malgun Gothic",sans-serif;color:#21262d;}
   :root{--navy:#1b2738;--navy2:#2a3a55;--gold:#b3873a;--gold-d:#8f6a2b;--gold-b:#d8c191;--red:#c0392b;--amber:#c98a1a;--green:#1e8e5a;--mut:#656565;--line:#dfdfdf;}
   #wrap{position:relative;width:1500px;height:940px;overflow:hidden;}
+  .leaflet-tile-pane{filter:brightness(1.1) saturate(.78) contrast(.94);}
+  #map::before{content:"";position:absolute;inset:0;z-index:350;pointer-events:none;background:rgba(255,255,255,.34);}
   #map{position:absolute;inset:0;background:#eef1f5;}
   .leaflet-container{font-family:inherit;}
 
@@ -34,8 +36,13 @@
   .pin .num{position:absolute;left:0;right:0;top:6px;text-align:center;font-weight:800;font-size:13px;color:#fff;}
   .pin.big .num{font-size:15px;top:8px;}
   .halo{width:56px;height:56px;border-radius:50%;background:rgba(192,57,43,.22);position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
-  .leaflet-tooltip.nm{background:var(--navy);border:none;color:#fff;font-weight:700;font-size:12px;padding:3px 10px;border-radius:7px;}
-  .leaflet-tooltip.nm::before{border-top-color:var(--navy);}
+  .leaflet-tooltip.nm{background:rgba(255,255,255,.97);border:1px solid #c9d4e3;color:var(--navy);font-weight:700;
+    font-size:12.5px;line-height:1.35;padding:4px 9px;border-radius:7px;text-align:center;box-shadow:none;}
+  .leaflet-tooltip.nm b{color:#1456f0;font-size:13px;}
+  .leaflet-tooltip.nm::before{border-top-color:#c9d4e3;}
+  .leaflet-tooltip.nm.site{border:2px solid var(--red);}
+  .leaflet-tooltip.nm.site b{color:var(--red);}
+  .leaflet-tooltip.nm.site::before{border-top-color:var(--red);}
 </style>
 </head>
 <body>
@@ -46,17 +53,22 @@
 <script>
 // ===== 지점 (Kakao 지오코딩·POI 교차검증 확정) =====
 const PLACES = [
-  {n:"장짐리 228-1 (본 사업)", pr:"공동주택 1,885세대 · 제2종일반주거 · 지번 확정(Kakao)", color:"#c0392b", ll:[37.139655,126.911075], big:true, grp:"대상지"},
-  {n:"향남산업단지", pr:"직주근접 배후수요 · 약 0.2km", color:"#2a3a55", ll:[37.13812,126.91148], grp:"배후·인프라"},
-  {n:"화성고·화성중학교", pr:"교육시설 · 약 0.4km", color:"#1e8e5a", ll:[37.13887,126.90695], grp:"배후·인프라"},
-  {n:"향남읍 행정복지센터", pr:"향남 구도심 상권 · 약 1.2km", color:"#8f6a2b", ll:[37.13243,126.92034], grp:"배후·인프라"},
-  {n:"향남2지구 신도시", pr:"주거인프라 공유 · 약 2.4km", color:"#2f6fb0", ll:[37.11864,126.91539], grp:"배후·인프라"},
+  {n:"장짐리 228-1 (본 사업)", lab:"본 사업지", sub:"1,885세대", dir:"top", color:"#c0392b", ll:[37.139655,126.911075], big:true},
+  {n:"향남산업단지", lab:"향남산업단지", sub:"종사자 3.4만 · 0.2km", dir:"right", color:"#1456f0", ll:[37.13812,126.91148]},
+  {n:"화성고·화성중학교", lab:"화성고·화성중", sub:"377m · 432m", dir:"left", color:"#1e8e5a", ll:[37.13887,126.90695]},
+  {n:"향남읍 구도심", lab:"향남읍 구도심", sub:"상업·문화 · 1.2km", dir:"right", color:"#b3873a", ll:[37.13243,126.92034]},
+  {n:"향남2지구 신도시", lab:"향남2지구", sub:"신도시 · 2.4km", dir:"bottom", color:"#2f6fb0", ll:[37.11864,126.91539]},
 ];
 
-const base = L.tileLayer('https://a.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-        {maxZoom:20, crossOrigin:true, attribution:'© CARTO · OpenStreetMap'});
+// 배경: 항공영상(Esri) + 라벨 오버레이 — 비교사례 지도(map_comps)와 톤 통일
+const base = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+        {maxZoom:19, crossOrigin:true, attribution:'항공영상 © Esri·Maxar · 라벨 © CARTO·OpenStreetMap'});
 const map = L.map('map',{zoomControl:false,attributionControl:true});
 base.addTo(map);
+map.createPane('labels'); map.getPane('labels').style.zIndex=450; map.getPane('labels').style.pointerEvents='none';
+const labels = L.tileLayer('https://basemaps.cartocdn.com/rastertiles/light_only_labels/{z}/{x}/{y}{r}.png',
+        {maxZoom:19, crossOrigin:true, pane:'labels', opacity:.92});
+labels.addTo(map);
 L.control.scale({imperial:false,position:'bottomright'}).addTo(map);
 
 function pinIcon(num,color,big){
@@ -69,14 +81,18 @@ function pinIcon(num,color,big){
 
 const lls=[];
 PLACES.forEach((p,i)=>{
-  L.marker(p.ll,{icon:pinIcon(i+1,p.color,p.big)}).addTo(map).bindTooltip(p.n,{className:'nm',direction:'top'});
+  L.marker(p.ll,{icon:pinIcon('',p.color,p.big)}).addTo(map)
+    .bindTooltip(`<b>${p.lab}</b><br>${p.sub}`,{className:'nm'+(p.big?' site':''),direction:p.dir,permanent:true,
+      offset: p.dir==='bottom'?[0,4] : p.dir==='left'?[-16,-20] : p.dir==='right'?[16,-20] : [0,-6]});
   lls.push(p.ll);
-  if(p.big) L.circle(p.ll,{radius:500,color:'#c0392b',weight:1.3,dashArray:'5 5',fill:false,opacity:.8}).addTo(map);
+  if(p.big){ L.circle(p.ll,{radius:500,color:'#fff',weight:3.4,fill:false,opacity:.55}).addTo(map);
+              L.circle(p.ll,{radius:500,color:'#c0392b',weight:1.6,dashArray:'6 5',fill:false,opacity:.95}).addTo(map); }
 });
 
 map.fitBounds(lls,{paddingTopLeft:[80,80],paddingBottomRight:[80,80],maxZoom:15});
 
-base.on('load',()=>{ window.__MAP_TILES_DONE=true; });
+let _d=0; const _f=()=>{ if(++_d>=2) window.__MAP_TILES_DONE=true; };
+base.on('load',_f); labels.on('load',_f);
 </script>
 </body>
 </html>
