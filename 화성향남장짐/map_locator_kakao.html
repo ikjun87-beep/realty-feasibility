@@ -13,20 +13,20 @@
   .title h1{font-size:20px;margin:6px 0 0;color:var(--navy);font-weight:800;letter-spacing:-0.5px;line-height:1.25;}
   .title .sub{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.5;}
   /* 라벨(오버레이) — deck 톤앤매너 동일: 흰 배경 · 1px 헤어라인 · 그림자 0 */
-  .lb{position:relative;background:rgba(255,255,255,.97);border:1px solid #c9d4e3;
-      border-radius:7px;padding:4px 9px;text-align:center;font-size:14.5px;line-height:1.35;font-weight:800;
+  .lb{position:relative;background:rgba(255,255,255,.97);border:2px solid #c9d4e3;
+      border-radius:12px;padding:7px 15px;text-align:center;font-size:24.5px;line-height:1.35;font-weight:800;
       color:var(--navy);white-space:nowrap;box-shadow:none;}
-  .lb b{display:block;color:var(--blue);font-size:15px;}
+  .lb b{display:block;color:var(--blue);font-size:25px;}
   /* 방향별 배치 — 핀 기준 */
-  .lb.t{transform:translate(-50%,calc(-100% - 44px));}
-  .lb.t::after{content:"";position:absolute;left:50%;bottom:-6px;margin-left:-6px;border:6px solid transparent;
+  .lb.t{transform:translate(-50%,calc(-100% - 75px));}
+  .lb.t::after{content:"";position:absolute;left:50%;bottom:-10px;margin-left:-10px;border:10px solid transparent;
       border-top-color:#c9d4e3;border-bottom:0;}
-  .lb.r{transform:translate(14px,calc(-100% - 12px));}
-  .lb.l{transform:translate(calc(-100% - 14px),calc(-100% - 12px));}
-  .lb.b{transform:translate(-50%,6px);}
-  .lb.site{border:2px solid var(--red);} .lb.site b{color:var(--red);}
+  .lb.r{transform:translate(24px,calc(-100% - 20px));}
+  .lb.l{transform:translate(calc(-100% - 24px),calc(-100% - 20px));}
+  .lb.b{transform:translate(-50%,10px);}
+  .lb.site{border:3px solid var(--red);} .lb.site b{color:var(--red);}
   .lb.site.t::after{border-top-color:var(--red);}
-  .pin{width:30px;height:40px;transform:translate(-50%,-100%);}
+  .pin{width:51px;height:68px;transform:translate(-50%,-100%);}
   .err{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;
        gap:10px;background:#fff;color:var(--red);font-weight:700;font-size:15px;z-index:2000;}
   .err small{color:var(--mut);font-weight:400;font-size:13px;}
