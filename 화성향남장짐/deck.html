@@ -146,7 +146,7 @@
   .cover .cr{width:74mm;height:4px;background:var(--red);margin:22px 0 20px}
   .cover .cs{font-size:16px;line-height:1.7;color:var(--ink);font-weight:700;max-width:800px}
   .cover .cm{font-size:12.5px;line-height:1.7;color:var(--mut2);margin-top:12px;max-width:760px}
-  .cover .cbadge{display:inline-block;background:var(--red);color:#fff;font-size:12px;font-weight:800;padding:5px 15px;margin-top:16px;letter-spacing:.04em}
+  .cover .cbadge{position:absolute;top:9.5mm;right:15mm;z-index:5;background:var(--red);color:#fff;font-size:12px;font-weight:800;padding:5px 15px;letter-spacing:.04em}
   .cover .cdisc{position:absolute;left:15mm;right:15mm;bottom:12mm;font-size:10.5px;color:var(--mut2);line-height:1.6;border-top:1px solid var(--line2);padding-top:9px}
   .cover .cdisc b{color:var(--ink)}
 
@@ -158,6 +158,8 @@
   .bigfig .bd{font-size:12.5px;color:var(--ink)}
   .bigfig .bd b{color:var(--red)}
 
+  /* 괄호 묶음 보호 — 한 줄에 못 들어가면 통째로 다음 줄로 (앞의 <wbr>가 줄바꿈 기회) */
+  .np{white-space:nowrap}
   @page{size:297mm 167mm;margin:0}
   @media print{ html,body{background:#fff} .slide{margin:0} }
 </style>
@@ -167,12 +169,12 @@
 <!-- 01 COVER -->
 <section class="slide cover">
   <div class="cbrand">REALTY FEASIBILITY REVIEW</div>
+  <span class="cbadge">검 토 본</span>
   <div class="ck">경기 화성특례시 · 향남읍 장짐리 228-1</div>
   <h1>향남 장짐지구 <span class="rk">공동주택</span> 신축사업<br>분양성 · 사업성 검토</h1>
   <div class="cr"></div>
-  <div class="cs">공동주택 1,885세대 · 대지 32,059평 · 건축비 평당 5,021천원 · 사업이익 869억원(세전·낙관) · 적정분양가 14,521천원/평</div>
-  <div class="cm">시장조사보고서(리버티랜드) · PF대출 IM(부국증권) · 사업수지(혼합형 토지신탁 VER13) + 국토교통부 실거래가 독립검증</div>
-  <div><span class="cbadge">검 토 본</span></div>
+  <div class="cs">공동주택 1,885세대 · 대지 32,059평 · 건축비 평당 5,021천원 · 사업이익 869억원<wbr><span class="np">(세전·낙관)</span> · 적정분양가 14,521천원/평</div>
+  <div class="cm">시장조사보고서<wbr><span class="np">(리버티랜드)</span> · PF대출 IM<wbr><span class="np">(부국증권)</span> · 사업수지<wbr><span class="np">(혼합형 토지신탁 VER13)</span> + 국토교통부 실거래가 독립검증</div>
   <div class="cdisc" style="font-size:23px;font-weight:800;color:var(--red);padding-top:18px;line-height:1.3">대한토지신탁 주식회사</div>
 </section>
 
@@ -180,33 +182,33 @@
 <section class="slide">
   <div class="s-head"><div class="s-title"><span class="sn">01.</span>검토 결과 — <span class="rk">분양성·사업성 지표 우호</span></div><div class="s-label">Conclusion First</div></div>
   <div class="s-body">
-    <div class="lead">보수 기준에서도 <b>세전 흑자</b>를 확보 — 사업이익 <span class="rk">약 576억~869억원</span>(57,573,942~86,909,598천원). 수익률은 <b>금융조건에 따라 6.7~9.5%</b>로 갈리며, <span class="rk">금융조건 확정이 관건</span>.</div>
+    <div class="lead">보수 기준에서도 <b>세전 흑자</b>를 확보 — 사업이익 <span class="rk">약 576억~869억원</span><wbr><span class="np">(57,573,942~86,909,598천원)</span>. 수익률은 <b>금융조건에 따라 6.7~9.5%</b>로 갈리며, <span class="rk">금융조건 확정이 관건</span>.</div>
     <div class="figs key">
-      <div class="fig rk"><div class="n">869<small>억원</small></div><div class="l">사업이익 (세전) <b>낙관</b> (9.48%)<br>대출 한도에 금리 적용 (사업수지·부가세 정정 반영)</div></div>
-      <div class="fig"><div class="n">576<small>억원</small></div><div class="l">사업이익 (세전) <b>보수</b> (6.70%)<br>잔액 기준+신탁사 자체자금 반영</div></div>
-      <div class="fig rk"><div class="n">6.7~9.5<small>%</small></div><div class="l">수익률 레인지 (매출 대비·세전)<br>금융조건 확정 전 잠정</div></div>
-      <div class="fig"><div class="n">14,521</div><div class="l">적정 가격 (상단)<br>실거래 적정 가격대 14,000~14,200</div></div>
+      <div class="fig rk"><div class="n">869<small>억원</small></div><div class="l">사업이익 <wbr><span class="np">(세전)</span> <b>낙관</b> <wbr><span class="np">(9.48%)</span><br>대출 한도에 금리 적용 <wbr><span class="np">(사업수지·부가세 정정 반영)</span></div></div>
+      <div class="fig"><div class="n">576<small>억원</small></div><div class="l">사업이익 <wbr><span class="np">(세전)</span> <b>보수</b> <wbr><span class="np">(6.70%)</span><br>잔액 기준+신탁사 자체자금 반영</div></div>
+      <div class="fig rk"><div class="n">6.7~9.5<small>%</small></div><div class="l">수익률 레인지 <wbr><span class="np">(매출 대비·세전)</span><br>금융조건 확정 전 잠정</div></div>
+      <div class="fig"><div class="n">14,521</div><div class="l">적정 가격 <wbr><span class="np">(상단)</span><br>실거래 적정 가격대 14,000~14,200</div></div>
     </div>
     <div class="row fill">
-      <div class="callout key" style="flex:1"><span class="t">① 사업성 — 확보(보수에서도 흑자)</span>
+      <div class="callout key" style="flex:1"><span class="t">① 사업성 — 확보<wbr><span class="np">(보수에서도 흑자)</span></span>
         <ul class="clean">
-          <li>낙관 <b>869억원 (9.48%)</b> · 대출 한도에 금리 적용</li>
-          <li>보수 <b>576억원 (6.70%)</b> · 잔액 기준(실측)</li>
+          <li>낙관 <b>869억원 <wbr><span class="np">(9.48%)</span></b> · 대출 한도에 금리 적용</li>
+          <li>보수 <b>576억원 <wbr><span class="np">(6.70%)</span></b> · 잔액 기준<wbr><span class="np">(실측)</span></li>
           <li>격차 <span class="hl">약 293억원</span>의 주된 원인이 <b>금융비 산정방식</b> 차이</li>
           <li>두 시나리오 모두 <b>세전 흑자</b> → 사업성 확보</li>
         </ul></div>
       <div class="callout" style="flex:1"><span class="t">② 분양성 — 확보</span>
         <ul class="clean">
-          <li>적정 = <b>실거래 적정 가격대 14,000~14,200</b> (제시가·신축 근접)</li>
-          <li>요인비교 <b>14,521</b>은 상단 시나리오(요인비교)</li>
+          <li>적정 = <b>실거래 적정 가격대 14,000~14,200</b> <wbr><span class="np">(제시가·신축 근접)</span></li>
+          <li>요인비교 <b>14,521</b>은 상단 시나리오<wbr><span class="np">(요인비교)</span></li>
           <li>신축 실거래 14,160 · 시장조사 15,300</li>
           <li>세 값 <span class="hl">±6% 내 수렴</span> → 가격대 신뢰 가능</li>
         </ul></div>
-      <div class="callout plain" style="flex:1"><span class="t">③ 실행 보완 (우선순위)</span>
+      <div class="callout plain" style="flex:1"><span class="t">③ 실행 보완 <wbr><span class="np">(우선순위)</span></span>
         <ul class="clean">
-          <li><b>금융조건(대출·신탁사 자체자금) 확정</b><br><span class="mut">수익률 6.7~9.5% 좌우 — 1순위</span></li>
+          <li><b>금융조건<wbr><span class="np">(대출·신탁사 자체자금)</span> 확정</b><br><span class="mut">수익률 6.7~9.5% 좌우 — 1순위</span></li>
           <li><b>시공사 공사비 확정</b> · 지출 54.3%<br><span class="mut">도급계약에 면세·과세 구분 발행 조항 필수</span></li>
-          <li><b>부가가치세 신고 정산</b> 세무대리인 확인 · 분양 전략(연 942세대)</li>
+          <li><b>부가가치세 신고 정산</b> 세무대리인 확인 · 분양 전략<wbr><span class="np">(연 942세대)</span></li>
         </ul></div>
     </div>
   </div>
@@ -224,20 +226,20 @@
           <div class="f wide"><div class="k">소재지</div><div class="v">경기 화성특례시 향남읍 장짐리 228-1 일원</div></div>
           <div class="f"><div class="k">용도지역</div><div class="v">제2종일반주거</div></div>
           <div class="f"><div class="k">지구단위</div><div class="v">제1종지구단위계획구역</div></div>
-          <div class="f"><div class="k">대지면적</div><div class="v">105,981㎡ (32,059평)</div></div>
-          <div class="f"><div class="k">연면적</div><div class="v">297,049㎡ (89,857평)</div></div>
-          <div class="f"><div class="k">건폐율</div><div class="v">14.55% <span class="mut">(법정 20%↓)</span></div></div>
-          <div class="f"><div class="k">용적률</div><div class="v">196.65% <span class="mut">(법정 200%↓)</span></div></div>
+          <div class="f"><div class="k">대지면적</div><div class="v">105,981㎡ <wbr><span class="np">(32,059평)</span></div></div>
+          <div class="f"><div class="k">연면적</div><div class="v">297,049㎡ <wbr><span class="np">(89,857평)</span></div></div>
+          <div class="f"><div class="k">건폐율</div><div class="v">14.55% <span class="mut"><wbr><span class="np">(법정 20%↓)</span></span></div></div>
+          <div class="f"><div class="k">용적률</div><div class="v">196.65% <span class="mut"><wbr><span class="np">(법정 200%↓)</span></span></div></div>
           <div class="f"><div class="k">규모</div><div class="v">지하2 ~ 지상18~24층, 20개동</div></div>
           <div class="f"><div class="k">세대수</div><div class="v">1,885세대</div></div>
-          <div class="f"><div class="k">주차</div><div class="v">2,529대 <span class="mut">(법정 1,821대)</span></div></div>
+          <div class="f"><div class="k">주차</div><div class="v">2,529대 <span class="mut"><wbr><span class="np">(법정 1,821대)</span></span></div></div>
         </div>
       </div>
       <div class="col" style="flex:1">
         <div class="card">
           <h3 class="blk">주택 타입 구성</h3>
           <table class="tight">
-            <thead><tr><th class="l">타입</th><th class="r">전용(㎡)</th><th class="r">세대수</th><th class="r">비중</th></tr></thead>
+            <thead><tr><th class="l">타입</th><th class="r">전용<wbr><span class="np">(㎡)</span></th><th class="r">세대수</th><th class="r">비중</th></tr></thead>
             <tbody>
               <tr><td class="l">59A</td><td class="r">59.92</td><td class="r">336</td><td class="r">17.8%</td></tr>
               <tr><td class="l">84형</td><td class="r">84.95</td><td class="r">1,549</td><td class="r">82.2%</td></tr>
@@ -245,13 +247,13 @@
             </tbody>
           </table>
         </div>
-        <div class="callout"><span class="t">인허가 — 검토 전제</span>주택사업계획승인 <b>완료 가정</b>('14.04.16 기준) · 인허가 유지 전제로 검토. 지구단위·사업계획 <b>변경 승인 진행</b> 중 — 변경 승인 시점이 착공·분양 일정을 좌우.<br><span class="mut">승인 유효기간·착공기한은 별도 실사로 확정 [확인필요]</span></div>
+        <div class="callout"><span class="t">인허가 — 검토 전제</span>주택사업계획승인 <b>완료 가정</b><wbr><span class="np">('14.04.16 기준)</span> · 인허가 유지 전제로 검토. 지구단위·사업계획 <b>변경 승인 진행</b> 중 — 변경 승인 시점이 착공·분양 일정을 좌우.<br><span class="mut">승인 유효기간·착공기한은 별도 실사로 확정 [확인필요]</span></div>
       </div>
     </div>
     <div class="figs" style="margin-top:auto">
       <div class="fig"><div class="n">14.55<small>%</small></div><div class="l">건폐율 — 법정 20% 이하 <b>저밀 계획</b></div></div>
       <div class="fig rk"><div class="n">1,885<small>세대</small></div><div class="l">20개동 <b>대단지</b> — 메이저 시공 유치 가능</div></div>
-      <div class="fig"><div class="n">139<small>%</small></div><div class="l">주차율 — 2,529대 (법정 1,821대)</div></div>
+      <div class="fig"><div class="n">139<small>%</small></div><div class="l">주차율 — 2,529대 <wbr><span class="np">(법정 1,821대)</span></div></div>
     </div>
   </div>
   <div class="foot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg">03</span></div>
@@ -281,7 +283,7 @@
             <li><b>직주근접</b> — 향남산단 0.2km 연접, 종사자 1.9만명</li>
             <li><b>학세권</b> — 화성고 377m 도보권</li>
             <li><b>교통</b> — 향남역·터미널 차량 5분, 비교단지 「향남역 한양수자인」보다 근접</li>
-            <li><b>상업·문화</b> — 향남읍 구도심 의존 (1.1~1.4km)</li>
+            <li><b>상업·문화</b> — 향남읍 구도심 의존 <wbr><span class="np">(1.1~1.4km)</span></li>
           </ul></div>
       </div>
     </div>
@@ -296,18 +298,18 @@
     <div class="lead">화성시 <b>연평균 분양 약 8,000세대</b> 대비 대상지 1,885세대는 시 전체의 <b>약 23%</b>. '25년 이후 3년간 새 아파트 입주물량 부족 → <span class="rk">공급자 우위 시장</span>.</div>
     <div class="row fill">
       <div class="card" style="flex:1.2">
-        <h3 class="blk">화성시 아파트 수급 전망 <span class="mut">— 부족(−)은 사업에 유리</span></h3>
+        <h3 class="blk">화성시 아파트 수급 전망 <span class="mut">— 부족<wbr><span class="np">(−)</span>은 사업에 유리</span></h3>
         <div class="bars">
           <div class="bar gray"><span class="bl">'25</span><div class="bt"><span class="bf" style="width:12%"></span></div><span class="bv">+890 <span class="pc">과잉</span></span></div>
           <div class="bar"><span class="bl">'26</span><div class="bt"><span class="bf" style="width:67%"></span></div><span class="bv"><span class="hl">−5,134</span> <span class="pc">부족</span></span></div>
           <div class="bar"><span class="bl">'27</span><div class="bt"><span class="bf" style="width:100%"></span></div><span class="bv"><span class="hl">−7,689</span> <span class="pc">부족</span></span></div>
           <div class="bar"><span class="bl">'28</span><div class="bt"><span class="bf" style="width:67%"></span></div><span class="bv"><span class="hl">−5,123</span> <span class="pc">부족</span></span></div>
         </div>
-        <h3 class="blk" style="margin:14px 0 8px">읍·동 단위 시장 비교 <span class="mut">— 국토교통부 실거래 84㎡·12개월 (천원)</span></h3>
+        <h3 class="blk" style="margin:14px 0 8px">읍·동 단위 시장 비교 <span class="mut">— 국토교통부 실거래 84㎡·12개월 <wbr><span class="np">(천원)</span></span></h3>
         <table class="tight">
           <thead><tr><th class="l">지역</th><th class="r">거래건수</th><th class="r">매매가 중간값</th><th class="r">전용 평단가</th></tr></thead>
           <tbody>
-            <tr><td class="l">새솔동 <span class="mut">(송산그린시티)</span></td><td class="r">209</td><td class="r">540,000</td><td class="r">21,170</td></tr>
+            <tr><td class="l">새솔동 <span class="mut"><wbr><span class="np">(송산그린시티)</span></span></td><td class="r">209</td><td class="r">540,000</td><td class="r">21,170</td></tr>
             <tr><td class="l">남양읍</td><td class="r">272</td><td class="r">387,000</td><td class="r">15,170</td></tr>
             <tr class="tot"><td class="l">향남읍 <span class="mut">·대상지</span></td><td class="r">232</td><td class="r">350,000</td><td class="r">13,620</td></tr>
             <tr><td class="l">화성시 전체</td><td class="r">745</td><td class="r">397,000</td><td class="r">15,560</td></tr>
@@ -318,9 +320,9 @@
         <div class="card">
           <h3 class="blk">수요·거래 여건</h3>
           <ul class="clean">
-            <li><b>향남읍 거래 61~85㎡ 77.9%</b> · 41~60㎡ 13.6% → 수요가 원하는 <b>중형 평형</b>이 대상지 <b>84·59형과 부합</b><br><span class="mut">국토부 실거래 376건 자체집계(2025.7~2026.6) · 화성시 전체 62.4%</span></li>
-            <li>향남읍 <b>신축(2024) 84㎡ 실거래 중위 14,160천원/평</b>(공급환산) — 대상지 가격대 근거<br><span class="mut">국토부 실거래 자체집계</span></li>
-            <li>비규제지역 유지 <b>[추정]</b> · <b>동탄 규제(7/1) 반사</b> 기대 — 향남 LTV 70% vs 동탄 50%</li>
+            <li><b>향남읍 거래 61~85㎡ 77.9%</b> · 41~60㎡ 13.6% → 수요가 원하는 <b>중형 평형</b>이 대상지 <b>84·59형과 부합</b><br><span class="mut">국토부 실거래 376건 자체집계<wbr><span class="np">(2025.7~2026.6)</span> · 화성시 전체 62.4%</span></li>
+            <li>향남읍 <b>신축<wbr><span class="np">(2024)</span> 84㎡ 실거래 중위 14,160천원/평</b><wbr><span class="np">(공급환산)</span> — 대상지 가격대 근거<br><span class="mut">국토부 실거래 자체집계</span></li>
+            <li>비규제지역 유지 <b>[추정]</b> · <b>동탄 규제<wbr><span class="np">(7/1)</span> 반사</b> 기대 — 향남 LTV 70% vs 동탄 50%</li>
           </ul>
         </div>
         <div class="card" style="flex:1">
@@ -341,41 +343,41 @@
 <section class="slide">
   <div class="s-head"><div class="s-title"><span class="sn">05.</span>수요 <span class="rk">검토</span> — 분양 가능성</div><div class="s-label">Demand</div></div>
   <div class="s-body">
-    <div class="lead">필요 분양 속도는 <span class="rk">연 942세대</span>(1,885세대 ÷ 2년). 화성시 연 분양(약 8,000세대)의 <b>11.8%</b>를 2년간 확보하는 수준.</div>
+    <div class="lead">필요 분양 속도는 <span class="rk">연 942세대</span><wbr><span class="np">(1,885세대 ÷ 2년)</span>. 화성시 연 분양<wbr><span class="np">(약 8,000세대)</span>의 <b>11.8%</b>를 2년간 확보하는 수준.</div>
     <div class="row fill">
       <div class="card" style="flex:1.25">
         <h3 class="blk">수요 유입 논리 — 모수에서 필요 분양량까지</h3>
         <table class="tight">
           <thead><tr><th class="l">단계</th><th class="r">규모</th><th class="l">근거·출처</th></tr></thead>
           <tbody>
-            <tr><td class="l">① 배후 고용 모수</td><td class="r">34,000명</td><td class="l">향남·발안산단 종사자 <span class="mut">(시장조사)</span></td></tr>
-            <tr><td class="l">② 지역 거주 성향</td><td class="r">62%</td><td class="l">지역 내 통근율 <span class="mut">(시장조사)</span></td></tr>
+            <tr><td class="l">① 배후 고용 모수</td><td class="r">34,000명</td><td class="l">향남·발안산단 종사자 <span class="mut"><wbr><span class="np">(시장조사)</span></span></td></tr>
+            <tr><td class="l">② 지역 거주 성향</td><td class="r">62%</td><td class="l">지역 내 통근율 <span class="mut"><wbr><span class="np">(시장조사)</span></span></td></tr>
             <tr><td class="l">③ 향남권 유효수요</td><td class="r">3,800세대</td><td class="l">시장조사 산정 <b>[추정]</b></td></tr>
-            <tr><td class="l">④ 화성시 연 분양</td><td class="r">8,000세대</td><td class="l">연간 기준 <span class="mut">(시장조사)</span></td></tr>
-            <tr class="tot"><td class="l">⑤ 필요 분양량</td><td class="r">연 942세대</td><td class="l">1,885 ÷ 2년 <span class="mut">(사업수지 기준)</span></td></tr>
+            <tr><td class="l">④ 화성시 연 분양</td><td class="r">8,000세대</td><td class="l">연간 기준 <span class="mut"><wbr><span class="np">(시장조사)</span></span></td></tr>
+            <tr class="tot"><td class="l">⑤ 필요 분양량</td><td class="r">연 942세대</td><td class="l">1,885 ÷ 2년 <span class="mut"><wbr><span class="np">(사업수지 기준)</span></span></td></tr>
             <tr><td class="l">⑥ 요구 점유율</td><td class="r hl">11.8%</td><td class="l">= 942 ÷ 8,000 <b>← 판단 기준</b></td></tr>
           </tbody>
         </table>
         <div class="callout" style="margin-top:13px"><span class="t">향남 분양 실적 — 공급공백 vs 흡수력</span>
           <ul class="clean" style="font-size:13.5px">
-            <li>향남읍 민간 일반분양 <b>16년간 945세대</b>(향남역 한양수자인, 2021.5)뿐 → <b>누적 대기수요</b></li>
-            <li>단, 2021 한양수자인 당해 1순위 <b>1.91:1</b> · 12개 평면 중 <b>7개 미달</b>(당시 13,000천원/평)</li>
+            <li>향남읍 민간 일반분양 <b>16년간 945세대</b><wbr><span class="np">(향남역 한양수자인, 2021.5)</span>뿐 → <b>누적 대기수요</b></li>
+            <li>단, 2021 한양수자인 당해 1순위 <b>1.91:1</b> · 12개 평면 중 <b>7개 미달</b><wbr><span class="np">(당시 13,000천원/평)</span></li>
             <li>2026.9 <b>향남역 그로브 스위첸 933세대</b> 분양 예정 — 경쟁공급</li>
             <li><span class="hl">"조기 완판" 전제는 미검증</span> — 흡수력 실적 부재 · 분양 전략이 관건</li>
           </ul></div>
       </div>
       <div class="col" style="flex:1">
         <div class="figs" style="margin:0 0 2px">
-          <div class="fig rk"><div class="n">376<small>건</small></div><div class="l">향남읍 연간 매매 <span class="mut">(국토부 실측·최근 12개월)</span></div></div>
+          <div class="fig rk"><div class="n">376<small>건</small></div><div class="l">향남읍 연간 매매 <span class="mut"><wbr><span class="np">(국토부 실측·최근 12개월)</span></span></div></div>
           <div class="fig"><div class="n">31.3<small>건/월</small></div><div class="l">향남읍 월평균 <span class="mut">20~39건, 안정</span></div></div>
         </div>
         <div class="callout key"><span class="t">유입 가능 — 근거</span>
         <ul class="clean">
           <li><b>공급 공백</b> — '26~'28 입주물량 <span class="hl">−5,134~−7,689세대</span></li>
           <li><b>대체수요</b> — 향남권 <b>신규 대단지 부재</b>, 구도심 15년↑ 노후</li>
-          <li><b>진입 가격대</b> — 향남읍 시세 화성시 대비 <b>−12%</b> (13,620 vs 15,560)</li>
+          <li><b>진입 가격대</b> — 향남읍 시세 화성시 대비 <b>−12%</b> <wbr><span class="np">(13,620 vs 15,560)</span></li>
         </ul></div>
-        <div class="callout plain"><span class="t">유의</span>1,885세대 = 화성시 연 분양의 <b>23.6%</b>. 연 942세대(화성시 분양의 11.8%)를 <b>2년 연속 분양</b>해야 함 — <b>분양 전략이 성패의 관건</b>.</div>
+        <div class="callout plain"><span class="t">유의</span>1,885세대 = 화성시 연 분양의 <b>23.6%</b>. 연 942세대<wbr><span class="np">(화성시 분양의 11.8%)</span>를 <b>2년 연속 분양</b>해야 함 — <b>분양 전략이 성패의 관건</b>.</div>
       </div>
     </div>
   </div>
@@ -386,38 +388,38 @@
 <section class="slide">
   <div class="s-head"><div class="s-title"><span class="sn">06.</span>시장 거래량 <span class="rk">추세</span> · 거시 환경</div><div class="s-label">Market Trend · Macro</div></div>
   <div class="s-body">
-    <div class="lead">향남 아파트 매매는 <b>월 31건 안팎 횡보</b>(안정). 대출규제·금리인상 등 <span class="rk">거시 역풍</span>에도 비규제·실수요 기반으로 상대적 방어적.</div>
+    <div class="lead">향남 아파트 매매는 <b>월 31건 안팎 횡보</b><wbr><span class="np">(안정)</span>. 대출규제·금리인상 등 <span class="rk">거시 역풍</span>에도 비규제·실수요 기반으로 상대적 방어적.</div>
     <div class="row fill" style="gap:13px">
       <div class="card" style="flex:1.15">
-        <h3 class="blk">향남읍 매매 거래량 — 5년 추세 <span class="mut">(국토부 실거래·연간 건수)</span></h3>
+        <h3 class="blk">향남읍 매매 거래량 — 5년 추세 <span class="mut"><wbr><span class="np">(국토부 실거래·연간 건수)</span></span></h3>
         <div class="bars">
           <div class="bar gray"><span class="bl">2021</span><div class="bt"><span class="bf" style="width:100%"></span></div><span class="bv">550 <span class="pc">고점</span></span></div>
           <div class="bar"><span class="bl">2022</span><div class="bt"><span class="bf" style="width:62%"></span></div><span class="bv"><span class="hl">341</span> <span class="pc">저점</span></span></div>
           <div class="bar gray"><span class="bl">2023</span><div class="bt"><span class="bf" style="width:71%"></span></div><span class="bv">389 <span class="pc">반등</span></span></div>
           <div class="bar gray"><span class="bl">2024</span><div class="bt"><span class="bf" style="width:82%"></span></div><span class="bv">450 <span class="pc">회복</span></span></div>
           <div class="bar gray"><span class="bl">2025</span><div class="bt"><span class="bf" style="width:67%"></span></div><span class="bv">371 <span class="pc">조정</span></span></div>
-          <div class="bar"><span class="bl">2026 (연율)</span><div class="bt"><span class="bf" style="width:69%"></span></div><span class="bv"><span class="hl">약 382</span> <span class="pc">횡보</span></span></div>
+          <div class="bar"><span class="bl">2026 <wbr><span class="np">(연율)</span></span><div class="bt"><span class="bf" style="width:69%"></span></div><span class="bv"><span class="hl">약 382</span> <span class="pc">횡보</span></span></div>
         </div>
-        <div class="est" style="margin-top:11px"><b>최근 12개월 376건 · 월평균 31건</b>(범위 20~39건). 2022 저점 → 2024 회복 → <b>2026 상반기 전년 동기 +2.7%(횡보)</b>. 기존 보고서값(368건)과 부합.</div>
-        <div class="callout" style="margin-top:11px"><span class="t">화성시 대비 — 동탄 급등과 디커플링</span>화성시 전체는 급증(월 651→1,660건)했으나 <b>전량 동탄 주도</b>(시의 62%). 향남은 월 34→33건 <b>정체</b> — 비중 4.6%→2.0%. <span class="mut">동탄 과열의 착시로 상대 약세이나, 향남 자체 거래는 안정.</span></div>
+        <div class="est" style="margin-top:11px"><b>최근 12개월 376건 · 월평균 31건</b><wbr><span class="np">(범위 20~39건)</span>. 2022 저점 → 2024 회복 → <b>2026 상반기 전년 동기 +2.7%<wbr><span class="np">(횡보)</span></b>. 기존 보고서값<wbr><span class="np">(368건)</span>과 부합.</div>
+        <div class="callout" style="margin-top:11px"><span class="t">화성시 대비 — 동탄 급등과 디커플링</span>화성시 전체는 급증<wbr><span class="np">(월 651→1,660건)</span>했으나 <b>전량 동탄 주도</b><wbr><span class="np">(시의 62%)</span>. 향남은 월 34→33건 <b>정체</b> — 비중 4.6%→2.0%. <span class="mut">동탄 과열의 착시로 상대 약세이나, 향남 자체 거래는 안정.</span></div>
       </div>
       <div class="col" style="flex:1;gap:11px">
         <div class="card">
-          <h3 class="blk">거시 환경 <span class="mut">(2026.7 기준)</span></h3>
+          <h3 class="blk">거시 환경 <span class="mut"><wbr><span class="np">(2026.7 기준)</span></span></h3>
           <table class="tight dense">
             <thead><tr><th class="l" style="width:22%">항목</th><th class="l">현황</th><th class="l" style="width:27%">영향</th></tr></thead>
             <tbody>
               <tr><td class="gu">대출규제</td><td class="l"><b>6·27</b> 수도권 주담대 6억 한도 + 스트레스 DSR 3단계 1.50%</td><td class="l">자금여력↓<br><span class="mut">집값 최대변수 87.5%</span></td></tr>
-              <tr><td class="gu">금리</td><td class="l"><b>2026.7 기준금리 2.75%로 인상</b>(3년 반 만 첫 인상)</td><td class="l">조달·이자 상방<br><span class="mut">긴축 전환</span></td></tr>
-              <tr><td class="gu">증시</td><td class="l">반도체發 <b>−20%대 조정</b>(6.23 서킷브레이커)</td><td class="l">투자심리 위축</td></tr>
-              <tr><td class="gu">환율</td><td class="l">원달러 <b>1,560원</b>(17년 만 최고)</td><td class="l">공사비 상방</td></tr>
+              <tr><td class="gu">금리</td><td class="l"><b>2026.7 기준금리 2.75%로 인상</b><wbr><span class="np">(3년 반 만 첫 인상)</span></td><td class="l">조달·이자 상방<br><span class="mut">긴축 전환</span></td></tr>
+              <tr><td class="gu">증시</td><td class="l">반도체發 <b>−20%대 조정</b><wbr><span class="np">(6.23 서킷브레이커)</span></td><td class="l">투자심리 위축</td></tr>
+              <tr><td class="gu">환율</td><td class="l">원달러 <b>1,560원</b><wbr><span class="np">(17년 만 최고)</span></td><td class="l">공사비 상방</td></tr>
             </tbody>
           </table>
         </div>
         <div class="callout key" style="flex:1"><span class="t">종합 — 향남은 상대적으로 방어적</span>
           <ul class="clean">
-            <li>비규제 <b>LTV 70%</b>(동탄 50%) · 청약 진입장벽↓</li>
-            <li><b>동탄 규제(7/1) 반사</b> + KCC 933세대 9월 분양 · 서해선 향남역</li>
+            <li>비규제 <b>LTV 70%</b><wbr><span class="np">(동탄 50%)</span> · 청약 진입장벽↓</li>
+            <li><b>동탄 규제<wbr><span class="np">(7/1)</span> 반사</b> + KCC 933세대 9월 분양 · 서해선 향남역</li>
             <li>단, 전국 <b>거래절벽·관망세 확산</b>은 분양 속도에 유의</li>
           </ul></div>
       </div>
@@ -434,7 +436,7 @@
       <div class="figbox" style="flex:1.55"><img src="map_comps.png"><div class="cap"><b>비교사례 지도</b> — 핀 번호 = 표 № · <b>빨강</b> 본 사업지 · <b>초록</b> 서해선 향남역 · © 카카오맵</div></div>
       <div class="col" style="flex:1">
         <table class="tight" style="font-size:12px">
-          <thead><tr><th class="c">№</th><th class="l">단지</th><th class="c">준공</th><th class="r">평단가<br>공급</th><th class="r">전용<br>(참고)</th></tr></thead>
+          <thead><tr><th class="c">№</th><th class="l">단지</th><th class="c">준공</th><th class="r">평단가<br>공급</th><th class="r">전용<br><wbr><span class="np">(참고)</span></th></tr></thead>
           <tbody>
             <tr><td class="c">1</td><td class="l">미소지움</td><td class="c">2005</td><td class="r hl">7,670</td><td class="r mut">10,310</td></tr>
             <tr><td class="c">2</td><td class="l">우미린</td><td class="c">2008</td><td class="r hl">11,580</td><td class="r mut">15,570</td></tr>
@@ -444,7 +446,7 @@
             <tr><td class="c">6</td><td class="l">모아엘가</td><td class="c">2015</td><td class="r hl">12,590</td><td class="r mut">16,930</td></tr>
             <tr class="tot"><td class="c">7</td><td class="l">한양수자인 <span class="mut">신축</span></td><td class="c">2024</td><td class="r">14,160</td><td class="r mut">19,040</td></tr>
           </tbody>
-          <caption>국토교통부 실거래가 <b>중간값</b>(84㎡대 매매, 최근 12개월 232건). 공급 = 전용 × 74.4%. 단위 <b>천원/평</b>.</caption>
+          <caption>국토교통부 실거래가 <b>중간값</b><wbr><span class="np">(84㎡대 매매, 최근 12개월 232건)</span>. 공급 = 전용 × 74.4%. 단위 <b>천원/평</b>.</caption>
         </table>
       </div>
     </div>
@@ -458,11 +460,11 @@
   <div class="s-body">
     <div class="row fill" style="gap:13px">
       <div class="card" style="flex:1.5">
-        <h3 class="blk">가중치 평가 (100점) <span class="mut">— 비교사례는 최근 실거래 기준</span></h3>
+        <h3 class="blk">가중치 평가 <wbr><span class="np">(100점)</span> <span class="mut">— 비교사례는 최근 실거래 기준</span></h3>
         <table class="tight dense" style="table-layout:fixed">
           <thead><tr><th class="l" style="width:9%">구분</th><th class="l" style="width:31%">평가항목</th><th class="c" style="width:15%">가중</th><th class="c" style="width:15%">당 PJT</th><th class="c" style="width:15%">수자인</th><th class="c" style="width:15%">모아4</th></tr></thead>
           <tbody>
-            <tr><td class="gu" rowspan="6">입지<br><span class="mut" style="font-size:10px">가중 55</span></td><td class="l">주거선호(지역위계)</td><td class="c">20</td><td class="c">16</td><td class="c">20</td><td class="c">18</td></tr>
+            <tr><td class="gu" rowspan="6">입지<br><span class="mut" style="font-size:10px">가중 55</span></td><td class="l">주거선호<wbr><span class="np">(지역위계)</span></td><td class="c">20</td><td class="c">16</td><td class="c">20</td><td class="c">18</td></tr>
             <tr><td class="l">교통환경 <span class="mut">·당 1.89&lt;수 2.43km</span></td><td class="c">10</td><td class="c">8</td><td class="c">6</td><td class="c hl">9</td></tr>
             <tr><td class="l">교육환경 <span class="mut">·화성고 377m</span></td><td class="c">10</td><td class="c hl">10</td><td class="c">8</td><td class="c">9</td></tr>
             <tr><td class="l">생활편의 <span class="mut">·상업 1.4km</span></td><td class="c">5</td><td class="c">3</td><td class="c">5</td><td class="c">4</td></tr>
@@ -479,7 +481,7 @@
       </div>
       <div class="col" style="flex:1;gap:10px">
         <div class="card">
-          <h3 class="blk">가격지수 → 산출 <span class="mut">(천원/평·공급)</span></h3>
+          <h3 class="blk">가격지수 → 산출 <span class="mut"><wbr><span class="np">(천원/평·공급)</span></span></h3>
           <table class="tight" style="font-size:12px;table-layout:fixed">
             <thead><tr><th class="l" style="width:34%">비교사례</th><th class="r" style="width:22%">실거래</th><th class="r" style="width:22%">지수</th><th class="r" style="width:22%">산출</th></tr></thead>
             <tbody>
@@ -490,8 +492,8 @@
           <div class="est">지수 = 당 PJT 점수 ÷ 비교사례 점수 · 산출 = 실거래 × 지수</div>
         </div>
         <div class="callout key" style="flex:1"><span class="t">적정분양가 — 적정 가격대 + 상단</span>
-          <div style="font-size:22px;font-weight:900;color:var(--red);margin:4px 0 5px">14,000 ~ 14,200<span style="font-size:12px;color:var(--ink)"> 적정 가격대(실거래·제시가 근접)</span></div>
-          실거래(14,160)·제시가(14,000)가 뒷받침. 요인비교 <b>14,521은 상단 시나리오</b>(산출 14,207~14,834).<br><span class="mut" style="font-size:11px">※ 비교사례 2개 — 표본 확대 권장 · 교통점수 근거: 당지 역 1.89 &lt; 수자인 2.43km</span></div>
+          <div style="font-size:22px;font-weight:900;color:var(--red);margin:4px 0 5px">14,000 ~ 14,200<span style="font-size:12px;color:var(--ink)"> 적정 가격대<wbr><span class="np">(실거래·제시가 근접)</span></span></div>
+          실거래<wbr><span class="np">(14,160)</span>·제시가<wbr><span class="np">(14,000)</span>가 뒷받침. 요인비교 <b>14,521은 상단 시나리오</b><wbr><span class="np">(산출 14,207~14,834)</span>.<br><span class="mut" style="font-size:11px">※ 비교사례 2개 — 표본 확대 권장 · 교통점수 근거: 당지 역 1.89 &lt; 수자인 2.43km</span></div>
       </div>
     </div>
   </div>
@@ -504,7 +506,7 @@
   <div class="s-body">
     <div class="row fill" style="gap:13px">
       <div class="card" style="flex:1.1">
-        <h3 class="blk">공급면적 기준 평단가 <span class="mut">(천원/평)</span></h3>
+        <h3 class="blk">공급면적 기준 평단가 <span class="mut"><wbr><span class="np">(천원/평)</span></span></h3>
         <div class="bars">
           <div class="bar gray"><span class="bl">제시 가격</span><div class="bt"><span class="bf" style="width:91.5%"></span></div><span class="bv">14,000 <span class="pc">보수</span></span></div>
           <div class="bar gray"><span class="bl">인근 신축 실거래</span><div class="bt"><span class="bf" style="width:92.5%"></span></div><span class="bv">14,160 <span class="pc">중간값</span></span></div>
@@ -514,30 +516,30 @@
         <h3 class="blk" style="margin-top:16px">각 분양가의 근거</h3>
         <table class="tight" style="font-size:12px;table-layout:fixed">
           <tbody>
-            <tr><td class="gu" style="width:20%">14,000</td><td class="l">사업수지 <b>확정 분양가</b> · 공급면적 기준 (84형 483,595천원/세대)</td></tr>
-            <tr><td class="gu">14,160</td><td class="l">한양수자인(2024) <b>국토부 실거래 중간값</b></td></tr>
+            <tr><td class="gu" style="width:20%">14,000</td><td class="l">사업수지 <b>확정 분양가</b> · 공급면적 기준 <wbr><span class="np">(84형 483,595천원/세대)</span></td></tr>
+            <tr><td class="gu">14,160</td><td class="l">한양수자인<wbr><span class="np">(2024)</span> <b>국토부 실거래 중간값</b></td></tr>
             <tr><td class="gu hl">14,521</td><td class="l">요인비교 88점 → 지수 104.8~106% <b>적정 가격</b> 중간값</td></tr>
-            <tr><td class="gu">15,300</td><td class="l">시장조사(리버티랜드) <b>요인비교법 제시가</b></td></tr>
+            <tr><td class="gu">15,300</td><td class="l">시장조사<wbr><span class="np">(리버티랜드)</span> <b>요인비교법 제시가</b></td></tr>
           </tbody>
         </table>
-        <div class="est">적정 = <b>실거래 적정 가격대 14,000~14,200</b>(제시가·신축 근접). 요인비교 <b>14,521은 상단 시나리오</b> · 시장조사 15,300은 +5.4%. 세 값 <b>±6% 이내 수렴</b>.</div>
+        <div class="est">적정 = <b>실거래 적정 가격대 14,000~14,200</b><wbr><span class="np">(제시가·신축 근접)</span>. 요인비교 <b>14,521은 상단 시나리오</b> · 시장조사 15,300은 +5.4%. 세 값 <b>±6% 이내 수렴</b>.</div>
       </div>
       <div class="card" style="flex:1.15">
-        <h3 class="blk">분양가별 사업이익 <span class="mut">(천원)</span></h3>
+        <h3 class="blk">분양가별 사업이익 <span class="mut"><wbr><span class="np">(천원)</span></span></h3>
         <table class="tight" style="font-size:12px">
-          <thead><tr><th class="l">분양가 (천원/평)</th><th class="r">분양매출</th><th class="r">사업이익</th><th class="r">증감</th></tr></thead>
+          <thead><tr><th class="l">분양가 <wbr><span class="np">(천원/평)</span></th><th class="r">분양매출</th><th class="r">사업이익</th><th class="r">증감</th></tr></thead>
           <tbody>
             <tr><td class="l"><b>14,000</b> <span class="mut">제시 가격</span></td><td class="r">868,033,339</td><td class="r">86,909,598</td><td class="r mut">—</td></tr>
             <tr class="tot"><td class="l"><b>14,521</b> <span class="mut">적정 가격</span></td><td class="r">900,336,581</td><td class="r">116,467,063</td><td class="r hl">+29,557,465</td></tr>
             <tr><td class="l"><b>15,300</b> <span class="mut">시장조사</span></td><td class="r">948,636,435</td><td class="r">160,661,431</td><td class="r mut">+73,751,833</td></tr>
           </tbody>
-          <caption>분양가 인상분에서 매출연동비용 8.5%(신탁보수·광고·예비비·분양보증·학교용지·중도금금융) 차감 후 반영. 세전·부가가치세 정정 반영 기준(국민주택 분양매출은 면세라 정정액은 분양가와 무관한 정액).</caption>
+          <caption>분양가 인상분에서 매출연동비용 8.5%<wbr><span class="np">(신탁보수·광고·예비비·분양보증·학교용지·중도금금융)</span> 차감 후 반영. 세전·부가가치세 정정 반영 기준<wbr><span class="np">(국민주택 분양매출은 면세라 정정액은 분양가와 무관한 정액)</span>.</caption>
         </table>
         <div class="callout key" style="margin-top:auto"><span class="t">분양가가 이익에 미치는 힘 — 단, 가격↔속도 맞물림</span>
           <ul class="clean">
-            <li>적정가(14,521) 적용 시 <span class="hl">+296억원</span> (산술 기준)</li>
+            <li>적정가<wbr><span class="np">(14,521)</span> 적용 시 <span class="hl">+296억원</span> <wbr><span class="np">(산술 기준)</span></li>
             <li>분양가 <b>+1,000천원/평</b> → 이익 <b>약 +567억원</b></li>
-            <li><b>단, 가격↑ = 분양 속도↓(지연)</b> — PF이자·판촉비 증가를 결합한 <b>순효과</b>로 판단</li>
+            <li><b>단, 가격↑ = 분양 속도↓<wbr><span class="np">(지연)</span></b> — PF이자·판촉비 증가를 결합한 <b>순효과</b>로 판단</li>
           </ul></div>
       </div>
     </div>
@@ -550,31 +552,31 @@
   <div class="s-head"><div class="s-title"><span class="sn">10.</span>사업 <span class="rk">수지</span></div><div class="s-label">Feasibility</div></div>
   <div class="s-body">
     <div class="eq">
-      <div class="t"><div class="lab">총수입 (VAT 포함)</div><div class="v" style="font-size:31px">9,171<span style="font-size:16px">억원</span></div><div class="u">917,079,324천원</div></div>
+      <div class="t"><div class="lab">총수입 <wbr><span class="np">(VAT 포함)</span></div><div class="v" style="font-size:31px">9,171<span style="font-size:16px">억원</span></div><div class="u">917,079,324천원</div></div>
       <div class="op">−</div>
-      <div class="t"><div class="lab">총지출 (VAT 포함)</div><div class="v" style="font-size:31px">8,302<span style="font-size:16px">억원</span></div><div class="u">830,169,726천원</div></div>
+      <div class="t"><div class="lab">총지출 <wbr><span class="np">(VAT 포함)</span></div><div class="v" style="font-size:31px">8,302<span style="font-size:16px">억원</span></div><div class="u">830,169,726천원</div></div>
       <div class="op">=</div>
-      <div class="t hl"><div class="lab" style="color:var(--red);font-weight:800">사업이익 (세전·낙관)</div><div class="v" style="font-size:35px">869<span style="font-size:17px">억원</span></div><div class="u">86,909,598천원 · 사업수지 기준</div></div>
+      <div class="t hl"><div class="lab" style="color:var(--red);font-weight:800">사업이익 <wbr><span class="np">(세전·낙관)</span></div><div class="v" style="font-size:35px">869<span style="font-size:17px">억원</span></div><div class="u">86,909,598천원 · 사업수지 기준</div></div>
     </div>
     <div class="est" style="margin:0 0 12px">사업수지 VER13 <b>셀 수식 단위 검증</b> 완료 — 부가가치세 안분 항등식(<b>매입세액 = 공제분 − 불공제분</b>) 정정 반영. <b>금융비 산정방식에 따라 사업이익 레인지가 존재</b> — 아래.</div>
     <div class="figs key">
-      <div class="fig rk"><div class="n">869<small>억원</small></div><div class="l">사업이익 <b>낙관</b> (9.48%)<br>대출 한도에 금리 적용 · 사업수지</div></div>
-      <div class="fig"><div class="n">576<small>억원</small></div><div class="l">사업이익 <b>보수</b> (6.70%)<br>잔액 기준+신탁사 자체자금</div></div>
-      <div class="fig rk"><div class="n">6.7~9.5<small>%</small></div><div class="l">수익률 레인지 (세전)<br>금융조건 확정 전 잠정</div></div>
+      <div class="fig rk"><div class="n">869<small>억원</small></div><div class="l">사업이익 <b>낙관</b> <wbr><span class="np">(9.48%)</span><br>대출 한도에 금리 적용 · 사업수지</div></div>
+      <div class="fig"><div class="n">576<small>억원</small></div><div class="l">사업이익 <b>보수</b> <wbr><span class="np">(6.70%)</span><br>잔액 기준+신탁사 자체자금</div></div>
+      <div class="fig rk"><div class="n">6.7~9.5<small>%</small></div><div class="l">수익률 레인지 <wbr><span class="np">(세전)</span><br>금융조건 확정 전 잠정</div></div>
       <div class="fig"><div class="n">8,680<small>억원</small></div><div class="l">아파트 분양매출<br>총수입의 94.7%</div></div>
     </div>
     <div class="row fill" style="margin-top:2px">
       <div class="callout key" style="flex:1.2"><span class="t">금융비 산정방식 — 결론의 핵심 변수</span>
         <ul class="clean">
-          <li>사업수지: 대출 <b>1,490억원 한도에 금리 일시 적용</b> → 금융비 <b>117,750,851</b> (14.4%)</li>
-          <li>보수모델: <b>잔액 기준(남은 대출에만 이자) + 신탁사 자체자금 이자 약 272억원</b> → 금융비 <b>151,504,932</b> (17.7%)</li>
-          <li>차이 <span class="hl">+338억원</span>이 이익 격차(약 293억원)의 주된 원인 → <b>금융조건 확정 시 재산출</b></li>
+          <li>사업수지: 대출 <b>1,490억원 한도에 금리 일시 적용</b> → 금융비 <b>117,750,851</b> <wbr><span class="np">(14.4%)</span></li>
+          <li>보수모델: <b>잔액 기준<wbr><span class="np">(남은 대출에만 이자)</span> + 신탁사 자체자금 이자 약 272억원</b> → 금융비 <b>151,504,932</b> <wbr><span class="np">(17.7%)</span></li>
+          <li>차이 <span class="hl">+338억원</span>이 이익 격차<wbr><span class="np">(약 293억원)</span>의 주된 원인 → <b>금융조건 확정 시 재산출</b></li>
         </ul></div>
       <div class="callout plain" style="flex:1"><span class="t">수입 구성 · 유의</span>
         <ul class="clean">
-          <li>기타 49,045,985 = 매출VAT·상가분양(약 75억원)·발코니 등 <span class="mut">(순수 기타수입 아님)</span></li>
-          <li>세후 이익 <b>약 67,200,000천원</b> [추정] · 낙관 기준 <span class="mut">(실효세율 22.63% 적용)</span></li>
-          <li>납부부가세 <b>+4,404,847천원</b>(납부) <span class="mut">전 세대 국민주택(85㎡ 이하) → 면세분 매입세액 불공제 · 신고 시 세무대리인 확인</span></li>
+          <li>기타 49,045,985 = 매출VAT·상가분양<wbr><span class="np">(약 75억원)</span>·발코니 등 <span class="mut"><wbr><span class="np">(순수 기타수입 아님)</span></span></li>
+          <li>세후 이익 <b>약 67,200,000천원</b> [추정] · 낙관 기준 <span class="mut"><wbr><span class="np">(실효세율 22.63% 적용)</span></span></li>
+          <li>납부부가세 <b>+4,404,847천원</b><wbr><span class="np">(납부)</span> <span class="mut">전 세대 국민주택<wbr><span class="np">(85㎡ 이하)</span> → 면세분 매입세액 불공제 · 신고 시 세무대리인 확인</span></li>
         </ul></div>
     </div>
   </div>
@@ -585,7 +587,7 @@
 <section class="slide">
   <div class="s-head"><div class="s-title"><span class="sn">11.</span>지출 <span class="rk">구성</span> · 민감도 <span class="mut" style="font-size:15px;color:var(--mut2);font-weight:700">총 830,170백만원 · 단위 백만원</span></div><div class="s-label">Cost · Sensitivity</div></div>
   <div class="s-body">
-    <div class="lead">건축비 <span class="rk">평당 약 5,021천원</span>(연면적 89,857평 기준). 지출의 <b>55.1%</b>로 최대 비목 — 공사업체 미정, <b>시행사 수지 기준 잠정</b>.</div>
+    <div class="lead">건축비 <span class="rk">평당 약 5,021천원</span><wbr><span class="np">(연면적 89,857평 기준)</span>. 지출의 <b>55.1%</b>로 최대 비목 — 공사업체 미정, <b>시행사 수지 기준 잠정</b>.</div>
     <div class="bars" style="margin:auto 0">
       <div class="bar"><span class="bl">건축비</span><div class="bt"><span class="bf" style="width:100%"></span></div><span class="bv">451,161 <span class="pc">54.3%</span></span></div>
       <div class="bar"><span class="bl">토지비</span><div class="bt"><span class="bf" style="width:32%"></span></div><span class="bv">145,331 <span class="pc">17.5%</span></span></div>
@@ -597,8 +599,8 @@
       <div class="bar gray"><span class="bl">납부부가세</span><div class="bt"><span class="bf" style="width:1.0%"></span></div><span class="bv">4,405 <span class="pc">0.5%</span></span></div>
     </div>
     <div class="row" style="gap:12px">
-      <div class="callout key" style="flex:1.25"><span class="t">민감도 — 금융비가 결론을 가름</span>건축비+금융비 = 지출의 <b>68.5%</b>. 금융비는 산정방식에 따라 <b>117,750,851</b>(사업수지·한도에 금리 적용) ~ <b>151,504,932</b>(보수·잔액 기준+신탁사 자체자금) — <span class="hl">차이 약 +338억원이 이익 레인지 약 576~869억원의 핵심</span>. 시공사·대주 확정 시 재산출.</div>
-      <div class="callout plain" style="flex:1"><span class="t">분양가 민감도 (천원)</span>분양가 <b>+1,000천원/평</b> 시 사업이익 <span class="hl">약 +567억원</span>.<br><span class="mut">단, 분양 6개월 지연 시 PF이자 약 −82억원 — 가격 인상과 분양 속도는 맞물림(상충).</span></div>
+      <div class="callout key" style="flex:1.25"><span class="t">민감도 — 금융비가 결론을 가름</span>건축비+금융비 = 지출의 <b>68.5%</b>. 금융비는 산정방식에 따라 <b>117,750,851</b><wbr><span class="np">(사업수지·한도에 금리 적용)</span> ~ <b>151,504,932</b><wbr><span class="np">(보수·잔액 기준+신탁사 자체자금)</span> — <span class="hl">차이 약 +338억원이 이익 레인지 약 576~869억원의 핵심</span>. 시공사·대주 확정 시 재산출.</div>
+      <div class="callout plain" style="flex:1"><span class="t">분양가 민감도 <wbr><span class="np">(천원)</span></span>분양가 <b>+1,000천원/평</b> 시 사업이익 <span class="hl">약 +567억원</span>.<br><span class="mut">단, 분양 6개월 지연 시 PF이자 약 −82억원 — 가격 인상과 분양 속도는 맞물림<wbr><span class="np">(상충)</span>.</span></div>
     </div>
   </div>
   <div class="foot"><span class="cf">향남 장짐 · 분양성·사업성 검토</span><span class="pg">12</span></div>
@@ -621,7 +623,7 @@
           </div>
         </div>
         <div class="card" style="flex:1">
-          <h3 class="blk">사업 기간 (50개월)</h3>
+          <h3 class="blk">사업 기간 <wbr><span class="np">(50개월)</span></h3>
           <div class="bars">
             <div class="bar gray"><span class="bl">준비</span><div class="bt"><span class="bf" style="width:20%"></span></div><span class="bv">10개월</span></div>
             <div class="bar"><span class="bl">공사</span><div class="bt"><span class="bf" style="width:74%"></span></div><span class="bv">37개월</span></div>
@@ -636,11 +638,11 @@
           <thead><tr><th class="l">항목</th><th class="l">영향 · 크기</th><th class="c">등급</th></tr></thead>
           <tbody>
             <tr><td class="l"><b>금융비 산정방식</b><br><span class="mut">대출·신탁사 자체자금</span></td><td class="l">방식에 따라 <b>117,750,851 ~ 151,504,932천원</b><br><span class="mut">+338억원 → 이익 869억↔576억원 · 수익률 6.7~9.5% ★최대변수</span></td><td class="c"><span class="tag r">높음</span></td></tr>
-            <tr><td class="l"><b>공사비 단가</b><br><span class="mut">시공사 미정</span></td><td class="l">건축비 451,161백만원 · <b>평당 약 5,021천원</b>(연면적)<br><span class="mut">±5% → 이익 ∓약 226억원 [추정]</span></td><td class="c"><span class="tag r">높음</span></td></tr>
+            <tr><td class="l"><b>공사비 단가</b><br><span class="mut">시공사 미정</span></td><td class="l">건축비 451,161백만원 · <b>평당 약 5,021천원</b><wbr><span class="np">(연면적)</span><br><span class="mut">±5% → 이익 ∓약 226억원 [추정]</span></td><td class="c"><span class="tag r">높음</span></td></tr>
             <tr><td class="l"><b>분양 진행</b><br><span class="mut">연 942세대</span></td><td class="l">2년 99% 분양 전제<br><span class="mut">6개월 지연 → PF이자 −82억원</span></td><td class="c"><span class="tag a">중간</span></td></tr>
             <tr><td class="l"><b>부가가치세 정산</b><br><span class="mut">본문 반영 완료</span></td><td class="l">면세분 매입세액 불공제 확정 → <b>납부 +4,405백만원</b> 수지 반영<br><span class="mut">국민주택 면세는 법정 · 잔여는 신고단계 세무대리인 최종 확인</span></td><td class="c"><span class="tag g">낮음</span></td></tr>
             <tr><td class="l"><b>인허가 변경</b><br><span class="mut">승인 진행</span></td><td class="l">착공·분양 시점 변동<br><span class="mut">일정 지연 시 금융비 증가</span></td><td class="c"><span class="tag a">중간</span></td></tr>
-            <tr><td class="l"><b>분양가</b><br><span class="mut">14,000천원/평</span></td><td class="l">실거래 적정 가격대(14,000~14,200) 근접<br><span class="mut">상방 여지 제한적 · 상향 시 분양 속도와 상충</span></td><td class="c"><span class="tag g">낮음</span></td></tr>
+            <tr><td class="l"><b>분양가</b><br><span class="mut">14,000천원/평</span></td><td class="l">실거래 적정 가격대<wbr><span class="np">(14,000~14,200)</span> 근접<br><span class="mut">상방 여지 제한적 · 상향 시 분양 속도와 상충</span></td><td class="c"><span class="tag g">낮음</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -654,8 +656,8 @@
   <div class="s-head"><div class="s-title"><span class="sn">13.</span>종합 결론 — <span class="rk">분양성 · 사업성 확보</span></div><div class="s-label">Final Conclusion</div></div>
   <div class="s-body">
     <div class="row" style="gap:14px">
-      <div class="bigfig" style="flex:1"><div class="bl">분양성 — 적정분양가</div><div class="bn">14,521<small>천원/평</small></div><div class="bd">제시 가격 <b>14,000</b> · −3.6% 보수 · 시장조사 15,300 (+5.4%)</div></div>
-      <div class="bigfig" style="flex:1;background:var(--pink);border:2px solid var(--red)"><div class="bl">사업성 — 세전 수익률 (레인지)</div><div class="bn">6.7~9.5<small>%</small></div><div class="bd">낙관 <b>869억</b> / 보수 <b>576억원</b> · <b>금융조건 확정이 관건</b></div></div>
+      <div class="bigfig" style="flex:1"><div class="bl">분양성 — 적정분양가</div><div class="bn">14,521<small>천원/평</small></div><div class="bd">제시 가격 <b>14,000</b> · −3.6% 보수 · 시장조사 15,300 <wbr><span class="np">(+5.4%)</span></div></div>
+      <div class="bigfig" style="flex:1;background:var(--pink);border:2px solid var(--red)"><div class="bl">사업성 — 세전 수익률 <wbr><span class="np">(레인지)</span></div><div class="bn">6.7~9.5<small>%</small></div><div class="bd">낙관 <b>869억</b> / 보수 <b>576억원</b> · <b>금융조건 확정이 관건</b></div></div>
     </div>
     <div class="row fill" style="gap:14px;margin-top:14px">
       <div class="card" style="flex:1">
@@ -664,8 +666,8 @@
           <tbody>
             <tr><td class="gu" style="width:66px">분양성</td><td class="l"><b>있음</b> — 요인비교 <b>14,521</b> · 신축 실거래 <b>14,160</b> · 시장조사 <b>15,300</b><br><span class="mut">3개 산출값 편차 ±6% 내 수렴 → 가격대 신뢰 가능</span></td></tr>
             <tr><td class="gu">가격수준</td><td class="l">제시 <b>14,000</b> = 적정가 <b>−3.6%</b> <span class="tag g" style="font-size:10px">보수</span><br><span class="mut">시장조사 15,300은 +5.4% — 소폭 고평가이나 허용 범위</span></td></tr>
-            <tr><td class="gu">사업성</td><td class="l"><b>있음</b> — 보수 시나리오에서도 <b>세전 흑자</b> (576억원 · 6.70%)<br><span class="mut">낙관 869억(9.48%) · <span class="hl">금융조건 확정 시 확정</span></span></td></tr>
-            <tr class="tot"><td class="gu">분양</td><td class="l">연 <b>942세대</b> · 2년 — 화성시 분양의 <b>11.8%</b><br><span class="mut">'26~'28 공급부족(−5,134~−7,689세대)이 뒷받침</span></td></tr>
+            <tr><td class="gu">사업성</td><td class="l"><b>있음</b> — 보수 시나리오에서도 <b>세전 흑자</b> <wbr><span class="np">(576억원 · 6.70%)</span><br><span class="mut">낙관 869억<wbr><span class="np">(9.48%)</span> · <span class="hl">금융조건 확정 시 확정</span></span></td></tr>
+            <tr class="tot"><td class="gu">분양</td><td class="l">연 <b>942세대</b> · 2년 — 화성시 분양의 <b>11.8%</b><br><span class="mut">'26~'28 공급부족<wbr><span class="np">(−5,134~−7,689세대)</span>이 뒷받침</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -673,10 +675,10 @@
         <h3 class="blk">실행 보완 4건</h3>
         <table class="tight dense">
           <tbody>
-            <tr><td class="gu" style="width:24px">1</td><td class="l"><b>금융조건(대출·신탁사 자체자금) 확정 ★</b><br><span class="mut">금융비 1,178~1,515억원 → 수익률 6.7~9.5% 좌우 · 최우선</span></td></tr>
-            <tr><td class="gu">2</td><td class="l"><b>부가가치세 신고 정산 확인 ★</b><br><span class="mut">면세분 매입세액 불공제 = 수지 반영 완료(납부 +44억) · 신고 시 세무대리인 최종 확인</span></td></tr>
+            <tr><td class="gu" style="width:24px">1</td><td class="l"><b>금융조건<wbr><span class="np">(대출·신탁사 자체자금)</span> 확정 ★</b><br><span class="mut">금융비 1,178~1,515억원 → 수익률 6.7~9.5% 좌우 · 최우선</span></td></tr>
+            <tr><td class="gu">2</td><td class="l"><b>부가가치세 신고 정산 확인 ★</b><br><span class="mut">면세분 매입세액 불공제 = 수지 반영 완료<wbr><span class="np">(납부 +44억)</span> · 신고 시 세무대리인 최종 확인</span></td></tr>
             <tr><td class="gu">3</td><td class="l"><b>시공사 공사비 확정 + 도급계약 VAT 조항</b><br><span class="mut">평당 5,021천원 · ±5% → ∓226억원 / <b>국민주택 면세·근생 과세 구분 발행</b> 조항 필수</span></td></tr>
-            <tr><td class="gu">4</td><td class="l"><b>분양 전략 (연 942세대)</b><br><span class="mut">향남 16년 공급공백 = 대기수요 / 흡수력 실적 부재 · 6개월 지연 −82억원</span></td></tr>
+            <tr><td class="gu">4</td><td class="l"><b>분양 전략 <wbr><span class="np">(연 942세대)</span></b><br><span class="mut">향남 16년 공급공백 = 대기수요 / 흡수력 실적 부재 · 6개월 지연 −82억원</span></td></tr>
           </tbody>
         </table>
         <div style="margin-top:11px"><span class="seal">사업성 확보 · 보완 후 실행 가능</span></div>
