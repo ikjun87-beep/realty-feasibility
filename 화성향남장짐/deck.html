@@ -97,6 +97,12 @@
   .bar .bt{height:15px;background:var(--gray);border-radius:2px;overflow:hidden}
   .bar .bf{display:block;height:100%;background:var(--red)}
   .bar.gray .bf{background:var(--grayhdr)}
+  /* .bar.sub = 상위 비목의 내역(합계에 이미 포함 — 별도 지출 아님). 들여쓰기+축소로 위계 구분 */
+  .bar.sub{font-size:11.5px;margin-top:-4px}
+  .bar.sub .bl{padding-left:11px;font-weight:700;color:var(--mut2)}
+  .bar.sub .bt{height:9px}
+  .bar.sub .bf{background:#c9a9a9}
+  .bar.sub .bv{color:var(--mut2);font-weight:700}
   /* .bar.key = 추천값(적정 가격) 사각 박스 강조 */
   .bar.key{background:var(--pink);border:2px solid var(--red);padding:5px 8px;margin:-3px 0}
   .bar .bv{text-align:right;font-weight:800;color:var(--ink)}
@@ -401,7 +407,7 @@
           <div class="bar"><span class="bl">2026 <wbr><span class="np">(연율)</span></span><div class="bt"><span class="bf" style="width:69%"></span></div><span class="bv"><span class="hl">약 382</span> <span class="pc">횡보</span></span></div>
         </div>
         <div class="est" style="margin-top:11px"><b>최근 12개월 376건 · 월평균 31건</b><wbr><span class="np">(범위 20~39건)</span>. 2022 저점 → 2024 회복 → <b>2026 상반기 전년 동기 +2.7%<wbr><span class="np">(횡보)</span></b>. 기존 보고서값<wbr><span class="np">(368건)</span>과 부합.</div>
-        <div class="callout" style="margin-top:11px"><span class="t">화성시 대비 — 동탄 급등과 디커플링</span>화성시 전체는 급증<wbr><span class="np">(월 651→1,660건)</span>했으나 <b>전량 동탄 주도</b><wbr><span class="np">(시의 62%)</span>. 향남은 월 34→33건 <b>정체</b> — 비중 4.6%→2.0%. <span class="mut">동탄 과열의 착시로 상대 약세이나, 향남 자체 거래는 안정.</span></div>
+        <div class="callout" style="margin-top:11px"><span class="t">화성시 대비 — 동탄만 급등, 향남은 따로 움직임</span>화성시 전체는 급증<wbr><span class="np">(월 651→1,660건)</span>했으나 <b>전량 동탄 주도</b><wbr><span class="np">(시의 62%)</span>. 향남은 월 34→33건 <b>정체</b> — 비중 4.6%→2.0%. <span class="mut">동탄 과열의 착시로 상대 약세이나, 향남 자체 거래는 안정.</span></div>
       </div>
       <div class="col" style="flex:1;gap:11px">
         <div class="card">
@@ -493,7 +499,7 @@
         </div>
         <div class="callout key" style="flex:1"><span class="t">적정분양가 — 적정 가격대 + 상단</span>
           <div style="font-size:22px;font-weight:900;color:var(--red);margin:4px 0 5px">14,000 ~ 14,200<span style="font-size:12px;color:var(--ink)"> 적정 가격대<wbr><span class="np">(실거래·제시가 근접)</span></span></div>
-          실거래<wbr><span class="np">(14,160)</span>·제시가<wbr><span class="np">(14,000)</span>가 뒷받침. 요인비교 <b>14,521은 상단 시나리오</b><wbr><span class="np">(산출 14,207~14,834)</span>.<br><span class="mut" style="font-size:11px">※ 비교사례 2개 — 표본 확대 권장 · 교통점수 근거: 당지 역 1.89 &lt; 수자인 2.43km</span></div>
+          실거래<wbr><span class="np">(14,160)</span>·제시가<wbr><span class="np">(14,000)</span>가 뒷받침. 요인비교 <b>14,521은 상단 시나리오</b><wbr><span class="np">(산출 14,207~14,834)</span>.<br><span class="mut" style="font-size:11px">※ 비교사례 2개 — 표본 확대 권장 · 교통점수: 당지 역 1.89 &lt; 수자인 2.43km</span></div>
       </div>
     </div>
   </div>
@@ -568,7 +574,7 @@
     <div class="row fill" style="margin-top:2px">
       <div class="callout key" style="flex:1.2"><span class="t">금융비 산정방식 — 결론의 핵심 변수</span>
         <ul class="clean">
-          <li>사업수지: 대출 <b>1,490억원 한도에 금리 일시 적용</b> → 금융비 <b>117,750,851</b> <wbr><span class="np">(14.4%)</span></li>
+          <li>사업수지: 대출 <b>1,490억원 한도에 금리 일시 적용</b> → 금융비 <b>117,750,851</b> <wbr><span class="np">(14.2%)</span></li>
           <li>보수모델: <b>잔액 기준<wbr><span class="np">(남은 대출에만 이자)</span> + 신탁사 자체자금 이자 약 272억원</b> → 금융비 <b>151,504,932</b> <wbr><span class="np">(17.7%)</span></li>
           <li>차이 <span class="hl">+338억원</span>이 이익 격차<wbr><span class="np">(약 293억원)</span>의 주된 원인 → <b>금융조건 확정 시 재산출</b></li>
         </ul></div>
@@ -587,12 +593,13 @@
 <section class="slide">
   <div class="s-head"><div class="s-title"><span class="sn">11.</span>지출 <span class="rk">구성</span> · 민감도 <span class="mut" style="font-size:15px;color:var(--mut2);font-weight:700">총 830,170백만원 · 단위 백만원</span></div><div class="s-label">Cost · Sensitivity</div></div>
   <div class="s-body">
-    <div class="lead">건축비 <span class="rk">평당 약 5,021천원</span><wbr><span class="np">(연면적 89,857평 기준)</span>. 지출의 <b>55.1%</b>로 최대 비목 — 공사업체 미정, <b>시행사 수지 기준 잠정</b>.</div>
+    <div class="lead">건축비 <span class="rk">평당 약 5,021천원</span><wbr><span class="np">(연면적 89,857평 기준)</span>. 지출의 <b>54.3%</b>로 최대 비목 — 공사업체 미정, <b>시행사 수지 기준 잠정</b>.</div>
     <div class="bars" style="margin:auto 0">
       <div class="bar"><span class="bl">건축비</span><div class="bt"><span class="bf" style="width:100%"></span></div><span class="bv">451,161 <span class="pc">54.3%</span></span></div>
       <div class="bar"><span class="bl">토지비</span><div class="bt"><span class="bf" style="width:32%"></span></div><span class="bv">145,331 <span class="pc">17.5%</span></span></div>
       <div class="bar"><span class="bl">금융비</span><div class="bt"><span class="bf" style="width:26%"></span></div><span class="bv">117,751 <span class="pc">14.2%</span></span></div>
       <div class="bar gray"><span class="bl">부대비</span><div class="bt"><span class="bf" style="width:8.6%"></span></div><span class="bv">38,979 <span class="pc">4.7%</span></span></div>
+      <div class="bar sub"><span class="bl">└ 신탁보수</span><div class="bt"><span class="bf" style="width:6.1%"></span></div><span class="bv">27,380 <span class="pc">매출의 3.0%</span></span></div>
       <div class="bar gray"><span class="bl">판매비</span><div class="bt"><span class="bf" style="width:7.6%"></span></div><span class="bv">34,284 <span class="pc">4.1%</span></span></div>
       <div class="bar gray"><span class="bl">제세공과</span><div class="bt"><span class="bf" style="width:4.6%"></span></div><span class="bv">20,657 <span class="pc">2.5%</span></span></div>
       <div class="bar gray"><span class="bl">용역비</span><div class="bt"><span class="bf" style="width:3.9%"></span></div><span class="bv">17,603 <span class="pc">2.1%</span></span></div>
@@ -667,6 +674,7 @@
             <tr><td class="gu" style="width:66px">분양성</td><td class="l"><b>있음</b> — 요인비교 <b>14,521</b> · 신축 실거래 <b>14,160</b> · 시장조사 <b>15,300</b><br><span class="mut">3개 산출값 편차 ±6% 내 수렴 → 가격대 신뢰 가능</span></td></tr>
             <tr><td class="gu">가격수준</td><td class="l">제시 <b>14,000</b> = 적정가 <b>−3.6%</b> <span class="tag g" style="font-size:10px">보수</span><br><span class="mut">시장조사 15,300은 +5.4% — 소폭 고평가이나 허용 범위</span></td></tr>
             <tr><td class="gu">사업성</td><td class="l"><b>있음</b> — 보수 시나리오에서도 <b>세전 흑자</b> <wbr><span class="np">(576억원 · 6.70%)</span><br><span class="mut">낙관 869억<wbr><span class="np">(9.48%)</span> · <span class="hl">금융조건 확정 시 확정</span></span></td></tr>
+            <tr><td class="gu">신탁보수</td><td class="l"><b>274억원</b> — 매출합계의 <b>3.0%</b> <span class="mut">(27,379,878천원 · 요율 3%)</span><br><span class="mut">부대비 390억원의 70% — 부대비 내 최대 항목</span></td></tr>
             <tr class="tot"><td class="gu">분양</td><td class="l">연 <b>942세대</b> · 2년 — 화성시 분양의 <b>11.8%</b><br><span class="mut">'26~'28 공급부족<wbr><span class="np">(−5,134~−7,689세대)</span>이 뒷받침</span></td></tr>
           </tbody>
         </table>

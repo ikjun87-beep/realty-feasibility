@@ -24,6 +24,8 @@
   .lb.r{transform:translate(24px,calc(-100% - 20px));}
   .lb.l{transform:translate(calc(-100% - 24px),calc(-100% - 20px));}
   .lb.b{transform:translate(-50%,10px);}
+  /* 아래·우측 시프트 — 서해선 향남역 핀(좌측)을 비껴가기 위함. 표준 t/r/l은 인접 라벨과 충돌 */
+  .lb.br{transform:translate(-50%,10px) translateX(48px);}
   .lb.site{border:3px solid var(--red);} .lb.site b{color:var(--red);}
   .lb.site.t::after{border-top-color:var(--red);}
   .pin{width:51px;height:68px;transform:translate(-50%,-100%);}
@@ -40,7 +42,7 @@ const SITE={lab:"본 사업지", sub:"장짐리 228-1 · 1,885세대", ll:[37.13
 const PLACES=[
   {num:1, dir:"r", short:"미소지움",      by:2005, ppe:1031, ll:[37.137645,126.910997]},
   {num:2, dir:"l", short:"우미린",        by:2008, ppe:1557, ll:[37.129780,126.917179]},
-  {num:3, dir:"b", short:"향남지웰2차",   by:2010, ppe:1451, ll:[37.128763,126.919605]},
+  {num:3, dir:"br", short:"향남지웰2차",  by:2010, ppe:1451, ll:[37.128763,126.919605]},
   {num:4, dir:"r", short:"대방노블랜드",  by:2008, ppe:1478, ll:[37.130151,126.925303]},
   {num:5, dir:"l", short:"모아에듀파크4", by:2018, ppe:1801, ll:[37.116402,126.903460]},
   {num:6, dir:"r", short:"모아엘가",      by:2015, ppe:1693, ll:[37.112688,126.913296]},
