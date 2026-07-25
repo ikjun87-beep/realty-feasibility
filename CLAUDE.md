@@ -22,6 +22,12 @@
 - 디자인 규율("다방"): **Pretendard 단일 패밀리**, **box-shadow:0**(깊이는 1px 헤어라인+배경톤으로). **색은 라이트 시스템(2026-07-12~)** = **네이비 `#13243f`(구조·타이틀) + 스카이 `#3b86d1`(데이터/정보 액센트) + 골드 `#b3873a`(절제된 브랜드 액센트)**, 화이트 배경. **표지·본문·마무리 전부 라이트**(구 "표지 쿨네이비·마무리 웜" 다크 대비는 폐기). 강조색은 슬라이드당 1~2개. **확정 토큰·헤더 규칙은 루트 `디자인_색감_가이드.md` 참조**(표준기준서 §9 폼·§7 지도 표준과 함께 준수).
 - 빌드·테스트 프레임워크 없음(정적 HTML).
 
+## API 키 (카카오)
+- **정본은 `화성향남장짐/.env`** — `KAKAO_REST_KEY`(Local API: 지오코딩·POI 반경) · `KAKAO_JS_KEY`(지도 SDK 렌더). **둘은 같은 앱의 서로 다른 키.**
+- 점파일 `.kakao_key`·`.kakao_js_key`는 기존 스크립트(`geocode.py`·`fetch_infra.py`·`render_kakao.mjs`)용 **파생물**이며 직접 편집하지 않는다.
+- ⚠ **점파일에만 두지 말 것** — `backup-secrets.sh`가 `.env`·`*.jks`만 걷어가서 2026-07-25 새 PC 이전 때 키가 통째로 소실됐다. 키 투입·검증·백업은 `bash ~/projects/easygroup-hq/scripts/set-kakao-keys.sh <REST키> [JS키]` 한 줄로.
+- JS 키는 **JavaScript SDK 도메인에 `http://localhost:8766` 등록**이 되어야 실제 지도가 뜬다. 상세는 지식창고 `참조/카카오맵-API.md`.
+
 ## 주요 명령 (WSL, 이 머신)
 - 슬라이드 PNG 렌더: `cd <현장폴더> && LD_LIBRARY_PATH=<chromelibs> node render.mjs`
 - PDF 생성: `node render_pdf.mjs <입력.html> <출력.pdf>`

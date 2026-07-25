@@ -8,6 +8,11 @@ _ref-proposals/
 
 # 지오코딩 API 키(로컬 전용)
 **/.kakao_key
+# 키 정본(.env) — backup-secrets.sh가 여기서 easygroup-secrets로 미러한다.
+# 점파일(.kakao_key·.kakao_js_key)은 백업 스크립트가 안 걷어가 새 PC에서 소실됨(2026-07-25 실증).
+.env
+**/.env
+!**/.env.example
 
 # 머신 고유 렌더 스크립트·의존성(로컬 전용, 재작성)
 **/render*.mjs
