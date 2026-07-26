@@ -10,6 +10,7 @@
 - `_원자료/_txt/` — PDF 전체 텍스트 추출본 / `_원자료/_molit/` — 국토부 실거래 json(화성시 전체 12개월)
 - `_원자료/추출_핵심팩트.md` — 팩트 정리 (⚠ **일부 stale** — "실거래 −26%"·"분양 comp" 오독 잔존, JN.md가 우선)
 - `deck.html`(SSOT, **14장**) → `향남장짐_분양성사업성_검토.pdf` · 원본백업 `deck_원본백업_20260715.html`(v2 디자인 이식·적대검토 반영 전, 원상복구용)
+- `캔바_PPT_프롬프트.md` — **캔바 PPT 정본 지시서**(2026-07-26 신설). 생성 파라미터·style·폰트·**권위값 체크리스트/폐기값 블랙리스트**·18장 아웃라인. 캔바 작업 전 반드시 읽을 것.
 - `보고서_기본데이터_적대검토.md` — **적대적 레드팀 검토**(내부용): 금융비 산정방식·이익 레인지 근거. deck 헤드라인의 SSOT.
 - `map_comps_kakao.html`·`map_locator_kakao.html` → `map_comps.png`·`map_locator.png`
 - `fetch_infra.py` → `infra.json` (Kakao Local 반경 실측)
@@ -43,6 +44,14 @@
 - **인허가 완료 · 토지 사용권원 확보를 전제.** 주택법 리스크(§16 승인취소·§21 매도청구)는 deck에 미표기.
 - 제출용 문서 — 내부 주의사항·면책·"가부 미판정" 문구 금지.
 - **결론은 사업성 있다/없다로 끝낼 것.** 분양가·사업이익을 크게 강조, 디테일은 하위.
+
+## 캔바(Canva) PPT — 고정정보 (2026-07-26)
+- **대상 디자인 `DAHQb4rlSB0`** (편집 https://www.canva.com/d/SfYSyeDsTc4kgZT). 지도 asset: 입지도 `MAHQblNb--0` · 실거래비교도 `MAHQbujS0_k` — **재업로드 금지, 재사용**.
+- **계정은 무료 플랜** → 커스텀 폰트(TTF) 업로드 불가. 폰트 = **`Source Han Sans KR`**(없으면 `Noto Sans KR`) 단일 패밀리 · Heavy/Medium/Regular.
+- 🔴 **`format_text`에 폰트 패밀리 옵션 없음** — `add_text`로 만든 요소는 캔바 기본 라틴 폰트로 굳어 API로 못 바꿈. **레이아웃을 API로 끝내고 폰트는 캔바 편집기에서 Ctrl+A 일괄 변경**이 유일한 해법.
+- 🔴 **`generate-design-structured`(캔바 AI 자동생성) 재사용 금지** — 표·수치를 70~80% 삭제하고 더미 연락처(`reallygreatsite.com`)를 넣음. 2026-07-26 실증. **`edit-design` 좌표 배치만 사용.**
+- 좌표계: `read-design`의 `pos: A,B` = **(top, left)**. 페이지 1920×1080, 좌우 여백 140.
+- 디자인 규격 「숫자 지배형」: 앵커 180px 레드 + 단위 44px 검정 · 레드 세로바 9×300 · 보조 58px + 언더라인 70×4 · 표는 **가로 헤어라인만**(헤더룰 레드 3px / 행 `#DDDDDD` 1px, 셀 배경 금지).
 
 ## 렌더 / 도구
 - 렌더: **Chrome/puppeteer**. chromelibs 없으면 메모리 `render-chrome-no-sudo` 절차 (**`~/chromelibs`에 재구성 — scratchpad는 주기적 삭제됨**).

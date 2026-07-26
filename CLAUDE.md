@@ -8,7 +8,7 @@
 - `분양성보고서-표준기준서.md` — **공통 표준(STANDARD)**. 새 보고서는 이 표준 목차·§4 필수 체크리스트·§12 품질게이트를 따른다.
 - `cashflow-report/` — 양산 물금 공동주택 **사업수지(현금흐름)** 통합보고서. 최신·완성본. cashflow-tool 엔진값 × 디자인.
   - `PRD_사업수지통합보고서.md`(로드맵·Phase) · `engine_result_양산.json`(엔진 진실값) · `양산_사업수지_보고서.html/.pdf`(11장) · `양산_사업수지_경영요약_1p.*`(임원 1p) · `양산_사업수지_ppt_프롬프트.txt`
-- `화성향남장짐/` — 화성 향남 장짐지구 공동주택 **분양성·사업성** 검토(deck 13장, **진행중**). 자체 `JN.md`·`CLAUDE.md` 보유(현장 정본 — **단위 천원·개조식·요인비교법** 등 확정 규칙 포함). **카카오맵**(`map_*_kakao.html` + `render_kakao.mjs`), `fetch_infra.py`(Kakao Local 반경 실측), `geocode.py`(좌표 확정). ⚠ `_원자료/추출_핵심팩트.md`는 일부 stale — JN.md 우선.
+- `화성향남장짐/` — 화성 향남 장짐지구 공동주택 **분양성·사업성** 검토(deck 13장, **진행중**). 자체 `JN.md`·`CLAUDE.md` 보유(현장 정본 — **단위 천원·개조식·요인비교법** 등 확정 규칙 포함). **카카오맵**(`map_*_kakao.html` + `render_kakao.mjs`), `fetch_infra.py`(Kakao Local 반경 실측), `geocode.py`(좌표 확정). **캔바 PPT 병행 제작중**(`캔바_PPT_프롬프트.md` · 디자인 `DAHQb4rlSB0` · 18장 중 3장). ⚠ `_원자료/추출_핵심팩트.md`는 일부 stale — JN.md 우선.
 - `ganghwa-naeri/` — 강화 내리 3필지 **지적검토 + 전원주택 가설계/3D**. 파이썬 빌드(`build_report.py`·`fetch_landdeals.py`·`fetch_parcels.py`·`neighbors_map.py`) → `index.html`/`house.html`.
 - `dangha-parking/` — 당하동 주차전용건축물 **분양성** 검토(report 12장 + deck 13장). `README.md`에 산출물 안내.
 - `ktower-geomdan/` — The K Tower 검단 **적정분양가·사업성** 검토(report + deck + `PRD.md`).
